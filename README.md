@@ -55,6 +55,18 @@ pra1/
          └─ ReservaTest.java
 ```
 
+## La relacion entre la clase Allotjament
+```Pain text
+Allotjament (abstract)
+│
+├── Parcela
+├── Casa (abstract)
+│     ├── Bungalow
+│     │     └── BungalowPremium
+│     ├── Glamping
+│     └── MobilHome
+```
+
 ---
 
 # Task Distribution
