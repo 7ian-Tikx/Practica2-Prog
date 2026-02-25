@@ -28,12 +28,12 @@ pra1/
 │     │  │
       |  (clases principales - to implement)
 │     │  ├─ Camping.java
-│     │  ├─ Client.java
-│     │  ├─ Reserva.java
-│     │  ├─ LlistaReserves.java
+│     │  ├─ Client.java  -acabado
+│     │  ├─ Reserva.java -acabado
+│     │  ├─ LlistaReserves.java -en proceso
          (Altjament classes)
-│     │  ├─ Allotjament.java (abstract)
-│     │  ├─ Parcela.java
+│     │  ├─ Allotjament.java (abstract) -acabado
+│     │  ├─ Parcela.java -acabado
 │     │  ├─ Casa.java        (abstract)
 │     │  ├─ Bungalow.java
 │     │  ├─ BungalowPremium.java
