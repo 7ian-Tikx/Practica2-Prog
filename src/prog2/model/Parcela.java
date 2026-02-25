@@ -12,7 +12,7 @@ public class Parcela extends Allotjament{
         this.mida = mida;
     }
 
-    // Els getters i setters dels nout atributs
+    // Els getters i setters dels nous atributs
     public boolean isConnexioElectrica(){
         return this.conexioElectrica;
     }
