@@ -10,23 +10,23 @@ public class Reserva{
     private Allotjament allotjament;
 
     //Fem el constructor de Reserva
-    public Reserva(LocalDate dataEntrada,LocalDate dataSortida, Client client, Allotjament allotjament){
+    public Reserva(Allotjament allotjament,Client client,LocalDate dataEntrada,LocalDate dataSortida){
         this.dataEntrada = dataEntrada;
         this.dataSortida = dataSortida;
         this.client = client;
         this.allotjament = allotjament;
     }
     //Fem els getter de dataEntrada,dataSortida,client i allotjament
-    public LocalDate dataEntrada(){
+    public LocalDate getDataEntrada(){
         return this.dataEntrada;
     }
-    public LocalDate dataSortida(){
+    public LocalDate getDataSortida(){
         return this.dataSortida;
     }
-    public Client client(){
+    public Client getClient(){
         return this.client;
     }
-    public Allotjament allotjament(){
+    public Allotjament getAllotjament_(){
         return this.allotjament;
     }
 
@@ -40,7 +40,7 @@ public class Reserva{
     public void setClient(Client client){
         this.client = client;
     }
-    public void setAllotjament(Allotjament allotjament){
+    public void setAllotjament_(Allotjament allotjament){
         this.allotjament = allotjament;
     }
 }
