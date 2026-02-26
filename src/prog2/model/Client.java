@@ -25,6 +25,6 @@ public class Client {
     }
     //Fem el metode toString per imprimir les informacions
     public String toString(String nom, String DNI){
-        return "Nom del client: " + nom + "\n DNI: " + DNI;
+        return nom + " amb DNI: " + DNI + ". ";
     }
 }
