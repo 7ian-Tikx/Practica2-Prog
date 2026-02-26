@@ -13,14 +13,14 @@ public class Client {
     public String getNom(){
         return this.nom;
     }
-    public String getDNI(){
+    public String getDni(){
         return this.DNI;
     }
     //Fem els setters del Nom i DNI
     public void setNom(String nom){
         this.nom = nom;
     }
-    public void setDNI(String DNI){
+    public void setDni(String DNI){
         this.DNI = DNI;
     }
     //Fem el metode toString per imprimir les informacions
