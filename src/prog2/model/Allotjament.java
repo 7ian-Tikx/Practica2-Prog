@@ -39,7 +39,7 @@ public abstract class Allotjament implements InAllotjament{
         }
     }
 
-    public) void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_){
+    public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_){
         this.estadaMinimaBAIXA = estadaMinimaBAIXA_;
         this.estadaMinimaALTA = estadaMinimaALTA_;
 
@@ -49,7 +49,7 @@ public abstract class Allotjament implements InAllotjament{
     public abstract boolean correcteFuncionament();
 
     @Override
-    public String toString( {
+    public String toString(){
         return "Nom=" + nom + ", Id=" + id + ", estada mínima en temp ALTA: " + estadaMinimaALTA +
                 ", estada mínima en temp BAIXA: " + estadaMinimaBAIXA;
     }
