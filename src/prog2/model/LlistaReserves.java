@@ -64,7 +64,7 @@ public class LlistaReserves implements InLlistaReserves{
             }
             if(!isEstadaMinima(allotjament,dataEntrada,dataSortida)){
                 throw new ExcepcioReserva("Les dates solicitades pel client " + client.getNom() + " amb DNI: " +
-                        client.getDNI() + " no compleixen l'estada minima per l'allotjament amb identificador " +
+                        client.getDni() + " no compleixen l'estada minima per l'allotjament amb identificador " +
                         allotjament.getId() + ".");
             }
 
