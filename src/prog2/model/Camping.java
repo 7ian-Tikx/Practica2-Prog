@@ -5,49 +5,74 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Camping implements InCamping{
+    private String nom;
     private ArrayList<Allotjament> allotjaments;
     private ArrayList <Client> clients;
-    private String nom;
+    private LlistaReserves llistaReserves;
 
     //Fem el constructor de Camping
-    public Camping(ArrayList<Allotjament> allotjaments,ArrayList <Client> clients,String nom) {
-
-        Iterator<Allotjament> iterator = allotjaments.iterator();
-        Iterator<Client> iterator1 = clients.iterator();
-
+    public Camping(String nom,ArrayList<Allotjament> allotjaments,ArrayList <Client> clients,LlistaReserves llistaReserves) {
         this.nom = nom;
-    }
-
-    //Fem els iterators de allotjaments i clients
-
-    public String getNom(){
-        return this.nom;
-    }
-
-    //Fel els setters de allotjaments, clients i nom
-    public void setAllotjaments(ArrayList<Allotjament> allotjaments){
         this.allotjaments = allotjaments;
-    }
-    public void setClients(ArrayList <Client> clients){
         this.clients = clients;
+        this.llistaReserves = llistaReserves;
     }
+
+    //Fel els setters i getters
     public void setNom(String nom){
         this.nom = nom;
     }
+    public String getNom(){
+        return this.nom;
+    }
+    public ArrayList<Allotjament> getAllotjaments(){
+        return this.allotjaments;
+    }
+    public ArrayList<Client> getClients(){
+        return this.clients;
+    }
+    public LlistaReserves getLlistaReserves(){
+        return this.llistaReserves;
+    }
 
     // Fem el mètode buscarAllotjament
-    public String buscarAllotjament(ArrayList<Allotjament> allotjaments){
-            for(int i = 0; i < allotjaments.size(); i++){
-                if(allotjaments.equals(nom)){
-                }
+    public Allotjament buscarAllotjament(String Id){
+        Iterator<Allotjament> iterator = allotjaments.iterator();
+
+        while(iterator.hasNext()){
+            Allotjament allotjament = iterator.next();
+
+            if(allotjament.getId().equals(Id)){
+                return allotjament;
             }
+        }
+        return null;
     }
 
     //Fem el mètode buscarClient
-    public String buscarClient(ArrayList <Client> clients){
+    public Client buscarClient(String DNI){
+        Iterator<Client> iterator = clients.iterator();
 
+        while(iterator.hasNext()){
+            Client client = iterator.next();
+
+            if(client.getDni().equals(DNI)){
+                return client;
+            }
+        }
+        return null;
     }
     public static InAllotjament.Temp getTemporada(LocalDate data){
+        int mes = data.getMonthValue();
+        int dia = data.getDayOfMonth();
+
+        if((mes == 3 && dia >= 21) || (mes == 9 && dia <= 20) || (mes > 3 && mes < 9)){
+            return InAllotjament.Temp.ALTA;
+        }
+        else{
+            return InAllotjament.Temp.BAIXA;
+        }
+
 
     }
 }
