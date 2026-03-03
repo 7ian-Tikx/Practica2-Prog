@@ -70,5 +70,9 @@ public class LlistaReserves implements InLlistaReserves{
             llistaReserves.add(reserva);
         }
 
-
+        @Override
+        public int getNumReserves() {
+            return this.llistaReserves.size();
     }
+
+}
