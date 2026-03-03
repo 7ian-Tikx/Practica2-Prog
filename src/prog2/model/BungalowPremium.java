@@ -42,11 +42,7 @@ public class BungalowPremium extends Bungalow{
 
     @Override
     public String toString() {
-        return super.toString() +
-                ". BungalowPremium{" +
-                "serveisExtra=" + serveisExtra +
-                ", codiWifi='" + codiWifi + "'" +
-                "}";
+        return super.toString() + ". BungalowPremium{" + "serveisExtra=" + serveisExtra + ", codiWifi='" + codiWifi + "'" + "}";
     }
 
 
