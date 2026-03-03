@@ -5,10 +5,10 @@ public class BungalowPremium extends Bungalow{
     private String codiWifi;
 
     // El constructor
-    public BungalowPremium(String nom, String id, long estadaMinimaALTA,long estadaMinimaBAIXA,
+    public BungalowPremium(String nom, String id,
                     String mida,int habitacions,int placesPersones,int placesParquing,boolean terrassa,boolean tv,
                            boolean aireFred,boolean serveisExtra,String codiWifi){
-        super(nom,id,7,4,mida,habitacions,placesPersones,placesParquing,
+        super(nom,id,mida,habitacions,placesPersones,placesParquing,
                 terrassa,tv,aireFred);
         this.serveisExtra = serveisExtra;
         this.codiWifi = codiWifi;
