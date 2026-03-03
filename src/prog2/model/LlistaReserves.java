@@ -26,41 +26,39 @@ public class LlistaReserves implements InLlistaReserves{
             Reserva reserva = llistaReserves.get(i);
 
             if(reserva.getAllotjament_().getId().equals(allotjament.getId())){
-                if (dataEntrada.isAfter(reserva.getDataSortida()) && dataSortida.isBefore(reserva.getDataEntrada())){
-                    return true;
+                if (dataEntrada.isBefore(reserva.getDataSortida()) && dataSortida.isAfter(reserva.getDataEntrada())){
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
     }
     //Implementam metode isEstadaMinima
-    public boolean isEstadaMinima (Allotjament allotjament,LocalDate dataEntrada,LocalDate dataSortida){
-        long diesEstada = ChronoUnit.DAYS.between(dataEntrada,dataSortida);
+    public boolean isEstadaMinima (Allotjament allotjament,LocalDate dataEntrada,LocalDate dataSortida) {
+        long diesEstada = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
 
         InAllotjament.Temp temporadaActual = Camping.getTemporada(dataEntrada);
 
-        if(temporadaActual == InAllotjament.Temp.ALTA){
-            if(diesEstada >= allotjament.getEstadaMinimaAlta()){
+        if (temporadaActual == InAllotjament.Temp.ALTA) {
+            if (diesEstada >= allotjament.getEstadaMinima(InAllotjament.Temp.ALTA)) {
                 return true;
+            } else {
+                return false;
             }
-            else{
+        } else {
+            if (diesEstada >= allotjament.getEstadaMinima(InAllotjament.Temp.BAIXA)) {
+                return true;
+            } else {
                 return false;
             }
         }
-        else{
-            if(diesEstada >= allotjament.getEstadaMinimaBaixa()){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
+    }
 
         @Override
         public void afegirReserva(Allotjament allotjament,Client client, LocalDate dataEntrada,LocalDate dataSortida)throws ExcepcioReserva{
-            if(!allotjamentDisponible(allotjament,dataEntrada,dataSortida){
-                throw new ExcepcioReserva("L'allotjament amb identificador " + allotjament.getId() + "no està disponible en la data demanada "
-                        + dataEntrada + " pel client " + client.getNom() +  " amb DNI: " + client.getDNI());
+            if(!allotjamentDisponible(allotjament,dataEntrada,dataSortida)){
+                throw new ExcepcioReserva("L'allotjament amb identificador " + allotjament.getId() + " no està disponible en la data demanada "
+                        + dataEntrada + " pel client " + client.getNom() +  " amb DNI: " + client.getDni());
             }
             if(!isEstadaMinima(allotjament,dataEntrada,dataSortida)){
                 throw new ExcepcioReserva("Les dates solicitades pel client " + client.getNom() + " amb DNI: " +
@@ -74,4 +72,3 @@ public class LlistaReserves implements InLlistaReserves{
 
 
     }
-}
