@@ -27,22 +27,22 @@ pra1/
 │     │  ├─ InReserva.java
 │     │  │
       |  (clases principales - to implement)
-│     │  ├─ Camping.java
+│     │  ├─ Camping.java -acabado
 │     │  ├─ Client.java  -acabado
 │     │  ├─ Reserva.java -acabado
-│     │  ├─ LlistaReserves.java -en proceso
+│     │  ├─ LlistaReserves.java -acabado
          (Altjament classes)
 │     │  ├─ Allotjament.java (abstract) -acabado
 │     │  ├─ Parcela.java -acabado
 │     │  ├─ Casa.java        (abstract)
-│     │  ├─ Bungalow.java
-│     │  ├─ BungalowPremium.java
-│     │  ├─ Glamping.java
-│     │  └─ MobilHome.java
+│     │  ├─ Bungalow.java -acabado
+│     │  ├─ BungalowPremium.java -acabado
+│     │  ├─ Glamping.java -acabado
+│     │  └─ MobilHome.java -acabado
 │     │
 │     └─ vista/
 │        ├─ ExcepcioReserva.java
-│        └─ GestorCamping.java
+│        └─ GestorCamping.java -- Solo falta esta parte
 │
 └─ test/
    └─ prog2/
