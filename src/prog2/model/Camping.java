@@ -2,6 +2,7 @@ package prog2.model;
 
 import prog2.vista.ExcepcioReserva;
 
+import java.sql.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,6 +16,10 @@ public class Camping implements InCamping{
     //Fem el constructor de Camping
     public Camping(String nom) {
         this.nom = nom;
+
+        this.allotjaments = new ArrayList<>();
+        this.clients = new ArrayList<>();
+        this.llistaReserves = new LlistaReserves();
     }
 
     //Fel els setters i getters
@@ -120,16 +125,18 @@ public class Camping implements InCamping{
         this.allotjaments.add(mobilHome);
     }
     @Override
-    public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva{
+    public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         Allotjament allotjament = buscarAllotjament(id_);
         Client client = buscarClient(dni_);
 
-        if(allotjament == null || client == null){
-            throw new ExcepcioReserva("No s'ha trobat cap allotjament/client amb aquest id/dni");
+        if (client == null) {
+            throw new ExcepcioReserva("El client amb DNI " + dni_ + " no existeix");
+        } else if (allotjament == null) {
+            throw new ExcepcioReserva("L'allotjament amb id " + id_ + " no existeix");
+        } else {
+            this.llistaReserves.afegirReserva(allotjament, client, dataEntrada, dataSortida);
+
         }
-
-        this.llistaReserves.afegirReserva(allotjament,client,dataEntrada,dataSortida);
-
     }
 
     @Override

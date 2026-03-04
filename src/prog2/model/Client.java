@@ -23,8 +23,9 @@ public class Client {
     public void setDni(String DNI){
         this.DNI = DNI;
     }
+    @Override
     //Fem el metode toString per imprimir les informacions
-    public String toString(String nom, String DNI){
-        return nom + " amb DNI: " + DNI + ". ";
+    public String toString(){
+        return this.nom + " amb DNI: " + this.DNI + ". ";
     }
 }
