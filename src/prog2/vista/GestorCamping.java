@@ -26,11 +26,16 @@ public class GestorCamping {
         // >> El número total d'allotjaments del Càmping és X dels quals X allotjaments estan operatius.
         //--------------------------------------------------------------------------------------------------
         // Per completar
+        int numAllotjaments = campingMar.getNumAllotjaments();
+        int numAllotjamentsOperatius = campingMar.calculAllotjamentsOperatius();
+        System.out.println("El número total d'allotjaments del Càmping és" + numAllotjaments +
+                "dels quals" + numAllotjamentsOperatius +"allotjaments estan operatius.");
 
         // Mostrar l'allotjament amb estada mínima de la temporada alta més curta amb el següent missatge:
         // >> L'allotjament amb estada mínima de la temporada alta més curta és el següent:
         //--------------------------------------------------------------------------------------------------
         // Per completar
+
        
     }
 

@@ -57,6 +57,7 @@ public class Bungalow extends Casa{
     }
 
     // El metodo funcionaCorrectament
+    @Override
     public boolean correcteFuncionament(){
         return aireFred;
     }

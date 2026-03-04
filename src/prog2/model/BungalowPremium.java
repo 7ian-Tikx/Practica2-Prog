@@ -35,6 +35,7 @@ public class BungalowPremium extends Bungalow{
 
 
     // El metodo funcionaCorrectament
+    @Override
     public boolean correcteFuncionament(){
         boolean codiCorrecte = codiWifi.length() >= 8 && codiWifi.length() <= 16;
         return codiCorrecte && super.isAireFred();

@@ -31,6 +31,7 @@ public class Glamping extends Casa{
     }
 
     // El metodo funcionaCorrectament
+    @Override
     public boolean correcteFuncionament(){
         return casaMascota;
     }

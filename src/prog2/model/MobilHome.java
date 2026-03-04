@@ -21,6 +21,7 @@ public class MobilHome extends Casa{
     }
 
     // El metodo funcionaCorrectament
+    @Override
     public boolean correcteFuncionament(){
         return terrassaBarbacoa;
     }
