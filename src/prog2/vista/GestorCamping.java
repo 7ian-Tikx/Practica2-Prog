@@ -31,8 +31,8 @@ public class GestorCamping {
         // Per completar
         int numAllotjaments = campingMar.getNumAllotjaments();
         int numAllotjamentsOperatius = campingMar.calculAllotjamentsOperatius();
-        System.out.println("El número total d'allotjaments del Càmping és" + numAllotjaments +
-                "dels quals" + numAllotjamentsOperatius +"allotjaments estan operatius.");
+        System.out.println("El número total d'allotjaments del Càmping és " + numAllotjaments +
+                " dels quals" + numAllotjamentsOperatius +" allotjaments estan operatius.");
 
         // Mostrar l'allotjament amb estada mínima de la temporada alta més curta amb el següent missatge:
         // >> L'allotjament amb estada mínima de la temporada alta més curta és el següent:
@@ -250,7 +250,7 @@ public class GestorCamping {
 
         idAllotjament = "300Z";
         dni = "789101A";
-        dataEntrada = LocalDate.of(2026,2,20);
+        dataEntrada = LocalDate.of(2026,2,25);
         dataSortida = LocalDate.of(2026,2,28);
 
         // Intentar afegir la reserva amb la informació indicada i si no és possible mostrar el missatge d'error.
