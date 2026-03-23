@@ -1,6 +1,6 @@
 package prog2.model;
 
-import prog2.vista.ExcepcioReserva;
+import prog2.vista.ExcepcioCamping;
 
 import java.sql.Array;
 import java.time.LocalDate;
