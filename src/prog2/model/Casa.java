@@ -7,8 +7,8 @@ public abstract class Casa extends Allotjament{
 
     // El constructor
     public Casa(String nom, String id, long estadaMinimaALTA,long estadaMinimaBAIXA,
-                String mida,int habitacions,int placesPersones){
-        super(nom,id,estadaMinimaALTA,estadaMinimaBAIXA);
+                boolean estat,String iluminacio,String mida,int habitacions,int placesPersones){
+        super(nom,id,estadaMinimaALTA,estadaMinimaBAIXA,estat,iluminacio);
         this.mida = mida;
         this.habitacions = habitacions;
         this.placesPersones = placesPersones;
