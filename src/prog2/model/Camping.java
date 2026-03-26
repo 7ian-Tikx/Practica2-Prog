@@ -125,14 +125,14 @@ public class Camping implements InCamping{
         this.allotjaments.add(mobilHome);
     }
     @Override
-    public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
+    public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioCamping {
         Allotjament allotjament = buscarAllotjament(id_);
         Client client = buscarClient(dni_);
 
         if (client == null) {
-            throw new ExcepcioReserva("El client amb DNI " + dni_ + " no existeix");
+            throw new ExcepcioCamping("El client amb DNI " + dni_ + " no existeix");
         } else if (allotjament == null) {
-            throw new ExcepcioReserva("L'allotjament amb id " + id_ + " no existeix");
+            throw new ExcepcioCamping("L'allotjament amb id " + id_ + " no existeix");
         } else {
             this.llistaReserves.afegirReserva(allotjament, client, dataEntrada, dataSortida);
 
