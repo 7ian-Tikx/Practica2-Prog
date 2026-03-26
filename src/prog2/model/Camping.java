@@ -23,7 +23,7 @@ public class Camping implements InCamping{
     }
 
     //Fel els setters i getters
-    public void setNom(String nom){
+    public void setNomCamping(String nom){
         this.nom = nom;
     }
     public String getNomCamping(){
@@ -78,53 +78,44 @@ public class Camping implements InCamping{
         }
     }
 
-    @Override
     public int getNumAllotjaments() {
         return this.allotjaments.size();
     }
 
-    @Override
     public int getNumReserves() {
         return this.llistaReserves.getNumReserves();
     }
 
-    @Override
     public int getNumClients() {
         return this.clients.size();
     }
-    @Override
+
     public void afegirClient(String nom_, String dni_) {
         Client  client = new Client(nom_, dni_);
         this.clients.add(client);
     }
 
-    @Override
     public void afegirParcela(String nom_, String idAllotjament_, float metres, boolean connexioElectrica) {
         Parcela parcela = new Parcela(nom_, idAllotjament_, metres, connexioElectrica);
         this.allotjaments.add(parcela);
     }
 
-    @Override
     public void afegirBungalow(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
         Bungalow bungalow = new Bungalow(nom_, idAllotjament_, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred);
         this.allotjaments.add(bungalow);
     }
-    @Override
     public void afegirBungalowPremium(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred, boolean serveisExtra, String codiWifi){
         BungalowPremium bungalowPremium = new BungalowPremium(nom_,idAllotjament_,mida,habitacions,placesPersones,placesParquing,terrassa,tv,aireFred,serveisExtra,codiWifi);
         this.allotjaments.add(bungalowPremium);
     }
-    @Override
     public void afegirGlamping(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, String material, boolean casaMascota){
         Glamping glamping = new Glamping(nom_,idAllotjament_,mida,habitacions,placesPersones,material,casaMascota);
         this.allotjaments.add(glamping);
     }
-    @Override
     public  void afegirMobilHome(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, boolean terrassaBarbacoa){
         MobilHome mobilHome = new MobilHome(nom_,idAllotjament_,mida,habitacions,placesPersones,terrassaBarbacoa);
         this.allotjaments.add(mobilHome);
     }
-    @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioCamping {
         Allotjament allotjament = buscarAllotjament(id_);
         Client client = buscarClient(dni_);
@@ -139,7 +130,6 @@ public class Camping implements InCamping{
         }
     }
 
-    @Override
     public  int calculAllotjamentsOperatius(){
        int comptador = 0;
        Iterator<Allotjament> iterator = this.allotjaments.iterator();
@@ -154,7 +144,6 @@ public class Camping implements InCamping{
        return comptador;
     }
 
-    @Override
     public Allotjament getAllotjamentEstadaMesCurta(InAllotjament.Temp temp){
         long estadaCurta = 1000000;
         Allotjament allotjamentEstadaMesCurta = null;
