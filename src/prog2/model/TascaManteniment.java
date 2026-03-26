@@ -7,6 +7,16 @@ public class TascaManteniment implements InTascaManteniment {
     private String data;
     private int dies;
 
+
+    public TascaManteniment (int numTasca,TipusTascaManteniment tipus,Allotjament allotjament,String data,int dies){
+        this.numTasca = numTasca;
+        this.tipus = tipus;
+        this.allotjament = allotjament;
+        this.data = data;
+        this.dies = dies;
+    }
+
+
     // Els getters
     @Override
     public int getNum() {
