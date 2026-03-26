@@ -3,7 +3,6 @@ package prog2.vista;
 
 import prog2.model.Camping;
 import prog2.model.InAllotjament;
-
 import java.time.LocalDate;
 
 
