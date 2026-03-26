@@ -1,5 +1,7 @@
 package prog2.model;
 
+import prog2.vista.ExcepcioCamping;
+
 public class VistaCamping {
     private Camping camping;
 
@@ -13,7 +15,11 @@ public class VistaCamping {
         return;
     }
 
-    public void completarTascaManteniment(int numTasca) throws ExcepcioCamping{
+    public void completarTascaManteniment(int numTasca) throws ExcepcioCamping {
+        return;
+    }
+
+    public void gestioCamping(){
         return;
     }
 }
