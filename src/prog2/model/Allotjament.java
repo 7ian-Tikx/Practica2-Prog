@@ -73,4 +73,25 @@ public abstract class Allotjament implements InAllotjament{
         return "Nom=" + nom + ", Id=" + id + ", estada mínima en temp ALTA: " + estadaMinimaALTA +
                 ", estada mínima en temp BAIXA: " + estadaMinimaBAIXA + ".";
     }
+
+    @Override
+    public void tancarAllotjament(TascaManteniment tasca) {
+        this.estat = false;
+        TascaManteniment.TipusTascaManteniment tascaManteniment = tasca.getTipus();
+        if (tascaManteniment == TascaManteniment.TipusTascaManteniment.Reparacio){
+           this.iluminacio = "50%";
+        }else if (tascaManteniment == TascaManteniment.TipusTascaManteniment.Neteja){
+            this.iluminacio = "100%";
+        }else if (tascaManteniment == TascaManteniment.TipusTascaManteniment.RevisioTecnica){
+            this.iluminacio = "50%";
+        }else{
+            this.iluminacio = "0%";
+        }
+    }
+
+    @Override
+    public void obrirAllotjament() {
+       this.estat = true;
+       this.iluminacio = "100%";
+    }
 }
