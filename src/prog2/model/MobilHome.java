@@ -11,12 +11,12 @@ public class MobilHome extends Casa {
     }
 
     // Els getters
-    public boolean isCasaMascota() {
+    public boolean isTerrassaBarbacoa() {
         return terrassaBarbacoa;
     }
 
     // Els setters
-    public void setCasaMascota(boolean terrassaBarbacoa) {
+    public void setTerrassaBarbacoa(boolean terrassaBarbacoa) {
         this.terrassaBarbacoa = terrassaBarbacoa;
     }
 
