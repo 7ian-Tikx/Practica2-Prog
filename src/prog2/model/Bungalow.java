@@ -11,6 +11,8 @@ public class Bungalow extends Casa{
                     boolean terrassa,boolean tv, boolean aireFred){
        super(nom,id,7,4,estat,iluminacio,mida,habitacions,placesPersones);
        this.placesParquing = placesParquing; // Un bungallow normal nomes te 1 places de parquing
+       this.terrassa = terrassa;
+       this.tv = tv;
        this.aireFred = aireFred;
     }
 
