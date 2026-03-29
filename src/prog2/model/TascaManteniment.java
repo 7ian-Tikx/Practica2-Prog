@@ -70,8 +70,17 @@ public class TascaManteniment implements InTascaManteniment {
 
     @Override
     public String getIluminacioAllotjament() {
-        return this.allotjament.getIluminacio();
+        if (this.tipus == TipusTascaManteniment.Reparacio) {
+            return "50%";
+        } else if (this.tipus == TipusTascaManteniment.Neteja) {
+            return "100%";
+        } else if (this.tipus == TipusTascaManteniment.RevisioTecnica) {
+            return "50%";
+        } else{
+            return "0%";
+        }
     }
+
 
     public static enum TipusTascaManteniment{
         Reparacio,
