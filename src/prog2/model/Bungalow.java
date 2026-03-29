@@ -10,8 +10,10 @@ public class Bungalow extends Casa{
     public Bungalow(String nom, String id, String mida,int habitacions,int placesPersones,int placesParquing,
                     boolean terrassa,boolean tv, boolean aireFred){
        super(nom,id,7,4,mida,habitacions,placesPersones);
-       this.placesParquing = placesParquing; // Un bungallow normal nomes te 1 places de parquing
-       this.aireFred = aireFred;
+        this.placesParquing = placesParquing; // Un bungallow normal nomes te 1 places de parquing
+        this.tv = tv;
+        this.terrassa = terrassa;
+        this.aireFred = aireFred;
     }
 
     // Els getters
