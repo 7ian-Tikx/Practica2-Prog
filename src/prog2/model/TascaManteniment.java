@@ -70,7 +70,7 @@ public class TascaManteniment implements InTascaManteniment {
 
     @Override
     public String getIluminacioAllotjament() {
-        return "";
+        return this.allotjament.getIluminacio();
     }
 
     public static enum TipusTascaManteniment{
