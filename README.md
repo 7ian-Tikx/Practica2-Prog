@@ -1,53 +1,156 @@
-[cite_start]Aquí tienes una propuesta de estructura para el archivo `README.md` de vuestro repositorio, organizada para que podáis visualizar el reparto de tareas y los objetivos técnicos de la **Práctica 2** del Càmping Green[cite: 1, 5].
+# 🏕️ Pràctica 2 — Càmping Green (Programació 2, UB)
+
+## Objetivo
+Desarrollar un sistema para modelar, consultar y actualizar la información del **Càmping Green**:
+- Alojamientos (estado operativo + iluminación)
+- Accesos (tipos, estado abierto/cerrado, accesibilidad)
+- Tareas de mantenimiento (alta/completado + efectos automáticos)
+- Cálculos globales y persistencia (`save/load`)
+- Tests propios por clase (punto 5.9)
 
 ---
 
-# 🏕️ Càmping Green - Pràctica 2 (Programació 2)
+## 📌 Plan final del proyecto (equipo de 2)
 
-[cite_start]Proyecto de gestión para el **Càmping Green** desarrollado para la Facultad de Matemáticas e Informática de la **UB (Curs 2025-2026)**[cite: 2, 5]. [cite_start]Esta segunda fase se centra en la implementación de herencia, polimorfismo, gestión de mantenimiento y persistencia de datos[cite: 71, 173].
+## 1) Alcance funcional
 
-## 📋 Objetivos del Proyecto
-* [cite_start]Implementar una jerarquía de clases para **Accesos** y **Alojamientos**[cite: 173, 184].
-* [cite_start]Gestionar **Tareas de Mantenimiento** que afecten al estado operativo y energético del camping[cite: 50, 56].
-* [cite_start]Automatizar la iluminación para un consumo energético eficiente (Camping "Verde")[cite: 53, 56].
-* [cite_start]Garantizar la **Persistencia de Datos** mediante la lectura y escritura de objetos en ficheros[cite: 87, 212].
+### 1.1 Alojamientos
+- Mantener jerarquía de P1 (`Parcela`, `Bungalow`, `BungalowPremium`, `Glamping`, `MobilHome`).
+- Añadir atributos nuevos en `Allotjament`:
+  - `estat` (Operatiu / No operatiu)
+  - `iluminacio` (`100%`, `50%`, `0%`)
+- Implementar:
+  - `tancarAllotjament(TascaManteniment tasca)`
+  - `obrirAllotjament()`
+
+### 1.2 Accesos
+- Implementar jerarquía completa de accesos:
+  - `Acces` (abstracta)
+  - `AccesAsfalt` (abstracta), `AccesTerra` (abstracta)
+  - `CamiAsfaltat`, `CarreteraAsfaltada`, `CamiTerra`, `CarreteraTerra`
+- Estado de acceso: abierto/cerrado.
+- Relación acceso ↔ lista de alojamientos a los que da servicio.
+
+### 1.3 Tareas de mantenimiento
+- Tipos: `Reparacio`, `Neteja`, `RevisioTecnica`, `Desinfeccio`.
+- Reglas:
+  - Un alojamiento no puede tener más de una tarea activa.
+  - Al añadir tarea:
+    - Alojamiento pasa a no operativo.
+    - Iluminación del alojamiento cambia según tipo.
+    - Se cierran accesos del alojamiento, salvo que también sirvan a otro alojamiento operativo.
+  - Al completar tarea:
+    - Alojamiento vuelve a operativo.
+    - Iluminación vuelve a `100%`.
+    - Recalcular estado de accesos.
+
+### 1.4 Funciones de `Camping`
+- Listados:
+  - `llistarAllotjaments(estat)`
+  - `llistarAccessos(infoEstat)`
+  - `llistarTasquesManteniment()`
+- Gestión:
+  - `afegirTascaManteniment(...)`
+  - `completarTascaManteniment(num)`
+- Cálculos:
+  - `calculaAccessosNoAccessibles()`
+  - `calculaMetresTerra()`
+- Persistencia:
+  - `save(camiDesti)`
+  - `load(camiOrigen)`
 
 ---
 
-## 🛠️ Organización del Trabajo
+## 2) Reparto de trabajo
 
-Para optimizar el desarrollo, el equipo se ha dividido las responsabilidades de la siguiente manera:
+## 👤 Miembro A (Alojamientos + Mantenimiento)
+- `Allotjament` + subclases (`Parcela`, `Bungalow`, `BungalowPremium`, `Glamping`, `MobilHome`).
+- `TascaManteniment`.
+- `LlistaTasquesManteniment` (alta/completado/listado/búsqueda).
+- Integración de reglas de iluminación en alojamientos.
+- Tests de todas las clases anteriores.
 
-### 👤 Miembro A: Gestión de Alojamientos y Mantenimiento
-* [cite_start]**Jerarquía de Alojamientos**: Actualización de la clase `Allotjament` y sus hijas (`Parcela`, `Bungalow`, `BungalowPremium`, `Glamping`, `MobilHome`) con nuevos atributos de estado y niveles de iluminación (100%, 50%, 0%)[cite: 27, 28, 185].
-* [cite_start]**Lógica de Mantenimiento**: Implementación de `TascaManteniment` y su enumeración de tipos (Reparació, Neteja, Revisió Tècnica, Desinfecció)[cite: 51, 188, 191].
-* [cite_start]**Interfaz de Usuario**: Ampliación de la `VistaCamping` con las 13 opciones del menú y gestión de `ExcepcioCamping`[cite: 72, 153, 234].
-
-### 👤 Miembro B: Infraestructura y Persistencia
-* [cite_start]**Jerarquía de Accesos**: Creación de las clases abstractas `Acces`, `AccesAsfalt` y `AccesTerra`, junto a sus implementaciones finales para caminos y carreteras[cite: 174, 177, 178].
-* [cite_start]**Lógica de Accesibilidad**: Implementación de los métodos para calcular metros totales de tierra y filtrar accesos por capacidad de vehículos[cite: 84, 85, 179].
-* [cite_start]**Persistencia**: Desarrollo de los métodos `guardar()` y `carregar()` en la clase `Camping` utilizando `Streams` de objetos[cite: 212, 221, 228].
-
----
-
-## 🚀 Funcionalidades Principales
-
-1.  [cite_start]**Gestión de Estados**: Los alojamientos pueden estar `Operatiu` o `No operatiu`[cite: 28]. [cite_start]Si un alojamiento tiene una tarea activa, deja de estar operativo[cite: 59].
-2.  [cite_start]**Cierre Automático de Accesos**: Al añadir una tarea a un alojamiento, el sistema cierra los accesos que llevan a él, a menos que den servicio a otros alojamientos operativos[cite: 60, 62].
-3.  [cite_start]**Ahorro Energético**: La iluminación de los alojamientos y accesos se ajusta automáticamente según las tareas de mantenimiento activas[cite: 54, 65].
-4.  [cite_start]**Validaciones Robustas**: Uso de excepciones para evitar duplicidad de tareas en un mismo alojamiento o errores en la carga de ficheros[cite: 57, 233].
+## 👤 Miembro B (Accesos + Persistencia + Cálculos)
+- Jerarquía de `Acces` y `LlistaAccessos`.
+- Cálculo de accesibilidad y metros de tierra.
+- `save/load` en `Camping`.
+- Integración final de `Camping` + `VistaCamping`/menú.
+- Tests de accesos, cálculos y persistencia.
 
 ---
 
-## 📂 Estructura del Código
-[cite_start]El proyecto se organiza en dos paquetes principales[cite: 96]:
-* [cite_start]`prog2.model`: Contiene la lógica de negocio, datos y entidades (Camping, Allotjaments, Accessos, Tasques)[cite: 97, 150].
-* [cite_start]`prog2.vista`: Contiene la interacción con el usuario, menús y la clase principal `IniciadorCamping`[cite: 97, 129, 154].
+## 3) Cronograma de entrega (propuesto)
 
-## 🧪 Pruebas Unitarias
-Se han incluido tests unitarios utilizando **JUnit 5** para validar:
-* [cite_start]Constructores de todas las clases del modelo[cite: 247].
-* [cite_start]Cálculo correcto de metros de longitud en accesos de tierra[cite: 85].
-* [cite_start]Correcto funcionamiento de la disponibilidad en las reservas[cite: 208].
+### Fase 1 — Estructura (día 1)
+- Crear/ajustar jerarquías de clases e interfaces.
+- Compilación básica sin lógica completa.
+
+### Fase 2 — Lógica de negocio (día 2)
+- Reglas de tareas de mantenimiento.
+- Reglas de cierre/apertura de accesos.
+- Métodos de listados y búsquedas.
+
+### Fase 3 — Integración (día 3)
+- Conectar todo en `Camping`.
+- Inicialización de datos (`inicialitzaDadesCamping`).
+- Validar flujo completo de menú.
+
+### Fase 4 — Persistencia + Tests (día 4)
+- Implementar `save/load`.
+- Completar tests propios por clase (punto 5.9).
+- Corrección de edge cases y limpieza final.
 
 ---
+
+## 4) Criterios de calidad
+- No modificar contratos de interfaces salvo necesidad explícita del enunciado.
+- Mantener encapsulación y coherencia de nombres.
+- Gestión de errores con `ExcepcioCamping`.
+- No dejar métodos vacíos ni retornos “placeholder”.
+- Commits pequeños y descriptivos.
+
+---
+
+## 5) Plan de tests propios (punto 5.9)
+
+### 5.1 Cobertura mínima por clase
+Para **cada clase implementada por el equipo**:
+1. Test de constructor
+2. Test de getters/setters relevantes
+3. Test de método de lógica principal
+4. Test de caso excepcional (si aplica)
+
+### 5.2 Tests clave de integración
+1. Añadir tarea -> estado e iluminación de alojamiento correctos.
+2. Añadir tarea duplicada en el mismo alojamiento -> excepción.
+3. Cierre de accesos respetando accesos compartidos.
+4. Completar tarea -> reapertura de alojamiento y recalculado de accesos.
+5. `save/load` mantiene estado completo del camping.
+
+---
+
+## 6) Riesgos y mitigación
+- **Riesgo:** conflictos de merge en `Camping.java`.
+  - **Mitigación:** integrar por bloques y acordar firmas antes de codificar.
+- **Riesgo:** interfaces incompletas / métodos sin implementar.
+  - **Mitigación:** checklist de compilación diaria.
+- **Riesgo:** tests no alineados con reglas del enunciado.
+  - **Mitigación:** testear explícitamente casos frontera (accesos compartidos, tareas duplicadas, estados).
+
+---
+
+## 7) Checklist final antes de entregar
+- [ ] Compila todo el proyecto sin errores.
+- [ ] Flujos de mantenimiento funcionan de extremo a extremo.
+- [ ] Cálculos (`metresTerra`, accesibilidad) correctos.
+- [ ] Persistencia `save/load` validada con test.
+- [ ] Tests propios por clase completados (5.9).
+- [ ] README actualizado con plan y reparto final.
+
+---
+
+## Equipo
+- Miembro A: Tiantian Pan
+- Miembro B: Jinjie Chen
+
+Proyecto: **Pràctica 2 — Programació 2 (UB, 2025–2026)**
