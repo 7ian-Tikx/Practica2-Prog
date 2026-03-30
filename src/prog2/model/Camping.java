@@ -2,24 +2,29 @@ package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
 
+import java.io.*;
 import java.sql.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Camping implements InCamping{
+public class Camping implements InCamping, Serializable {
     private String nom;
-    private ArrayList<Allotjament> allotjaments;
+    private LlistaAllotjaments allotjaments;
     private ArrayList <Client> clients;
     private LlistaReserves llistaReserves;
+    private LlistaAccessos llistaAccessos;
+    private LlistaTasquesManteniment llistaTasquesManteniment;
 
     //Fem el constructor de Camping
     public Camping(String nom) {
         this.nom = nom;
 
-        this.allotjaments = new ArrayList<>();
+        this.allotjaments = new LlistaAllotjaments();
         this.clients = new ArrayList<>();
         this.llistaReserves = new LlistaReserves();
+        this.llistaAccessos = new LlistaAccessos();
+        this.llistaTasquesManteniment = new LlistaTasquesManteniment();
     }
 
     //Fel els setters i getters
@@ -321,6 +326,47 @@ public class Camping implements InCamping{
         Acc12.afegirAllotjament(ALL6);
 
 
+    }
+
+    @Override
+    public int calculaAccessosNoAccessibles(){
+        return llistaAccessos.calculaAccessosNoAccessibles();
+    }
+    @Override
+    public float calculaMetresTerra(){
+        return llistaAccessos.calculaMetresTerra();
+    }
+    @Override
+    public String llistarAllotjaments(String estat) throws ExcepcioCamping {
+        return allotjaments.llistarAllotjaments(estat);
+    }
+
+    @Override
+    public String llistarAccessos(String infoEstat) throws ExcepcioCamping {boolean estat = infoEstat.equalsIgnoreCase("Obert");
+        return llistaAccessos.llistarAccessos(estat);
+    }
+
+    @Override
+    public String llistarTasquesManteniment() throws ExcepcioCamping {
+        return llistaTasquesManteniment.llistarTasquesManteniment();
+    }
+    @Override
+    public void save(String fitxerFI) throws ExcepcioCamping{
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fitxerFI))){
+            oos.writeObject(this);
+
+        }
+        catch(IOException e){
+            throw new ExcepcioCamping(e.getMessage());
+        }
+    }
+    public static Camping load(String fitxerOR) throws ExcepcioCamping{
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fitxerOR))){
+            return (Camping) ois.readObject();
+        }
+        catch(IOException | ClassNotFoundException e){
+            throw new ExcepcioCamping(e.getMessage());
+        }
     }
 
 }
