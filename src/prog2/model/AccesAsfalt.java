@@ -5,9 +5,8 @@ import java.util.ArrayList;
 public abstract class AccesAsfalt extends Acces{
     private double tamanyAsfalt;
 
-    public AccesAsfalt(String nom, boolean accessibilitat, boolean estat, ArrayList<Allotjament> llistaAllotjaments, double tamanyAsfalt){
-        super(nom,accessibilitat,estat,llistaAllotjaments);
-
+    public AccesAsfalt(String nom, boolean estat, double tamanyAsfalt){
+        super(nom,estat);
         this.tamanyAsfalt = tamanyAsfalt;
     }
 

@@ -6,13 +6,12 @@ public abstract class Acces implements InAcces {
     private String nom;
     private boolean accessibilitat;
     private boolean estat;
-    private ArrayList<Allotjament> llistaAllotjaments;
+    private LlistaAllotjaments llistaAllotjaments;
 
-    public Acces(String nom, boolean accessibilitat, boolean estat, ArrayList<Allotjament> llistaAllotjaments) {
+    public Acces(String nom, boolean estat) {
         this.nom = nom;
-        this.accessibilitat = accessibilitat;
         this.estat = estat;
-        this.llistaAllotjaments = llistaAllotjaments;
+        this.llistaAllotjaments = new LlistaAllotjaments();
     }
 
     //fem els setters
@@ -28,7 +27,7 @@ public abstract class Acces implements InAcces {
         this.estat = estat;
     }
 
-    public void setLlistaAllotjaments(ArrayList<Allotjament> llistaAllotjaments){
+    public void setLlistaAllotjaments(LlistaAllotjaments llistaAllotjaments){
         this.llistaAllotjaments = llistaAllotjaments;
     }
 
@@ -46,9 +45,25 @@ public abstract class Acces implements InAcces {
         return this.estat;
     }
 
-    public ArrayList<Allotjament> getLlistaAllotjaments(){
+    public LlistaAllotjaments getAAllotjaments(){
         return this.llistaAllotjaments;
     }
+
+    @Override
+    public void afegirAllotjament(Allotjament allotjament) {
+        this.llistaAllotjaments.afegirAllotjament(allotjament);
+    }
+
+    @Override
+    public void tancarAcces() {
+        this.estat = false;
+    }
+
+    @Override
+    public void obrirAcces() {
+        this.estat = true;
+    }
+
     @Override
     public String toString(){
         String access = "";
@@ -68,6 +83,7 @@ public abstract class Acces implements InAcces {
         }
         return ("nom: " + this.nom + " , " + "accessibilitat: " + access + " , "+ "estat : " + estats);
    }
+
 
 }
 

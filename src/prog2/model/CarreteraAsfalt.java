@@ -6,8 +6,8 @@ public class CarreteraAsfalt extends AccesAsfalt{
 
     private double pes;
 
-    public CarreteraAsfalt(String nom, boolean accessibilitat, boolean estat, ArrayList<Allotjament> llistaAllotjaments, float tamanyAsfalt){
-        super(nom, true, estat, llistaAllotjaments, tamanyAsfalt);
+    public CarreteraAsfalt(String nom, boolean estat, float tamanyAsfalt){
+        super(nom, true, tamanyAsfalt);
         this.pes = pes;
     }
 
