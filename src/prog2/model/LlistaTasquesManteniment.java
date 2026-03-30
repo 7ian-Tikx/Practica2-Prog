@@ -55,5 +55,34 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
         throw new ExcepcioCamping("La tasca no existeix");
     }
 
+    @Override
+    public String llistarTasquesManteniment() throws ExcepcioCamping {
+        String result = "";
+        if (this.tasquesManteniment.isEmpty()) throw new ExcepcioCamping("NO hi ha cap tasca registrada");
+        Iterator<TascaManteniment> it = this.tasquesManteniment.iterator();
+        while (it.hasNext()){
+            TascaManteniment tmp = it.next();
+            result += "Num tasca: " + tmp.getNum()
+                    + ", tipus: " + tmp.getTipus()
+                    + ", allotjament: " + tmp.getAllotjament().getNom()
+                    + ", data: " + tmp.getData()
+                    + ", dies: " + tmp.getDies();
+            if (it.hasNext()) {
+                result += "\n";
+            }
+        }
+        return result;
+    }
 
+    @Override
+    public TascaManteniment getTascaManteniment(int num) throws ExcepcioCamping {
+        Iterator<TascaManteniment> it = this.tasquesManteniment.iterator();
+        while (it.hasNext()){
+            TascaManteniment tmp = it.next();
+            if (tmp.getNum() == num){
+                return tmp;
+            }
+        }
+        throw new ExcepcioCamping("La tasca no existeix");
+    }
 }
