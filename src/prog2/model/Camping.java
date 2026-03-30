@@ -7,37 +7,35 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Camping implements InCamping{
-    private String nom;
-    private ArrayList<Allotjament> allotjaments;
-    private ArrayList <Client> clients;
+public class Camping implements InCamping,Serializable{
+    private String nomCamping;
+    private LlistaAllotjaments llistaAllotjaments;
+    private LlistaAccessos llistaAccessos;
+    private LlistaTasquesManteniment llistaTasquesManteniment;
     private LlistaReserves llistaReserves;
+    private ArrayList<Client> llistaClients;
+
+
 
     //Fem el constructor de Camping
-    public Camping(String nom) {
-        this.nom = nom;
-
-        this.allotjaments = new ArrayList<>();
-        this.clients = new ArrayList<>();
+    public Camping(String nomCamping) {
+        this.nomCamping = nomCamping;
+        this.llistaAllotjaments = new LlistaAllotjaments();
+        this.llistaAccessos = new LlistaAccessos();
+        this.llistaTasquesManteniment = new LlistaTasquesManteniment();
         this.llistaReserves = new LlistaReserves();
+        this.llistaClients = new ArrayList<>();
+
     }
 
     //Fel els setters i getters
     public void setNomCamping(String nom){
-        this.nom = nom;
+        this.nomCamping = nom;
     }
     public String getNomCamping(){
-        return this.nom;
+        return this.nomCamping;
     }
-    public ArrayList<Allotjament> getLlistaAllotjaments(){
-        return this.allotjaments;
-    }
-    public ArrayList<Client> getLlistaClients(){
-        return this.clients;
-    }
-    public LlistaReserves getLlistaReserves(){
-        return this.llistaReserves;
-    }
+
 
     // Fem el mètode buscarAllotjament
     public Allotjament buscarAllotjament(String Id){
@@ -162,6 +160,49 @@ public class Camping implements InCamping{
         return allotjamentEstadaMesCurta;
 
     }
+
+
+    // -------------------------------------------------------Els metodes nous-----------------------------------------------------------
+
+    @Override
+    public String llistarAllotjaments(String estat) throws ExcepcioCamping {
+       return this.llistaAllotjaments.llistarAllotjaments(estat);
+    }
+
+    @Override
+    public String llistarAccessos(String infoEstat) throws ExcepcioCamping {
+        boolean estat;
+        if ("Obert".equalsIgnoreCase(infoEstat)) {
+            estat = true;
+        } else if ("Tancat".equalsIgnoreCase(infoEstat)) {
+            estat = false;
+        } else {
+            throw new ExcepcioCamping("L'estat de l'accés ha de ser 'Obert' o 'Tancat'");
+        }
+
+        return llistaAccessos.llistarAccessos(estat);
+    }
+
+    @Override
+    public String llistarTasquesManteniment() throws ExcepcioCamping {
+        return llistaTasquesManteniment.llistarTasquesManteniment();
+    }
+
+    @Override
+    public void afegirTascaManteniment(int num, String tipus, String idAllotjament, String data, int dies) throws ExcepcioCamping {
+        Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
+        llistaTasquesManteniment.afegirTascaManteniment(num, tipus, allotjament, data, dies);
+        llistaAccessos.actualitzaEstatAccessos();
+    }
+
+    @Override
+    public void completarTascaManteniment(int num) throws ExcepcioCamping {
+        TascaManteniment tasca = llistaTasquesManteniment.getTascaManteniment(num);
+        llistaTasquesManteniment.completarTascaManteniment(tasca);
+        llistaAccessos.actualitzaEstatAccessos();
+    }
+
+
 
 
     public void inicialitzaDadesCamping() {
