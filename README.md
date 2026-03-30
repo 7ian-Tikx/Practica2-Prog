@@ -149,8 +149,4 @@ Para **cada clase implementada por el equipo**:
 
 ---
 
-## Equipo
-- Miembro A: Tiantian Pan
-- Miembro B: Jinjie Chen
-
 Proyecto: **Pràctica 2 — Programació 2 (UB, 2025–2026)**
