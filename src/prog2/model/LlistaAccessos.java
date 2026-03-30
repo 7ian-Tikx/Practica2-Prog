@@ -9,8 +9,7 @@ public class LlistaAccessos implements InLlistaAccessos {
     private ArrayList<Acces> llistaAccessos;
 
     //fem el constructor
-
-    public LlistaAccessos(ArrayList<Acces> llistaAccessos){
+    public LlistaAccessos(){
         this.llistaAccessos = new ArrayList<>();
     }
 
@@ -41,9 +40,9 @@ public class LlistaAccessos implements InLlistaAccessos {
             }
         }
 
-        if(trobat == false){
+        if(!trobat){
             String estatS = "";
-            if(estat == true){
+            if(estat){
                 estatS = "obert";
             }
             else{
