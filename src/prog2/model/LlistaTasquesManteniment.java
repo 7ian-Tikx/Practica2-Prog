@@ -37,20 +37,22 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
             }
         }
         TascaManteniment tasca = new TascaManteniment(num,tipusTasca,allotjament,data,dies);
+        allotjament.tancarAllotjament(tasca);
         this.tasquesManteniment.add(tasca);
     }
 
     @Override
     public void completarTascaManteniment(TascaManteniment tasca) throws ExcepcioCamping {
-        if (!this.tasquesManteniment.contains(tasca)) throw new ExcepcioCamping("La tasca no existeix");
         Iterator<TascaManteniment> it = this.tasquesManteniment.iterator();
         while (it.hasNext()){
             TascaManteniment tmp = it.next();
             if (tmp == tasca){
                 tmp.getAllotjament().obrirAllotjament();
-                tasquesManteniment.remove(tasca);
+                it.remove();
+                return;
             }
         }
+        throw new ExcepcioCamping("La tasca no existeix");
     }
 
 
