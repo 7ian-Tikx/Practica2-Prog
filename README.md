@@ -22,6 +22,10 @@ Desarrollar un sistema para modelar, consultar y actualizar la información del 
 - Implementar:
   - `tancarAllotjament(TascaManteniment tasca)`
   - `obrirAllotjament()`
+- Implementar `LlistaAllotjaments`:
+  - `afegirAllotjament(...)`, `buidar()`
+  - `llistarAllotjaments(estat)`
+  - `containsAllotjamentOperatiu()`, `contains(...)`, `getAllotjament(id)`
 
 ### 1.2 Accesos
 - Implementar jerarquía completa de accesos:
@@ -65,6 +69,7 @@ Desarrollar un sistema para modelar, consultar y actualizar la información del 
 
 ## 👤 Miembro A (Alojamientos + Mantenimiento)
 - `Allotjament` + subclases (`Parcela`, `Bungalow`, `BungalowPremium`, `Glamping`, `MobilHome`).
+- `LlistaAllotjaments` (gestión/listado/filtros de alojamientos).
 - `TascaManteniment`.
 - `LlistaTasquesManteniment` (alta/completado/listado/búsqueda).
 - Integración de reglas de iluminación en alojamientos.
