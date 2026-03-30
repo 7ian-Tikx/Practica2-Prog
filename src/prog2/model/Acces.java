@@ -1,12 +1,14 @@
 package prog2.model;
 
+import java.util.ArrayList;
+
 public abstract class Acces implements InAcces {
     private String nom;
     private boolean accessibilitat;
     private boolean estat;
-    private LlistaAllotjaments llistaAllotjaments;
+    private ArrayList<Allotjament> llistaAllotjaments;
 
-    public Acces(String nom, boolean accessibilitat, boolean estat, LlistaAllotjaments llistaAllotjaments) {
+    public Acces(String nom, boolean accessibilitat, boolean estat, ArrayList<Allotjament> llistaAllotjaments) {
         this.nom = nom;
         this.accessibilitat = accessibilitat;
         this.estat = estat;
@@ -26,7 +28,7 @@ public abstract class Acces implements InAcces {
         this.estat = estat;
     }
 
-    public void setLlistaAllotjaments(LlistaAllotjaments llistaAllotjaments){
+    public void setLlistaAllotjaments(ArrayList<Allotjament> llistaAllotjaments){
         this.llistaAllotjaments = llistaAllotjaments;
     }
 
@@ -44,7 +46,7 @@ public abstract class Acces implements InAcces {
         return this.estat;
     }
 
-    public LlistaAllotjaments getLlistaAllotjaments(){
+    public ArrayList<Allotjament> getLlistaAllotjaments(){
         return this.llistaAllotjaments;
     }
     @Override

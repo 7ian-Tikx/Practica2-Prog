@@ -1,10 +1,12 @@
 package prog2.model;
 
+import java.util.ArrayList;
+
 public class CarreteraTerra extends AccesTerra{
 
     private double amplada;
 
-    public CarreteraTerra(String nom, boolean accessibilitat, boolean estat, LlistaAllotjaments llistaAllotjaments, double longitud) {
+    public CarreteraTerra(String nom, boolean accessibilitat, boolean estat, ArrayList<Allotjament> llistaAllotjaments, double longitud) {
         super(nom, accessibilitat, estat, llistaAllotjaments, longitud);
         this.amplada = amplada;
     }
