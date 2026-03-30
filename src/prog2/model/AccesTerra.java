@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public abstract class AccesTerra extends Acces {
     private double longitud;
 
-    public AccesTerra(String nom, boolean accessibilitat, boolean estat, LlistaAllotjaments llistaAllotjaments, double longitud){
-        super(nom,accessibilitat,estat,llistaAllotjaments);
+    public AccesTerra(String nom, boolean estat, double longitud){
+        super(nom,estat);
 
         this.longitud = longitud;
     }

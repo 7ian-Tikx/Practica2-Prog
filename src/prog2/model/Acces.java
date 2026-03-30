@@ -6,7 +6,7 @@ public abstract class Acces implements InAcces {
     private String nom;
     private boolean accessibilitat;
     private boolean estat;
-    private LListaAllotjaments llistaAllotjaments;
+    private LlistaAllotjaments llistaAllotjaments;
 
     public Acces(String nom, boolean estat) {
         this.nom = nom;
@@ -27,7 +27,7 @@ public abstract class Acces implements InAcces {
         this.estat = estat;
     }
 
-    public void setLlistaAllotjaments(LListaAllotjaments llistaAllotjaments){
+    public void setLlistaAllotjaments(LlistaAllotjaments llistaAllotjaments){
         this.llistaAllotjaments = llistaAllotjaments;
     }
 
@@ -45,7 +45,7 @@ public abstract class Acces implements InAcces {
         return this.estat;
     }
 
-    public LListaAllotjaments getAAllotjaments(){
+    public LlistaAllotjaments getAAllotjaments(){
         return this.llistaAllotjaments;
     }
 

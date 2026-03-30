@@ -6,8 +6,8 @@ public class CarreteraTerra extends AccesTerra{
 
     private double amplada;
 
-    public CarreteraTerra(String nom, boolean accessibilitat, boolean estat, LListaAllotjaments llistaAllotjaments, double longitud) {
-        super(nom, accessibilitat, estat, llistaAllotjaments, longitud);
+    public CarreteraTerra(String nom, boolean accessibilitat, double longitud, double amplada) {
+        super(nom, accessibilitat, longitud);
         this.amplada = amplada;
     }
 
