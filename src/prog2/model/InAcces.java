@@ -27,6 +27,7 @@ public interface InAcces {
      * Retorna si l'accés permet accessibilitat amb cotxe o no.
      * @return 
      */
+
     public boolean isAccessibilitat();
 
     /**
@@ -45,5 +46,6 @@ public interface InAcces {
      * Retorna la llista d'allotjaments associats a l'accés
      * @return
      */
+
     public LlistaAllotjaments getAAllotjaments();
 }
