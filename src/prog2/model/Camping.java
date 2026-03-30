@@ -6,6 +6,7 @@ import java.sql.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.io.*;
 
 public class Camping implements InCamping,Serializable{
     private String nomCamping;
@@ -202,7 +203,33 @@ public class Camping implements InCamping,Serializable{
         llistaAccessos.actualitzaEstatAccessos();
     }
 
+    @Override
+    public int calculaAccessosNoAccessibles(){
+        return llistaAccessos.calculaAccessosNoAccessibles();
+    }
+    @Override
+    public float calculaMetresTerra(){
+        return llistaAccessos.calculaMetresTerra();
+    }
 
+    @Override
+    public void save(String fitxerFI) throws ExcepcioCamping{
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fitxerFI))){
+            oos.writeObject(this);
+
+        }
+        catch(IOException e){
+            throw new ExcepcioCamping(e.getMessage());
+        }
+    }
+    public static Camping load(String fitxerOR) throws ExcepcioCamping{
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fitxerOR))){
+            return (Camping) ois.readObject();
+        }
+        catch(IOException | ClassNotFoundException e){
+            throw new ExcepcioCamping(e.getMessage());
+        }
+    }
 
 
     public void inicialitzaDadesCamping() {
