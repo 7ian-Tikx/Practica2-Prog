@@ -13,7 +13,7 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
     }
 
     // Els getters i setters
-    public ArrayList getTasquesManteniment(){
+    public ArrayList<TascaManteniment> getTasquesManteniment(){
         return this.tasquesManteniment;
     }
     public void setTasquesManteniment(ArrayList<TascaManteniment> tasquesManteniment){
