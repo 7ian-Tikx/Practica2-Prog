@@ -15,7 +15,7 @@ public class LlistaAllotjaments implements  InLlistaAllotjaments{
     public ArrayList<Allotjament> getLlistaAllotjaments(){
         return this.llistaAllotjaments;
     }
-    public void setTasquesManteniment(ArrayList<Allotjament> llistaAllotjaments){
+    public void setLlistaAllotjaments(ArrayList<Allotjament> llistaAllotjaments){
         this.llistaAllotjaments = llistaAllotjaments;
     }
 
@@ -38,8 +38,8 @@ public class LlistaAllotjaments implements  InLlistaAllotjaments{
         Iterator<Allotjament> it = this.llistaAllotjaments.iterator();
         while (it.hasNext()){
             Allotjament tmp = it.next();
-            if (tmp.isOperatiu() == estatBoolean) result += tmp.toString();
-            if (it.hasNext()) {
+            if (tmp.isOperatiu() == estatBoolean) {
+                result += tmp.toString();
                 result += "\n";
             }
         }
