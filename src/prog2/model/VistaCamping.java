@@ -12,11 +12,11 @@ public class VistaCamping {
 
     public void afegirTascaManteniment(int numTasca, String tipus, String
             idAllotjament, String data, int dies) throws ExcepcioCamping{
-        return;
+        this.camping.afegirTascaManteniment(numTasca,tipus,idAllotjament,data,dies);
     }
 
     public void completarTascaManteniment(int numTasca) throws ExcepcioCamping {
-        return;
+        this.camping.completarTascaManteniment(numTasca);
     }
 
     public void gestioCamping(){
