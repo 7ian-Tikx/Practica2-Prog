@@ -7,6 +7,9 @@ import prog2.vista.ExcepcioCamping;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Gestiona les tasques de manteniment actives del càmping.
+ */
 public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Serializable{
     private ArrayList<TascaManteniment> tasquesManteniment;
 

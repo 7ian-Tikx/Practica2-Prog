@@ -2,6 +2,9 @@ package prog2.model;
 
 import java.io.Serializable;
 
+/**
+ * Representa una tasca de manteniment associada a un allotjament.
+ */
 public class TascaManteniment implements InTascaManteniment, Serializable {
     private int numTasca;
     private TipusTascaManteniment tipus;

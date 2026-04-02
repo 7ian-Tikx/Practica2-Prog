@@ -2,6 +2,9 @@ package prog2.model;
 
 import java.io.Serializable;
 
+/**
+ * Classe abstracta base per a tots els tipus d'allotjament del càmping.
+ */
 public abstract class Allotjament implements InAllotjament, Serializable{
     private String nom;
     private String id;

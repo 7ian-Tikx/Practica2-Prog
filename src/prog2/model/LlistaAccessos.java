@@ -7,6 +7,9 @@ import prog2.vista.ExcepcioCamping;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Gestiona la col·lecció d'accessos del càmping.
+ */
 public class LlistaAccessos implements InLlistaAccessos, Serializable {
     private ArrayList<Acces> llistaAccessos;
 

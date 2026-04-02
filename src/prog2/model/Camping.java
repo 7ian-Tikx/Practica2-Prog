@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.io.*;
 
+/**
+ * Classe principal del domini del càmping Green.
+ * Gestiona allotjaments, accessos, tasques de manteniment i persistència de dades.
+ *
+ * @author Jinjie Chen
+ */
 public class Camping implements InCamping,Serializable{
     private String nomCamping;
     private LlistaAllotjaments llistaAllotjaments;
@@ -17,7 +23,11 @@ public class Camping implements InCamping,Serializable{
 
 
 
-    //Fem el constructor de Camping
+    /**
+     * Constructor de Camping.
+     *
+     * @param nomCamping nom del càmping
+     */
     public Camping(String nomCamping) {
         this.nomCamping = nomCamping;
         this.llistaAllotjaments = new LlistaAllotjaments();
@@ -28,10 +38,19 @@ public class Camping implements InCamping,Serializable{
 
     }
 
-    //Fel els setters i getters
+    /**
+     * Actualitza el nom del càmping.
+     *
+     * @param nom nou nom
+     */
     public void setNomCamping(String nom){
         this.nomCamping = nom;
     }
+    /**
+     * Retorna el nom del càmping.
+     *
+     * @return nom del càmping
+     */
     public String getNomCamping(){
         return this.nomCamping;
     }
@@ -67,6 +86,12 @@ public class Camping implements InCamping,Serializable{
     }
 
     */
+    /**
+     * Calcula la temporada segons una data.
+     *
+     * @param data data a comprovar
+     * @return {@link InAllotjament.Temp#ALTA} o {@link InAllotjament.Temp#BAIXA}
+     */
     public static InAllotjament.Temp getTemporada(LocalDate data){
         int mes = data.getMonthValue();
         int dia = data.getDayOfMonth();
@@ -169,11 +194,25 @@ public class Camping implements InCamping,Serializable{
 
     // -------------------------------------------------------Els metodes nous-----------------------------------------------------------
 
+    /**
+     * Llista allotjaments filtrats per estat.
+     *
+     * @param estat "Operatiu" o "No operatiu"
+     * @return text amb la informació dels allotjaments filtrats
+     * @throws ExcepcioCamping si l'estat no és vàlid o no hi ha resultats
+     */
     @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
        return this.llistaAllotjaments.llistarAllotjaments(estat);
     }
 
+    /**
+     * Llista accessos filtrats per estat.
+     *
+     * @param infoEstat "Obert" o "Tancat"
+     * @return text amb la informació dels accessos filtrats
+     * @throws ExcepcioCamping si l'estat indicat no és vàlid
+     */
     @Override
     public String llistarAccessos(String infoEstat) throws ExcepcioCamping {
         boolean estat;
@@ -188,11 +227,27 @@ public class Camping implements InCamping,Serializable{
         return llistaAccessos.llistarAccessos(estat);
     }
 
+    /**
+     * Llista totes les tasques de manteniment actives.
+     *
+     * @return text amb les tasques actives
+     * @throws ExcepcioCamping si no hi ha cap tasca registrada
+     */
     @Override
     public String llistarTasquesManteniment() throws ExcepcioCamping {
         return llistaTasquesManteniment.llistarTasquesManteniment();
     }
 
+    /**
+     * Afegeix una nova tasca de manteniment sobre un allotjament.
+     *
+     * @param num número identificador de la tasca
+     * @param tipus tipus de tasca (Reparacio, Neteja, RevisioTecnica o Desinfeccio)
+     * @param idAllotjament identificador de l'allotjament
+     * @param data data de la tasca
+     * @param dies dies previstos de durada
+     * @throws ExcepcioCamping si les dades no són vàlides o l'allotjament no existeix
+     */
     @Override
     public void afegirTascaManteniment(int num, String tipus, String idAllotjament, String data, int dies) throws ExcepcioCamping {
         Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
@@ -200,6 +255,12 @@ public class Camping implements InCamping,Serializable{
         llistaAccessos.actualitzaEstatAccessos();
     }
 
+    /**
+     * Completa una tasca de manteniment existent.
+     *
+     * @param num número de la tasca a completar
+     * @throws ExcepcioCamping si la tasca no existeix
+     */
     @Override
     public void completarTascaManteniment(int num) throws ExcepcioCamping {
         TascaManteniment tasca = llistaTasquesManteniment.getTascaManteniment(num);
@@ -207,15 +268,31 @@ public class Camping implements InCamping,Serializable{
         llistaAccessos.actualitzaEstatAccessos();
     }
 
+    /**
+     * Calcula el nombre total d'accessos sense accessibilitat amb vehicle.
+     *
+     * @return nombre d'accessos no accessibles
+     */
     @Override
     public int calculaAccessosNoAccessibles(){
         return llistaAccessos.calculaAccessosNoAccessibles();
     }
+    /**
+     * Calcula els metres totals dels accessos de tipus terra.
+     *
+     * @return metres totals d'accessos de terra
+     */
     @Override
     public float calculaMetresTerra(){
         return llistaAccessos.calculaMetresTerra();
     }
 
+    /**
+     * Guarda l'estat del càmping en un fitxer.
+     *
+     * @param fitxerFI ruta del fitxer destí
+     * @throws ExcepcioCamping si es produeix un error d'E/S
+     */
     @Override
     public void save(String fitxerFI) throws ExcepcioCamping{
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fitxerFI))){
@@ -226,6 +303,13 @@ public class Camping implements InCamping,Serializable{
             throw new ExcepcioCamping(e.getMessage());
         }
     }
+    /**
+     * Carrega un objecte {@link Camping} des d'un fitxer.
+     *
+     * @param fitxerOR ruta del fitxer origen
+     * @return instància carregada de {@link Camping}
+     * @throws ExcepcioCamping si es produeix un error de lectura o de tipus
+     */
     public static Camping load(String fitxerOR) throws ExcepcioCamping{
         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fitxerOR))){
             return (Camping) ois.readObject();
@@ -236,6 +320,9 @@ public class Camping implements InCamping,Serializable{
     }
 
 
+    /**
+     * Inicialitza totes les dades base del càmping (allotjaments i accessos).
+     */
     public void inicialitzaDadesCamping() {
 
         llistaAccessos.buidar();

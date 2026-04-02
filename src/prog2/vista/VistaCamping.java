@@ -3,14 +3,28 @@ package prog2.vista;
 import prog2.model.Camping;
 import prog2.model.Menu;
 
+/**
+ * Classe de vista per a la gestió interactiva del càmping.
+ * Controla el menú i delega les operacions al model {@link Camping}.
+ *
+ * @author Jinjie Chen
+ */
 public class VistaCamping {
     private Camping camping;
 
+    /**
+     * Constructor de la vista.
+     *
+     * @param nomCamping nom del càmping
+     */
     public VistaCamping(String nomCamping){
         camping = new Camping(nomCamping);
         camping.inicialitzaDadesCamping();
     }
 
+    /**
+     * Executa el menú principal de l'aplicació i gestiona la interacció amb l'usuari.
+     */
     public void gestioCamping(){
         java.util.Scanner sc = new java.util.Scanner(System.in);
 
