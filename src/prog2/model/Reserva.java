@@ -1,10 +1,12 @@
 package prog2.model;
 
+import java.io.Serializable;
+
 import prog2.vista.ExcepcioReserva;
 
 import java.time.LocalDate;
 
-public class Reserva{
+public class Reserva implements Serializable{
 
     private LocalDate dataEntrada;
     private LocalDate dataSortida;

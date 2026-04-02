@@ -1,6 +1,8 @@
 package prog2.model;
 
-public class TascaManteniment implements InTascaManteniment {
+import java.io.Serializable;
+
+public class TascaManteniment implements InTascaManteniment, Serializable {
     private int numTasca;
     private TipusTascaManteniment tipus;
     private Allotjament allotjament;

@@ -2,7 +2,6 @@ package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
 
-import java.sql.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -1,8 +1,10 @@
 package prog2.model;
 
+import java.io.Serializable;
+
 import java.util.ArrayList;
 
-public abstract class Acces implements InAcces {
+public abstract class Acces implements InAcces, Serializable {
     private String nom;
     private boolean accessibilitat;
     private boolean estat;

@@ -1,11 +1,13 @@
 package prog2.model;
 
+import java.io.Serializable;
+
 import prog2.vista.ExcepcioCamping;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class LlistaAllotjaments implements  InLlistaAllotjaments{
+public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
     private ArrayList<Allotjament> llistaAllotjaments;
 
     public LlistaAllotjaments(){
@@ -31,16 +33,22 @@ public class LlistaAllotjaments implements  InLlistaAllotjaments{
 
     @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
-        String result = "";
         boolean estatBoolean;
-        estatBoolean = estat.equals("Operatiu");
+        if ("Operatiu".equals(estat)) {
+            estatBoolean = true;
+        } else if ("No operatiu".equals(estat)) {
+            estatBoolean = false;
+        } else {
+            throw new ExcepcioCamping("Estat no vàlid: " + estat);
+        }
 
+        String result = "";
         Iterator<Allotjament> it = this.llistaAllotjaments.iterator();
-        while (it.hasNext()){
+        while (it.hasNext()) {
             Allotjament tmp = it.next();
             if (tmp.isOperatiu() == estatBoolean) {
+                if (!result.isEmpty()) result += "\n";
                 result += tmp.toString();
-                result += "\n";
             }
         }
         if (result.isEmpty()) throw new ExcepcioCamping("No existeix allotjaments amb estat " + estat);

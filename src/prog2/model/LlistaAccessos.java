@@ -1,11 +1,13 @@
 package prog2.model;
 
+import java.io.Serializable;
+
 import prog2.vista.ExcepcioCamping;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class LlistaAccessos implements InLlistaAccessos {
+public class LlistaAccessos implements InLlistaAccessos, Serializable {
     private ArrayList<Acces> llistaAccessos;
 
     //fem el constructor

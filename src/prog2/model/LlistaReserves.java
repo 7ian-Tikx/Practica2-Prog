@@ -1,11 +1,13 @@
 package prog2.model;
 
+import java.io.Serializable;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import prog2.vista.ExcepcioReserva;
 
-public class LlistaReserves implements InLlistaReserves{
+public class LlistaReserves implements InLlistaReserves, Serializable{
     private ArrayList<Reserva> llistaReserves;
 
     //Fem el seu constructor
