@@ -11,10 +11,10 @@ public class CarreteraTerra extends AccesTerra{
 
     /**
      * Constructor de CarreteraTerra.
-     * @param nom valor d'entrada
-     * @param accessibilitat valor d'entrada
-     * @param longitud valor d'entrada
-     * @param amplada valor d'entrada
+     * @param nom nom de l'entitat
+     * @param accessibilitat valor d'entrada associat a l'operació
+     * @param longitud longitud del tram de terra en metres
+     * @param amplada amplada de la carretera de terra
      */
     public CarreteraTerra(String nom, boolean accessibilitat, double longitud, double amplada) {
         super(nom, accessibilitat, longitud);
@@ -24,7 +24,7 @@ public class CarreteraTerra extends AccesTerra{
     //fem els setters
     /**
      * Operació setAmplada.
-     * @param amplada valor d'entrada
+     * @param amplada amplada de la carretera de terra
      */
     public void setAmplada(double amplada){
         this.amplada = amplada;

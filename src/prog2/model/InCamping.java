@@ -15,7 +15,7 @@ public interface InCamping {
 
     /**
      * Llista els allotjaments segons el seu estat.
-     * @param estat Estat dels allotjaments a llistar. (Operatiu, No Operatiu)
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
      * @return String
      * @throws ExcepcioCamping
      */
@@ -23,7 +23,7 @@ public interface InCamping {
 
     /**
      * Llista els accessos segons l'estat indicat.
-     * @param infoEstat Estat dels accessos a llistar. (Obert, Tancat)
+     * @param infoEstat text de l'estat a filtrar
      * @return String
      * @throws ExcepcioCamping
      */
@@ -38,18 +38,18 @@ public interface InCamping {
 
     /**
      * Afegeix una nova tasca al registre del càmping.
-     * @param num Número identificador de la tasca.
-     * @param tipus Tipus de tasca (en format string)
-     * @param idAllotjament Identificador de l'allotjament afectat.
-     * @param data Data en què s'ha registrat la tasca.
-     * @param dies Número esperat de dies per completar la tasca
+     * @param num número identificador de la tasca
+     * @param tipus tipus de tasca de manteniment
+     * @param idAllotjament identificador de l'allotjament
+     * @param data data de la tasca o operació
+     * @param dies dies previstos o durada en dies
      * @throws ExcepcioCamping
      */
     void afegirTascaManteniment(int num, String tipus, String idAllotjament, String data, int dies) throws ExcepcioCamping;
 
     /**
      * Completa una tasca de manteniment existent identificada pel seu número.
-     * @param num Número identificador de la tasca a completar.
+     * @param num número identificador de la tasca
      * @throws ExcepcioCamping
      */
     void completarTascaManteniment(int num) throws ExcepcioCamping;
@@ -68,14 +68,14 @@ public interface InCamping {
 
     /**
      * Guarda l'estat actual del càmping en un fitxer.
-     * @param camiDesti Ruta del fitxer de destinació.
+     * @param camiDesti ruta del fitxer destí
      * @throws ExcepcioCamping
      */
     void save(String camiDesti) throws ExcepcioCamping;
 
     /**
      * Carrega l'estat d'un càmping des d'un fitxer.
-     * @param camiOrigen Ruta del fitxer d'origen.
+     * @param camiOrigen ruta del fitxer origen
      * @return Una instància de la classe Camping carregada des del fitxer.
      * @throws ExcepcioCamping
      */

@@ -15,11 +15,11 @@ public class TascaManteniment implements InTascaManteniment, Serializable {
 
     /**
      * Constructor de TascaManteniment.
-     * @param numTasca valor d'entrada
-     * @param tipus valor d'entrada
-     * @param allotjament valor d'entrada
-     * @param data valor d'entrada
-     * @param dies valor d'entrada
+     * @param numTasca número identificador de la tasca
+     * @param tipus tipus de tasca de manteniment
+     * @param allotjament allotjament associat
+     * @param data data de la tasca o operació
+     * @param dies dies previstos o durada en dies
      */
     public TascaManteniment (int numTasca,TipusTascaManteniment tipus,Allotjament allotjament,String data,int dies){
         this.numTasca = numTasca;
@@ -75,7 +75,7 @@ public class TascaManteniment implements InTascaManteniment, Serializable {
     // Els setters
     /**
      * Operació setNum.
-     * @param num_ valor d'entrada
+     * @param num_ número identificador de la tasca
      */
     public void setNum(int num_) {
         this.numTasca = num_;
@@ -83,7 +83,7 @@ public class TascaManteniment implements InTascaManteniment, Serializable {
 
         /**
      * Operació setTipus.
-     * @param tipus_ valor d'entrada
+     * @param tipus_ tipus de tasca de manteniment
      */
     @Override
     public void setTipus(TascaManteniment.TipusTascaManteniment tipus_) {
@@ -92,7 +92,7 @@ public class TascaManteniment implements InTascaManteniment, Serializable {
 
         /**
      * Operació setAllotjament.
-     * @param allotjament valor d'entrada
+     * @param allotjament allotjament associat
      */
     @Override
     public void setAllotjament(Allotjament allotjament) {
@@ -101,7 +101,7 @@ public class TascaManteniment implements InTascaManteniment, Serializable {
 
         /**
      * Operació setData.
-     * @param data valor d'entrada
+     * @param data data de la tasca o operació
      */
     @Override
     public void setData(String data) {
@@ -110,7 +110,7 @@ public class TascaManteniment implements InTascaManteniment, Serializable {
 
         /**
      * Operació setDies.
-     * @param dies valor d'entrada
+     * @param dies dies previstos o durada en dies
      */
     @Override
     public void setDies(int dies) {

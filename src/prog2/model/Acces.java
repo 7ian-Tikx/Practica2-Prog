@@ -15,8 +15,8 @@ public abstract class Acces implements InAcces, Serializable {
 
     /**
      * Constructor de Acces.
-     * @param nom valor d'entrada
-     * @param estat valor d'entrada
+     * @param nom nom de l'entitat
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
      */
     public Acces(String nom, boolean estat) {
         this.nom = nom;
@@ -28,14 +28,14 @@ public abstract class Acces implements InAcces, Serializable {
 
     /**
      * Operació setNom.
-     * @param nom valor d'entrada
+     * @param nom nom de l'entitat
      */
     public void setNom(String nom) {
         this.nom = nom;
     }
     /**
      * Operació setAccessibilitat.
-     * @param accessibilitat valor d'entrada
+     * @param accessibilitat valor d'entrada associat a l'operació
      */
     public void setAccessibilitat(boolean accessibilitat){
         this.accessibilitat = accessibilitat;
@@ -43,7 +43,7 @@ public abstract class Acces implements InAcces, Serializable {
 
     /**
      * Operació setEstat.
-     * @param estat valor d'entrada
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
      */
     public void setEstat(boolean estat){
         this.estat = estat;
@@ -51,7 +51,7 @@ public abstract class Acces implements InAcces, Serializable {
 
     /**
      * Operació setLlistaAllotjaments.
-     * @param llistaAllotjaments valor d'entrada
+     * @param llistaAllotjaments llista d'allotjaments
      */
     public void setLlistaAllotjaments(LlistaAllotjaments llistaAllotjaments){
         this.llistaAllotjaments = llistaAllotjaments;
@@ -93,7 +93,7 @@ public abstract class Acces implements InAcces, Serializable {
 
         /**
      * Operació afegirAllotjament.
-     * @param allotjament valor d'entrada
+     * @param allotjament allotjament associat
      */
     @Override
     public void afegirAllotjament(Allotjament allotjament) {

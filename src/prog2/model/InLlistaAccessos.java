@@ -10,7 +10,7 @@ public interface InLlistaAccessos {
     
     /**
      * Afegeix un accés rebut per paràmetre a la llista d'accessos.
-     * @param acc Objecte de tipus Acces.
+     * @param acc accés a afegir
      * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
      */
     public void afegirAcces(Acces acc) throws ExcepcioCamping;
@@ -23,7 +23,7 @@ public interface InLlistaAccessos {
      /**
      * Itera sobre la llista d'accessos i retorna un String amb la informació de tots els accessos amb l'estat rebut per paràmetre.
      * En cas que no hi hagi accessos en l'estat passat com a paràmetre llança una excepció. 
-     * @param estat boolean
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
      * @return String
      * @throws prog2.vista.ExcepcioCamping Aquest mètode llança una excepció en cas que no hi hagi accessos en l'estat passat com a parametre.
      * 

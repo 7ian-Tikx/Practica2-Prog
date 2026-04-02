@@ -38,7 +38,7 @@ public class BungalowPremium extends Bungalow{
     // Els setters dels nous atributs
     /**
      * Operació setServeisExtra.
-     * @param serveisExtra valor d'entrada
+     * @param serveisExtra indica si inclou serveis extra
      */
     public void setServeisExtra(boolean serveisExtra){
         this.serveisExtra = serveisExtra;
@@ -46,7 +46,7 @@ public class BungalowPremium extends Bungalow{
 
     /**
      * Operació setCodiWifi.
-     * @param codiWifi valor d'entrada
+     * @param codiWifi codi WiFi del bungalow premium
      */
     public void setCodiWifi(String codiWifi){
         this.codiWifi = codiWifi;

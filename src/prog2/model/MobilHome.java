@@ -25,7 +25,7 @@ public class MobilHome extends Casa {
     // Els setters
     /**
      * Operació setTerrassaBarbacoa.
-     * @param terrassaBarbacoa valor d'entrada
+     * @param terrassaBarbacoa indica si té terrassa amb barbacoa
      */
     public void setTerrassaBarbacoa(boolean terrassaBarbacoa) {
         this.terrassaBarbacoa = terrassaBarbacoa;

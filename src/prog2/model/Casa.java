@@ -45,7 +45,7 @@ public abstract class Casa extends Allotjament{
     // Els setters
     /**
      * Operació setMida.
-     * @param mida valor d'entrada
+     * @param mida mida de l'allotjament
      */
     public void setMida(float mida){
         this.mida = mida;
@@ -53,7 +53,7 @@ public abstract class Casa extends Allotjament{
 
     /**
      * Operació setHabitacions.
-     * @param habitacions valor d'entrada
+     * @param habitacions nombre d'habitacions
      */
     public void setHabitacions(int habitacions){
         this.habitacions = habitacions;
@@ -61,7 +61,7 @@ public abstract class Casa extends Allotjament{
 
     /**
      * Operació setPlacesPersones.
-     * @param placesPersones valor d'entrada
+     * @param placesPersones capacitat màxima de persones
      */
     public void setPlacesPersones(int placesPersones){
         this.placesPersones = placesPersones;

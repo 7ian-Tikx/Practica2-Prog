@@ -10,9 +10,9 @@ public abstract class AccesTerra extends Acces {
 
     /**
      * Constructor de AccesTerra.
-     * @param nom valor d'entrada
-     * @param estat valor d'entrada
-     * @param longitud valor d'entrada
+     * @param nom nom de l'entitat
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
+     * @param longitud longitud del tram de terra en metres
      */
     public AccesTerra(String nom, boolean estat, double longitud){
         super(nom,estat);
@@ -25,7 +25,7 @@ public abstract class AccesTerra extends Acces {
 
     /**
      * Operació setLongitud.
-     * @param longitud valor d'entrada
+     * @param longitud longitud del tram de terra en metres
      */
     public void setLongitud(double longitud){
         this.longitud = longitud;

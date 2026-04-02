@@ -35,7 +35,7 @@ public class Glamping extends Casa{
     // Els setters
     /**
      * Operació setMaterial.
-     * @param material valor d'entrada
+     * @param material material principal de l'allotjament
      */
     public void setMaterial(String material){
         this.material = material;
@@ -43,7 +43,7 @@ public class Glamping extends Casa{
 
     /**
      * Operació setCasaMascota.
-     * @param casaMascota valor d'entrada
+     * @param casaMascota indica si hi ha casa per a mascota
      */
     public void setCasaMascota(boolean casaMascota){
         this.casaMascota = casaMascota;

@@ -11,10 +11,10 @@ public class CarreteraAsfaltada extends AccesAsfalt{
 
     /**
      * Constructor de CarreteraAsfaltada.
-     * @param nom valor d'entrada
-     * @param estat valor d'entrada
-     * @param tamanyAsfalt valor d'entrada
-     * @param pes valor d'entrada
+     * @param nom nom de l'entitat
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
+     * @param tamanyAsfalt metres quadrats d'asfalt
+     * @param pes pes màxim admès per la carretera
      */
     public CarreteraAsfaltada(String nom, boolean estat, float tamanyAsfalt,double pes){
         super(nom, true, tamanyAsfalt);
@@ -25,7 +25,7 @@ public class CarreteraAsfaltada extends AccesAsfalt{
 
     /**
      * Operació setPes.
-     * @param pes valor d'entrada
+     * @param pes pes màxim admès per la carretera
      */
     public void setPes(double pes){
         this.pes = pes;

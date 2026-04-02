@@ -7,7 +7,7 @@ package prog2.vista;
 public class IniciadorCamping {
     
     /**
-     * @param args the command line arguments
+     * @param args valor d'entrada associat a l'operació
      */
         public static void main(String[] args) {
         // Definim el nom del càmping

@@ -16,12 +16,12 @@ public abstract class Allotjament implements InAllotjament, Serializable{
     // El constructor
     /**
      * Constructor de Allotjament.
-     * @param nom valor d'entrada
-     * @param id valor d'entrada
-     * @param estadaMinimaALTA valor d'entrada
-     * @param estadaMinimaBAIXA valor d'entrada
-     * @param estat valor d'entrada
-     * @param iluminacio valor d'entrada
+     * @param nom nom de l'entitat
+     * @param id identificador únic
+     * @param estadaMinimaALTA valor d'entrada associat a l'operació
+     * @param estadaMinimaBAIXA valor d'entrada associat a l'operació
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
+     * @param iluminacio nivell d'il·luminació de l'allotjament
      */
     public Allotjament(String nom, String id, long estadaMinimaALTA,long estadaMinimaBAIXA,boolean estat,String iluminacio){
         this.nom = nom;
@@ -51,7 +51,7 @@ public abstract class Allotjament implements InAllotjament, Serializable{
 
     /**
      * Operació getEstadaMinima.
-     * @param temp valor d'entrada
+     * @param temp temporada a consultar (ALTA o BAIXA)
      * @return valor retornat
      */
     public long getEstadaMinima(Temp temp){
@@ -81,14 +81,14 @@ public abstract class Allotjament implements InAllotjament, Serializable{
     // Els setter
     /**
      * Operació setNom.
-     * @param nom valor d'entrada
+     * @param nom nom de l'entitat
      */
     public void setNom(String nom){
         this.nom = nom;
     }
     /**
      * Operació setId.
-     * @param id valor d'entrada
+     * @param id identificador únic
      */
     public void setId(String id){
         this.id = id;
@@ -96,8 +96,8 @@ public abstract class Allotjament implements InAllotjament, Serializable{
 
     /**
      * Operació setEstadaMinima.
-     * @param estadaMinimaALTA_ valor d'entrada
-     * @param estadaMinimaBAIXA_ valor d'entrada
+     * @param estadaMinimaALTA_ valor d'entrada associat a l'operació
+     * @param estadaMinimaBAIXA_ valor d'entrada associat a l'operació
      */
     public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_){
         this.estadaMinimaBAIXA = estadaMinimaBAIXA_;
@@ -107,7 +107,7 @@ public abstract class Allotjament implements InAllotjament, Serializable{
 
     /**
      * Operació setOperatiu.
-     * @param estat valor d'entrada
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
      */
     public void setOperatiu(boolean estat) {
         this.estat = estat;
@@ -115,7 +115,7 @@ public abstract class Allotjament implements InAllotjament, Serializable{
 
     /**
      * Operació setIluminacio.
-     * @param iluminacio valor d'entrada
+     * @param iluminacio nivell d'il·luminació de l'allotjament
      */
     public void setIluminacio(String iluminacio) {
         this.iluminacio = iluminacio;
@@ -136,7 +136,7 @@ public abstract class Allotjament implements InAllotjament, Serializable{
 
         /**
      * Operació tancarAllotjament.
-     * @param tasca valor d'entrada
+     * @param tasca tasca de manteniment
      */
     @Override
     public void tancarAllotjament(TascaManteniment tasca) {

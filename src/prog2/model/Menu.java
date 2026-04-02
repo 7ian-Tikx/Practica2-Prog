@@ -28,8 +28,8 @@ public class Menu<TEnum> {
 
     /**
      * Constructor per defecte. Se li ha de passar un enumeració de les opcions.
-     * @param titol Títol del menú
-     * @param llistaOpcions Enumeració amb les opcions
+     * @param titol valor d'entrada associat a l'operació
+     * @param llistaOpcions llista de valors associats
      */
     public Menu(String titol,TEnum[] llistaOpcions) {
         _titol=titol;
@@ -38,7 +38,7 @@ public class Menu<TEnum> {
 
     /**
      * Permet assignar una descripció personalitzada a les opcions del menú
-     * @param descripcions Llista de descripcions
+     * @param descripcions valor d'entrada associat a l'operació
      */
     public void setDescripcions(String[] descripcions) {
         if(descripcions.length!=_llistaOpcions.length) {
@@ -78,7 +78,7 @@ public class Menu<TEnum> {
 
     /**
      * Demana una opció utilitzant la entrada passada per paràmetre.
-     * @param sc Canal d'entrada utilitzat per a obtenir la opció
+     * @param sc valor d'entrada associat a l'operació
      * @return Opció seleccionada.
      */
     public TEnum getOpcio(Scanner sc) {

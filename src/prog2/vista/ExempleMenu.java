@@ -27,7 +27,7 @@ public class ExempleMenu {
 
     /**
      * Fitxer principal. Crea el menú principal i un menú secundari
-     * @param args the command line arguments
+     * @param args valor d'entrada associat a l'operació
      */
     public static void main(String[] args) {
         // Creem un objecte per llegir des del teclat
@@ -42,7 +42,7 @@ public class ExempleMenu {
 
     /**
      * Menú principal del reproductor d'audio
-     * @param sc Objecte de tipus Scanner que permet accedir al teclat
+     * @param sc valor d'entrada associat a l'operació
      */
     private void gestio(Scanner sc) {
 
@@ -86,7 +86,7 @@ public class ExempleMenu {
 
     /**
      * Menú secundari
-     * @param sc Objecte de tipus Scanner que permet accedir al teclat
+     * @param sc valor d'entrada associat a l'operació
      */
     private void gestioMenuSecundari(Scanner sc) {
 

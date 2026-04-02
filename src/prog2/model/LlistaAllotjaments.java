@@ -29,7 +29,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
     }
     /**
      * Operació setLlistaAllotjaments.
-     * @param llistaAllotjaments valor d'entrada
+     * @param llistaAllotjaments llista d'allotjaments
      */
     public void setLlistaAllotjaments(ArrayList<Allotjament> llistaAllotjaments){
         this.llistaAllotjaments = llistaAllotjaments;
@@ -37,7 +37,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
 
         /**
      * Operació afegirAllotjament.
-     * @param allotjament valor d'entrada
+     * @param allotjament allotjament associat
      * @throws ExcepcioCamping en cas d'error
      */
     @Override
@@ -55,7 +55,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
 
         /**
      * Operació llistarAllotjaments.
-     * @param estat valor d'entrada
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
      * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
@@ -102,7 +102,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
 
         /**
      * Operació contains.
-     * @param allotjament valor d'entrada
+     * @param allotjament allotjament associat
      * @return valor retornat
      */
     @Override
@@ -119,7 +119,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
 
         /**
      * Operació getAllotjament.
-     * @param id valor d'entrada
+     * @param id identificador únic
      * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */

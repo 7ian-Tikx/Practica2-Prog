@@ -41,7 +41,7 @@ public class Camping implements InCamping,Serializable{
     /**
      * Actualitza el nom del càmping.
      *
-     * @param nom nou nom
+     * @param nom nom de l'entitat
      */
     public void setNomCamping(String nom){
         this.nomCamping = nom;
@@ -60,7 +60,7 @@ public class Camping implements InCamping,Serializable{
     // Fem el mètode buscarAllotjament
     /**
      * Operació buscarAllotjament.
-     * @param Id valor d'entrada
+     * @param Id identificador únic
      * @return valor retornat
      */
     public Allotjament buscarAllotjament(String Id){
@@ -79,7 +79,7 @@ public class Camping implements InCamping,Serializable{
     //Fem el mètode buscarClient
     /**
      * Operació buscarClient.
-     * @param DNI valor d'entrada
+     * @param DNI valor d'entrada associat a l'operació
      * @return valor retornat
      */
     public Client buscarClient(String DNI){
@@ -99,7 +99,7 @@ public class Camping implements InCamping,Serializable{
     /**
      * Calcula la temporada segons una data.
      *
-     * @param data data a comprovar
+     * @param data data de la tasca o operació
      * @return {@link InAllotjament.Temp#ALTA} o {@link InAllotjament.Temp#BAIXA}
      */
     public static InAllotjament.Temp getTemporada(LocalDate data){
@@ -141,8 +141,8 @@ public class Camping implements InCamping,Serializable{
 
     /**
      * Operació afegirClient.
-     * @param nom_ valor d'entrada
-     * @param dni_ valor d'entrada
+     * @param nom_ nom de l'entitat
+     * @param dni_ DNI del client
      */
     public void afegirClient(String nom_, String dni_) {
         Client  client = new Client(nom_, dni_);
@@ -151,10 +151,10 @@ public class Camping implements InCamping,Serializable{
 
     /**
      * Operació afegirParcela.
-     * @param nom_ valor d'entrada
-     * @param idAllotjament_ valor d'entrada
-     * @param metres valor d'entrada
-     * @param connexioElectrica valor d'entrada
+     * @param nom_ nom de l'entitat
+     * @param idAllotjament_ identificador de l'allotjament
+     * @param metres metres de l'accés o superfície
+     * @param connexioElectrica indica si té connexió elèctrica
      */
     public void afegirParcela(String nom_, String idAllotjament_, float metres, boolean connexioElectrica) {
         Parcela parcela = new Parcela(nom_, idAllotjament_, metres, connexioElectrica);
@@ -163,15 +163,15 @@ public class Camping implements InCamping,Serializable{
 
     /**
      * Operació afegirBungalow.
-     * @param nom_ valor d'entrada
-     * @param idAllotjament_ valor d'entrada
-     * @param mida valor d'entrada
-     * @param habitacions valor d'entrada
-     * @param placesPersones valor d'entrada
-     * @param placesParquing valor d'entrada
-     * @param terrassa valor d'entrada
-     * @param tv valor d'entrada
-     * @param aireFred valor d'entrada
+     * @param nom_ nom de l'entitat
+     * @param idAllotjament_ identificador de l'allotjament
+     * @param mida mida de l'allotjament
+     * @param habitacions nombre d'habitacions
+     * @param placesPersones capacitat màxima de persones
+     * @param placesParquing nombre de places d'aparcament
+     * @param terrassa indica si té terrassa
+     * @param tv indica si té televisió
+     * @param aireFred indica si disposa d'aire fred
      */
     public void afegirBungalow(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
         Bungalow bungalow = new Bungalow(nom_, idAllotjament_, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred);
@@ -179,17 +179,17 @@ public class Camping implements InCamping,Serializable{
     }
     /**
      * Operació afegirBungalowPremium.
-     * @param nom_ valor d'entrada
-     * @param idAllotjament_ valor d'entrada
-     * @param mida valor d'entrada
-     * @param habitacions valor d'entrada
-     * @param placesPersones valor d'entrada
-     * @param placesParquing valor d'entrada
-     * @param terrassa valor d'entrada
-     * @param tv valor d'entrada
-     * @param aireFred valor d'entrada
-     * @param serveisExtra valor d'entrada
-     * @param codiWifi valor d'entrada
+     * @param nom_ nom de l'entitat
+     * @param idAllotjament_ identificador de l'allotjament
+     * @param mida mida de l'allotjament
+     * @param habitacions nombre d'habitacions
+     * @param placesPersones capacitat màxima de persones
+     * @param placesParquing nombre de places d'aparcament
+     * @param terrassa indica si té terrassa
+     * @param tv indica si té televisió
+     * @param aireFred indica si disposa d'aire fred
+     * @param serveisExtra indica si inclou serveis extra
+     * @param codiWifi codi WiFi del bungalow premium
      */
     public void afegirBungalowPremium(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred, boolean serveisExtra, String codiWifi){
         BungalowPremium bungalowPremium = new BungalowPremium(nom_,idAllotjament_,mida,habitacions,placesPersones,placesParquing,terrassa,tv,aireFred,serveisExtra,codiWifi);
@@ -197,13 +197,13 @@ public class Camping implements InCamping,Serializable{
     }
     /**
      * Operació afegirGlamping.
-     * @param nom_ valor d'entrada
-     * @param idAllotjament_ valor d'entrada
-     * @param mida valor d'entrada
-     * @param habitacions valor d'entrada
-     * @param placesPersones valor d'entrada
-     * @param material valor d'entrada
-     * @param casaMascota valor d'entrada
+     * @param nom_ nom de l'entitat
+     * @param idAllotjament_ identificador de l'allotjament
+     * @param mida mida de l'allotjament
+     * @param habitacions nombre d'habitacions
+     * @param placesPersones capacitat màxima de persones
+     * @param material material principal de l'allotjament
+     * @param casaMascota indica si hi ha casa per a mascota
      */
     public void afegirGlamping(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, String material, boolean casaMascota){
         Glamping glamping = new Glamping(nom_,idAllotjament_,mida,habitacions,placesPersones,material,casaMascota);
@@ -211,12 +211,12 @@ public class Camping implements InCamping,Serializable{
     }
     /**
      * Operació afegirMobilHome.
-     * @param nom_ valor d'entrada
-     * @param idAllotjament_ valor d'entrada
-     * @param mida valor d'entrada
-     * @param habitacions valor d'entrada
-     * @param placesPersones valor d'entrada
-     * @param terrassaBarbacoa valor d'entrada
+     * @param nom_ nom de l'entitat
+     * @param idAllotjament_ identificador de l'allotjament
+     * @param mida mida de l'allotjament
+     * @param habitacions nombre d'habitacions
+     * @param placesPersones capacitat màxima de persones
+     * @param terrassaBarbacoa indica si té terrassa amb barbacoa
      */
     public  void afegirMobilHome(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, boolean terrassaBarbacoa){
         MobilHome mobilHome = new MobilHome(nom_,idAllotjament_,mida,habitacions,placesPersones,terrassaBarbacoa);
@@ -224,10 +224,10 @@ public class Camping implements InCamping,Serializable{
     }
     /**
      * Operació afegirReserva.
-     * @param id_ valor d'entrada
-     * @param dni_ valor d'entrada
-     * @param dataEntrada valor d'entrada
-     * @param dataSortida valor d'entrada
+     * @param id_ identificador únic
+     * @param dni_ DNI del client
+     * @param dataEntrada data d'entrada de la reserva
+     * @param dataSortida data de sortida de la reserva
      * @throws ExcepcioCamping en cas d'error
      */
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioCamping {
@@ -264,7 +264,7 @@ public class Camping implements InCamping,Serializable{
 
     /**
      * Operació getAllotjamentEstadaMesCurta.
-     * @param temp valor d'entrada
+     * @param temp temporada a consultar (ALTA o BAIXA)
      * @return valor retornat
      */
     public Allotjament getAllotjamentEstadaMesCurta(InAllotjament.Temp temp){
@@ -293,13 +293,13 @@ public class Camping implements InCamping,Serializable{
     /**
      * Llista allotjaments filtrats per estat.
      *
-     * @param estat "Operatiu" o "No operatiu"
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
      * @return text amb la informació dels allotjaments filtrats
      * @throws ExcepcioCamping si l'estat no és vàlid o no hi ha resultats
      */
         /**
      * Operació llistarAllotjaments.
-     * @param estat valor d'entrada
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
      * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
@@ -311,13 +311,13 @@ public class Camping implements InCamping,Serializable{
     /**
      * Llista accessos filtrats per estat.
      *
-     * @param infoEstat "Obert" o "Tancat"
+     * @param infoEstat text de l'estat a filtrar
      * @return text amb la informació dels accessos filtrats
      * @throws ExcepcioCamping si l'estat indicat no és vàlid
      */
         /**
      * Operació llistarAccessos.
-     * @param infoEstat valor d'entrada
+     * @param infoEstat text de l'estat a filtrar
      * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
@@ -355,19 +355,19 @@ public class Camping implements InCamping,Serializable{
      * Afegeix una nova tasca de manteniment sobre un allotjament.
      *
      * @param num número identificador de la tasca
-     * @param tipus tipus de tasca (Reparacio, Neteja, RevisioTecnica o Desinfeccio)
+     * @param tipus tipus de tasca de manteniment
      * @param idAllotjament identificador de l'allotjament
-     * @param data data de la tasca
-     * @param dies dies previstos de durada
+     * @param data data de la tasca o operació
+     * @param dies dies previstos o durada en dies
      * @throws ExcepcioCamping si les dades no són vàlides o l'allotjament no existeix
      */
         /**
      * Operació afegirTascaManteniment.
-     * @param num valor d'entrada
-     * @param tipus valor d'entrada
-     * @param idAllotjament valor d'entrada
-     * @param data valor d'entrada
-     * @param dies valor d'entrada
+     * @param num número identificador de la tasca
+     * @param tipus tipus de tasca de manteniment
+     * @param idAllotjament identificador de l'allotjament
+     * @param data data de la tasca o operació
+     * @param dies dies previstos o durada en dies
      * @throws ExcepcioCamping en cas d'error
      */
     @Override
@@ -380,12 +380,12 @@ public class Camping implements InCamping,Serializable{
     /**
      * Completa una tasca de manteniment existent.
      *
-     * @param num número de la tasca a completar
+     * @param num número identificador de la tasca
      * @throws ExcepcioCamping si la tasca no existeix
      */
         /**
      * Operació completarTascaManteniment.
-     * @param num valor d'entrada
+     * @param num número identificador de la tasca
      * @throws ExcepcioCamping en cas d'error
      */
     @Override
@@ -430,7 +430,7 @@ public class Camping implements InCamping,Serializable{
      */
         /**
      * Operació save.
-     * @param fitxerFI valor d'entrada
+     * @param fitxerFI ruta del fitxer destí
      * @throws ExcepcioCamping en cas d'error
      */
     @Override

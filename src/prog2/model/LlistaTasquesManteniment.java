@@ -30,7 +30,7 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
     }
     /**
      * Operació setTasquesManteniment.
-     * @param tasquesManteniment valor d'entrada
+     * @param tasquesManteniment llista de tasques de manteniment
      */
     public void setTasquesManteniment(ArrayList<TascaManteniment> tasquesManteniment){
         this.tasquesManteniment = tasquesManteniment;
@@ -38,11 +38,11 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
 
         /**
      * Operació afegirTascaManteniment.
-     * @param num valor d'entrada
-     * @param tipus valor d'entrada
-     * @param allotjament valor d'entrada
-     * @param data valor d'entrada
-     * @param dies valor d'entrada
+     * @param num número identificador de la tasca
+     * @param tipus tipus de tasca de manteniment
+     * @param allotjament allotjament associat
+     * @param data data de la tasca o operació
+     * @param dies dies previstos o durada en dies
      * @throws ExcepcioCamping en cas d'error
      */
     @Override
@@ -68,7 +68,7 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
 
         /**
      * Operació completarTascaManteniment.
-     * @param tasca valor d'entrada
+     * @param tasca tasca de manteniment
      * @throws ExcepcioCamping en cas d'error
      */
     @Override
@@ -111,7 +111,7 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
 
         /**
      * Operació getTascaManteniment.
-     * @param num valor d'entrada
+     * @param num número identificador de la tasca
      * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */

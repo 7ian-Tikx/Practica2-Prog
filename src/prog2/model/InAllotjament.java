@@ -14,7 +14,7 @@ public interface InAllotjament {
 
     /**
      * Estableix el nom de l'allotjament.
-     * @param nom el nom a assignar.
+     * @param nom nom de l'entitat
      */
     void setNom(String nom);
 
@@ -26,21 +26,21 @@ public interface InAllotjament {
 
     /**
      * Estableix l'identificador únic de l'allotjament.
-     * @param id l'identificador a assignar.
+     * @param id identificador únic
      */
     void setId(String id);
 
     /**
      * Obté l'estada mínima segons la temporada.
-     * @param temp la temporada (ALTA o BAIXA).
+     * @param temp temporada a consultar (ALTA o BAIXA)
      * @return el valor de l'estada mínima per a la temporada indicada.
      */
     long getEstadaMinima(Temp temp);
 
     /**
      * Estableix l'estada mínima per a cada temporada.
-     * @param estadaMinimaALTA_ l'estada mínima en temporada alta.
-     * @param estadaMinimaBAIXA_ l'estada mínima en temporada baixa.
+     * @param estadaMinimaALTA_ valor d'entrada associat a l'operació
+     * @param estadaMinimaBAIXA_ valor d'entrada associat a l'operació
      */
     void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_);
 
@@ -54,7 +54,7 @@ public interface InAllotjament {
 
     /**
      * Modifica l'estat de l'allotjament a No Operatiu i la il·luminació depenent de la tasca rebuda com a paràmetre
-     * @param tasca Objecte de tipus TascaManteniment.
+     * @param tasca tasca de manteniment
      */
     public void tancarAllotjament(TascaManteniment tasca);
 

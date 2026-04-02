@@ -9,9 +9,9 @@ public class CamiTerra extends AccesTerra {
 
     /**
      * Constructor de CamiTerra.
-     * @param nom valor d'entrada
-     * @param estat valor d'entrada
-     * @param longitud valor d'entrada
+     * @param nom nom de l'entitat
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
+     * @param longitud longitud del tram de terra en metres
      */
     public CamiTerra(String nom, boolean estat, double longitud) {
         super(nom, false, longitud);

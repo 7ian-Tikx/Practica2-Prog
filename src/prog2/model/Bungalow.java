@@ -56,7 +56,7 @@ public class Bungalow extends Casa{
     // Els setters
     /**
      * Operació setPlacesParquingPlaces.
-     * @param placesParquing valor d'entrada
+     * @param placesParquing nombre de places d'aparcament
      */
     public void setPlacesParquingPlaces(int placesParquing){
         this.placesParquing = placesParquing;
@@ -64,7 +64,7 @@ public class Bungalow extends Casa{
 
     /**
      * Operació setTerrassa.
-     * @param terrassa valor d'entrada
+     * @param terrassa indica si té terrassa
      */
     public void setTerrassa(boolean terrassa){
         this.terrassa = terrassa;
@@ -72,7 +72,7 @@ public class Bungalow extends Casa{
 
     /**
      * Operació setTV.
-     * @param tv valor d'entrada
+     * @param tv indica si té televisió
      */
     public void setTV(boolean tv){
         this.tv = tv;
@@ -80,7 +80,7 @@ public class Bungalow extends Casa{
 
     /**
      * Operació setAireFred.
-     * @param aireFred valor d'entrada
+     * @param aireFred indica si disposa d'aire fred
      */
     public void setAireFred(boolean aireFred){
         this.aireFred = aireFred;

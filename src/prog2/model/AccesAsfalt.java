@@ -10,9 +10,9 @@ public abstract class AccesAsfalt extends Acces{
 
     /**
      * Constructor de AccesAsfalt.
-     * @param nom valor d'entrada
-     * @param estat valor d'entrada
-     * @param tamanyAsfalt valor d'entrada
+     * @param nom nom de l'entitat
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
+     * @param tamanyAsfalt metres quadrats d'asfalt
      */
     public AccesAsfalt(String nom, boolean estat, double tamanyAsfalt){
         super(nom,estat);
@@ -23,7 +23,7 @@ public abstract class AccesAsfalt extends Acces{
 
     /**
      * Operació setTamanyAsfalt.
-     * @param tamanyAsfalt valor d'entrada
+     * @param tamanyAsfalt metres quadrats d'asfalt
      */
     public void setTamanyAsfalt(double tamanyAsfalt){
         this.tamanyAsfalt = tamanyAsfalt;

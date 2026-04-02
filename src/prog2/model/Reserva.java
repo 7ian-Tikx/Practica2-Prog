@@ -19,10 +19,10 @@ public class Reserva implements Serializable{
     //Fem el constructor de Reserva
     /**
      * Constructor de Reserva.
-     * @param allotjament valor d'entrada
-     * @param client valor d'entrada
-     * @param dataEntrada valor d'entrada
-     * @param dataSortida valor d'entrada
+     * @param allotjament allotjament associat
+     * @param client client associat
+     * @param dataEntrada data d'entrada de la reserva
+     * @param dataSortida data de sortida de la reserva
      * @throws ExcepcioReserva en cas d'error
      */
     public Reserva(Allotjament allotjament,Client client,LocalDate dataEntrada,LocalDate dataSortida) throws ExcepcioReserva{
@@ -68,28 +68,28 @@ public class Reserva implements Serializable{
     //Fem els setters de dataEntrada,dataSortida,client i allotjament
     /**
      * Operació setDataEntrada.
-     * @param dataEntrada valor d'entrada
+     * @param dataEntrada data d'entrada de la reserva
      */
     public void setDataEntrada(LocalDate dataEntrada){
         this.dataEntrada = dataEntrada;
     }
     /**
      * Operació setDataSortida.
-     * @param dataSortida valor d'entrada
+     * @param dataSortida data de sortida de la reserva
      */
     public void setDataSortida(LocalDate dataSortida){
         this.dataSortida = dataSortida;
     }
     /**
      * Operació setClient.
-     * @param client valor d'entrada
+     * @param client client associat
      */
     public void setClient(Client client){
         this.client = client;
     }
     /**
      * Operació setAllotjament_.
-     * @param allotjament valor d'entrada
+     * @param allotjament allotjament associat
      */
     public void setAllotjament_(Allotjament allotjament){
         this.allotjament = allotjament;
@@ -129,31 +129,31 @@ public class Reserva implements Serializable{
 
         /**
          * Assigna un nou número identificador a la tasca.
-         * @param num_ Número identificador de la tasca.
+         * @param num_ número identificador de la tasca
          */
         void setNum(int num_);
 
         /**
          * Assigna el tipus de tasca de manteniment.
-         * @param tipus_ Tipus de tasca.
+         * @param tipus_ tipus de tasca de manteniment
          */
         void setTipus(TascaManteniment.TipusTascaManteniment tipus_);
 
         /**
          * Assigna l'allotjament associat a la tasca.
-         * @param allotjament_ Allotjament afectat.
+         * @param allotjament_ allotjament associat
          */
         void setAllotjament(Allotjament allotjament_);
 
         /**
          * Assigna la data de registre de la tasca.
-         * @param data_ Data de la tasca.
+         * @param data_ data de la tasca o operació
          */
         void setData(String data_);
 
         /**
          * Assigna el nombre de dies previstos per completar la tasca.
-         * @param dies_ Nombre de dies.
+         * @param dies_ dies previstos o durada en dies
          */
         void setDies(int dies_);
 

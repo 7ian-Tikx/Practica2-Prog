@@ -12,8 +12,8 @@ public class Client implements Serializable {
     //Fem el constructor de la clase Client
     /**
      * Constructor de Client.
-     * @param nom valor d'entrada
-     * @param DNI valor d'entrada
+     * @param nom nom de l'entitat
+     * @param DNI valor d'entrada associat a l'operació
      */
     public Client(String nom, String DNI) {
         this.nom = nom;
@@ -37,14 +37,14 @@ public class Client implements Serializable {
     //Fem els setters del Nom i DNI
     /**
      * Operació setNom.
-     * @param nom valor d'entrada
+     * @param nom nom de l'entitat
      */
     public void setNom(String nom){
         this.nom = nom;
     }
     /**
      * Operació setDni.
-     * @param DNI valor d'entrada
+     * @param DNI valor d'entrada associat a l'operació
      */
     public void setDni(String DNI){
         this.DNI = DNI;

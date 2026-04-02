@@ -30,7 +30,7 @@ public class LlistaReserves implements InLlistaReserves, Serializable{
     }
     /**
      * Operació setLlistaReserves.
-     * @param llistaReserves valor d'entrada
+     * @param llistaReserves llista de valors associats
      */
     public void setLlistaReserves(ArrayList<Reserva> llistaReserves){
 
@@ -39,9 +39,9 @@ public class LlistaReserves implements InLlistaReserves, Serializable{
     //Implementam metode allotjamentDisponible
     /**
      * Operació allotjamentDisponible.
-     * @param allotjament valor d'entrada
-     * @param dataEntrada valor d'entrada
-     * @param dataSortida valor d'entrada
+     * @param allotjament allotjament associat
+     * @param dataEntrada data d'entrada de la reserva
+     * @param dataSortida data de sortida de la reserva
      * @return valor retornat
      */
     public boolean allotjamentDisponible(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida){
@@ -59,9 +59,9 @@ public class LlistaReserves implements InLlistaReserves, Serializable{
     //Implementam metode isEstadaMinima
     /**
      * Operació isEstadaMinima.
-     * @param allotjament valor d'entrada
-     * @param dataEntrada valor d'entrada
-     * @param dataSortida valor d'entrada
+     * @param allotjament allotjament associat
+     * @param dataEntrada data d'entrada de la reserva
+     * @param dataSortida data de sortida de la reserva
      * @return valor retornat
      */
     public boolean isEstadaMinima (Allotjament allotjament,LocalDate dataEntrada,LocalDate dataSortida) {
@@ -86,10 +86,10 @@ public class LlistaReserves implements InLlistaReserves, Serializable{
 
                 /**
          * Operació afegirReserva.
-         * @param allotjament valor d'entrada
-         * @param client valor d'entrada
-         * @param dataEntrada valor d'entrada
-         * @param dataSortida valor d'entrada
+         * @param allotjament allotjament associat
+         * @param client client associat
+         * @param dataEntrada data d'entrada de la reserva
+         * @param dataSortida data de sortida de la reserva
          * @throws ExcepcioReserva en cas d'error
          */
         @Override

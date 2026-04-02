@@ -23,7 +23,7 @@ public class LlistaAccessos implements InLlistaAccessos, Serializable {
 
         /**
      * Operació afegirAcces.
-     * @param acc valor d'entrada
+     * @param acc accés a afegir
      * @throws ExcepcioCamping en cas d'error
      */
     @Override
@@ -42,7 +42,7 @@ public class LlistaAccessos implements InLlistaAccessos, Serializable {
 
         /**
      * Operació llistarAccessos.
-     * @param estat valor d'entrada
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
      * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */

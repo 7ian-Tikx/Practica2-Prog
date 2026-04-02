@@ -10,12 +10,12 @@ public class Parcela extends Allotjament {
     // El constructor
     /**
      * Constructor de Parcela.
-     * @param nom valor d'entrada
-     * @param id valor d'entrada
-     * @param estat valor d'entrada
-     * @param iluminacio valor d'entrada
-     * @param mida valor d'entrada
-     * @param conexioElectrica valor d'entrada
+     * @param nom nom de l'entitat
+     * @param id identificador únic
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
+     * @param iluminacio nivell d'il·luminació de l'allotjament
+     * @param mida mida de l'allotjament
+     * @param conexioElectrica indica si té connexió elèctrica
      */
     public Parcela(String nom, String id, boolean estat, String iluminacio, float mida, boolean conexioElectrica) {
         super(nom, id, 4, 2, estat, iluminacio);
@@ -42,7 +42,7 @@ public class Parcela extends Allotjament {
 
     /**
      * Operació setConnexioElectrica.
-     * @param conexioElectrica_ valor d'entrada
+     * @param conexioElectrica_ indica si té connexió elèctrica
      */
     public void setConnexioElectrica(boolean conexioElectrica_) {
         this.conexioElectrica = conexioElectrica_;
@@ -50,7 +50,7 @@ public class Parcela extends Allotjament {
 
     /**
      * Operació setMida.
-     * @param mida_ valor d'entrada
+     * @param mida_ mida de l'allotjament
      */
     public void setMida(float mida_) {
         this.mida = mida_;

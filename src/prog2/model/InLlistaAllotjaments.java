@@ -10,7 +10,7 @@ public interface InLlistaAllotjaments {
     
     /**
      * Afegeix un allotjament rebut per paràmetre a la llista d'allotjaments.
-     * @param allotjament Objecte de tipus Allotjament
+     * @param allotjament allotjament associat
      * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
      */
     public void afegirAllotjament(Allotjament allotjament) throws ExcepcioCamping;
@@ -45,7 +45,7 @@ public interface InLlistaAllotjaments {
     
     /**
      * Busca l'allotjament amb el nom rebut per paràmetre i el retorna. En cas que no existeixi llança una excepció.
-     * @param id String amb el id de l'allotjament
+     * @param id identificador únic
      * @return  Objecte de tipus Allotjament
      * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
      */

@@ -14,17 +14,17 @@ public interface InLlistaTasquesManteniment {
      * (número d'identificador, tipus, l'allotjament on s'ha produït, la data, i els dies esperats per completar-la) i l'afegeix a la llista.
      * A més, s'ha de comprovar que aquest allotjament no té ja una tasca, si ja té una tasca s'ha de llançar una excepció.
      * Una vegada creada la tasca s'ha de tancar (no operatiu) l'allotjament corresponent.
-     * @param num Número d'identificació de la tasca.
-     * @param tipus Aquest String permet crear el enum TipusTascaManteniment
-     * @param allotjament Allotjament on s'afegeix la tasca
-     * @param data Data quan genera la tasca
-     * @param dies Número de dies esperats per completar la tasca
+     * @param num número identificador de la tasca
+     * @param tipus tipus de tasca de manteniment
+     * @param allotjament allotjament associat
+     * @param data data de la tasca o operació
+     * @param dies dies previstos o durada en dies
      * @throws ExcepcioCamping Per comprovar i avisar si l'allotjament ja té una tasca o si el tipus de tasca que es vol afegir no existeix.
      */
     public void afegirTascaManteniment(int num, String tipus, Allotjament allotjament, String data, int dies) throws ExcepcioCamping;
     /**
     * Aquest mètode completa una tasca de manteniment de la llista (l'elimina) i actualitza l'estat de l'allotjament mitjançant el mètode obrirAllotjament de la classe Allotjament.
-    * @param tasca Objecte de tipus TascaManteniment
+    * @param tasca tasca de manteniment
     * @throws ExcepcioCamping
      */
     public void completarTascaManteniment(TascaManteniment tasca) throws ExcepcioCamping;
@@ -40,7 +40,7 @@ public interface InLlistaTasquesManteniment {
     /**
      * Busca la tasca amb el número rebut per paràmetre i la retorna.
      * En cas que no existeixi llança una excepció.
-     * @param num Número d'identificació de la tasca.
+     * @param num número identificador de la tasca
      * @return Objecte de tipus TascaManteniment
      * @throws ExcepcioCamping Aquest mètode llança una excepció si no existeix cap tasca amb el número passat per paràmetre.
      */

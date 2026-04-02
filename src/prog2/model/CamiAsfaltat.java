@@ -6,9 +6,9 @@ package prog2.model;
 public class CamiAsfaltat extends AccesAsfalt {
     /**
      * Constructor de CamiAsfaltat.
-     * @param nom valor d'entrada
-     * @param estat valor d'entrada
-     * @param tamanyAsfalt valor d'entrada
+     * @param nom nom de l'entitat
+     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
+     * @param tamanyAsfalt metres quadrats d'asfalt
      */
     public CamiAsfaltat(String nom, boolean estat, float tamanyAsfalt){
         super(nom, false, tamanyAsfalt);
