@@ -19,19 +19,35 @@ public class BungalowPremium extends Bungalow{
 
 
     // Els getters dels nous atributs
+    /**
+     * Mètode isServeisExtra.
+     * @return resultat del mètode
+     */
     public boolean isServeisExtra(){
         return serveisExtra;
     }
 
+    /**
+     * Mètode getCodiWifi.
+     * @return resultat del mètode
+     */
     public String getCodiWifi(){
         return codiWifi;
     }
 
     // Els setters dels nous atributs
+    /**
+     * Mètode setServeisExtra.
+     * @param serveisExtra paràmetre del mètode
+     */
     public void setServeisExtra(boolean serveisExtra){
         this.serveisExtra = serveisExtra;
     }
 
+    /**
+     * Mètode setCodiWifi.
+     * @param codiWifi paràmetre del mètode
+     */
     public void setCodiWifi(String codiWifi){
         this.codiWifi = codiWifi;
     }
@@ -39,12 +55,20 @@ public class BungalowPremium extends Bungalow{
 
     // El metodo funcionaCorrectament
     @Override
+    /**
+     * Mètode correcteFuncionament.
+     * @return resultat del mètode
+     */
     public boolean correcteFuncionament(){
         boolean codiCorrecte = codiWifi.length() >= 8 && codiWifi.length() <= 16;
         return codiCorrecte && super.isAireFred();
     }
 
     @Override
+    /**
+     * Mètode toString.
+     * @return resultat del mètode
+     */
     public String toString() {
         return super.toString() + ". BungalowPremium{" + "serveisExtra=" + serveisExtra + ", codiWifi='" + codiWifi + "'" + "}";
     }

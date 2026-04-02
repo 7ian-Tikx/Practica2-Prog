@@ -16,30 +16,54 @@ public class Glamping extends Casa{
     }
 
     // Els getters
+    /**
+     * Mètode getMaterial.
+     * @return resultat del mètode
+     */
     public String getMaterial() {
         return material;
     }
 
+    /**
+     * Mètode isCasaMascota.
+     * @return resultat del mètode
+     */
     public boolean isCasaMascota() {
         return casaMascota;
     }
 
     // Els setters
+    /**
+     * Mètode setMaterial.
+     * @param material paràmetre del mètode
+     */
     public void setMaterial(String material){
         this.material = material;
     }
 
+    /**
+     * Mètode setCasaMascota.
+     * @param casaMascota paràmetre del mètode
+     */
     public void setCasaMascota(boolean casaMascota){
         this.casaMascota = casaMascota;
     }
 
     // El metodo funcionaCorrectament
     @Override
+    /**
+     * Mètode correcteFuncionament.
+     * @return resultat del mètode
+     */
     public boolean correcteFuncionament(){
         return casaMascota;
     }
 
     @Override
+    /**
+     * Mètode toString.
+     * @return resultat del mètode
+     */
     public String toString() {
         return super.toString() +
                 ". Glamping{" + "material='" + material + "'" + ", casaMascota=" + casaMascota + "}";

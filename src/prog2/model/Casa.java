@@ -18,27 +18,51 @@ public abstract class Casa extends Allotjament{
     }
 
     //Els nous getters
+    /**
+     * Mètode getMida.
+     * @return resultat del mètode
+     */
     public float getMida(){
         return this.mida;
     }
 
+    /**
+     * Mètode getNumHabitacions.
+     * @return resultat del mètode
+     */
     public int getNumHabitacions(){
         return this.habitacions;
     }
 
+    /**
+     * Mètode getPlacesPersones.
+     * @return resultat del mètode
+     */
     public int getPlacesPersones(){
         return this.placesPersones;
     }
 
     // Els setters
+    /**
+     * Mètode setMida.
+     * @param mida paràmetre del mètode
+     */
     public void setMida(float mida){
         this.mida = mida;
     }
 
+    /**
+     * Mètode setHabitacions.
+     * @param habitacions paràmetre del mètode
+     */
     public void setHabitacions(int habitacions){
         this.habitacions = habitacions;
     }
 
+    /**
+     * Mètode setPlacesPersones.
+     * @param placesPersones paràmetre del mètode
+     */
     public void setPlacesPersones(int placesPersones){
         this.placesPersones = placesPersones;
     }
@@ -47,6 +71,10 @@ public abstract class Casa extends Allotjament{
     public abstract boolean correcteFuncionament();
 
     @Override
+    /**
+     * Mètode toString.
+     * @return resultat del mètode
+     */
     public String toString() {
         return super.toString() +
                 ", mida=" + mida + ", habitacions=" + habitacions + ", placesPersones=" + placesPersones;

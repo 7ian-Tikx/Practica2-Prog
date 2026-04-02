@@ -17,6 +17,14 @@ public class Reserva implements Serializable{
     private Allotjament allotjament;
 
     //Fem el constructor de Reserva
+    /**
+     * Constructor de Reserva.
+     * @param allotjament paràmetre del mètode
+     * @param client paràmetre del mètode
+     * @param dataEntrada paràmetre del mètode
+     * @param dataSortida paràmetre del mètode
+     * @throws ExcepcioReserva en cas d'error
+     */
     public Reserva(Allotjament allotjament,Client client,LocalDate dataEntrada,LocalDate dataSortida) throws ExcepcioReserva{
 
         if(dataSortida.isBefore(dataEntrada)){
@@ -28,29 +36,61 @@ public class Reserva implements Serializable{
         this.allotjament = allotjament;
     }
     //Fem els getter de dataEntrada,dataSortida,client i allotjament
+    /**
+     * Mètode getDataEntrada.
+     * @return resultat del mètode
+     */
     public LocalDate getDataEntrada(){
         return this.dataEntrada;
     }
+    /**
+     * Mètode getDataSortida.
+     * @return resultat del mètode
+     */
     public LocalDate getDataSortida(){
         return this.dataSortida;
     }
+    /**
+     * Mètode getClient.
+     * @return resultat del mètode
+     */
     public Client getClient(){
         return this.client;
     }
+    /**
+     * Mètode getAllotjament_.
+     * @return resultat del mètode
+     */
     public Allotjament getAllotjament_(){
         return this.allotjament;
     }
 
     //Fem els setters de dataEntrada,dataSortida,client i allotjament
+    /**
+     * Mètode setDataEntrada.
+     * @param dataEntrada paràmetre del mètode
+     */
     public void setDataEntrada(LocalDate dataEntrada){
         this.dataEntrada = dataEntrada;
     }
+    /**
+     * Mètode setDataSortida.
+     * @param dataSortida paràmetre del mètode
+     */
     public void setDataSortida(LocalDate dataSortida){
         this.dataSortida = dataSortida;
     }
+    /**
+     * Mètode setClient.
+     * @param client paràmetre del mètode
+     */
     public void setClient(Client client){
         this.client = client;
     }
+    /**
+     * Mètode setAllotjament_.
+     * @param allotjament paràmetre del mètode
+     */
     public void setAllotjament_(Allotjament allotjament){
         this.allotjament = allotjament;
     }

@@ -14,22 +14,38 @@ public class MobilHome extends Casa {
     }
 
     // Els getters
+    /**
+     * Mètode isTerrassaBarbacoa.
+     * @return resultat del mètode
+     */
     public boolean isTerrassaBarbacoa() {
         return terrassaBarbacoa;
     }
 
     // Els setters
+    /**
+     * Mètode setTerrassaBarbacoa.
+     * @param terrassaBarbacoa paràmetre del mètode
+     */
     public void setTerrassaBarbacoa(boolean terrassaBarbacoa) {
         this.terrassaBarbacoa = terrassaBarbacoa;
     }
 
     // El metodo funcionaCorrectament
     @Override
+    /**
+     * Mètode correcteFuncionament.
+     * @return resultat del mètode
+     */
     public boolean correcteFuncionament() {
         return terrassaBarbacoa;
     }
 
     @Override
+    /**
+     * Mètode toString.
+     * @return resultat del mètode
+     */
     public String toString() {
         return super.toString() + ". MobilHome{" + "material='" + ", terrassaBarbacoa=" + terrassaBarbacoa + "}";
     }
