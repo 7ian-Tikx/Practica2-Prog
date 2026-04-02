@@ -1,5 +1,8 @@
 package prog2.model;
 
+/**
+ * Representa un bungalow premium amb serveis extra.
+ */
 public class BungalowPremium extends Bungalow{
     private boolean serveisExtra;
     private String codiWifi;

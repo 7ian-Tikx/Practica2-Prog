@@ -6,6 +6,9 @@ import prog2.vista.ExcepcioReserva;
 
 import java.time.LocalDate;
 
+/**
+ * Representa una reserva d'un allotjament per un client.
+ */
 public class Reserva implements Serializable{
 
     private LocalDate dataEntrada;

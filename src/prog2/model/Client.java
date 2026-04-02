@@ -2,6 +2,9 @@ package prog2.model;
 
 import java.io.Serializable;
 
+/**
+ * Representa un client del càmping.
+ */
 public class Client implements Serializable {
     private String nom;
     private String DNI;

@@ -2,6 +2,9 @@ package prog2.model;
 
 import java.util.ArrayList;
 
+/**
+ * Classe abstracta per als accessos de terra.
+ */
 public abstract class AccesTerra extends Acces {
     private double longitud;
 

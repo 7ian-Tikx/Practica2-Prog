@@ -1,5 +1,8 @@
 package prog2.model;
 
+/**
+ * Classe abstracta per als allotjaments de tipus casa.
+ */
 public abstract class Casa extends Allotjament{
     private float mida;
     private int habitacions;

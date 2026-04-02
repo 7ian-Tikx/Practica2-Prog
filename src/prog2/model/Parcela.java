@@ -1,5 +1,8 @@
 package prog2.model;
 
+/**
+ * Representa un allotjament de tipus parcel·la.
+ */
 public class Parcela extends Allotjament {
     private boolean conexioElectrica;  // Si te o no un punt de connexio
     private float mida;

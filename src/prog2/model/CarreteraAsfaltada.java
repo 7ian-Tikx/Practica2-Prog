@@ -2,6 +2,9 @@ package prog2.model;
 
 import java.util.ArrayList;
 
+/**
+ * Representa una carretera asfaltada amb accés de vehicle.
+ */
 public class CarreteraAsfaltada extends AccesAsfalt{
 
     private double pes;

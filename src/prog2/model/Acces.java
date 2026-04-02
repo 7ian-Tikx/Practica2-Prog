@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import java.util.ArrayList;
 
+/**
+ * Classe abstracta base per als accessos del càmping.
+ */
 public abstract class Acces implements InAcces, Serializable {
     private String nom;
     private boolean accessibilitat;

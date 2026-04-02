@@ -1,5 +1,8 @@
 package prog2.model;
 
+/**
+ * Representa un allotjament de tipus mobil-home.
+ */
 public class MobilHome extends Casa {
     private boolean terrassaBarbacoa;
 

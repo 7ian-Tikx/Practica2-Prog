@@ -1,5 +1,8 @@
 package prog2.model;
 
+/**
+ * Representa un allotjament de tipus bungalow.
+ */
 public class Bungalow extends Casa{
     private int placesParquing;
     boolean terrassa;

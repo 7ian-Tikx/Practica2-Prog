@@ -2,6 +2,9 @@ package prog2.model;
 
 import java.util.ArrayList;
 
+/**
+ * Classe abstracta per als accessos asfaltats.
+ */
 public abstract class AccesAsfalt extends Acces{
     private double tamanyAsfalt;
 

@@ -1,5 +1,8 @@
 package prog2.model;
 
+/**
+ * Representa un allotjament de tipus glamping.
+ */
 public class Glamping extends Casa{
     private String material;
     private boolean casaMascota;

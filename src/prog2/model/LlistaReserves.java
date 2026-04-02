@@ -7,6 +7,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import prog2.vista.ExcepcioReserva;
 
+/**
+ * Gestiona la col·lecció de reserves del càmping.
+ */
 public class LlistaReserves implements InLlistaReserves, Serializable{
     private ArrayList<Reserva> llistaReserves;
 

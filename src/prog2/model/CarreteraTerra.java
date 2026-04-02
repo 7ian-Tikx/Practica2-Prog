@@ -2,6 +2,9 @@ package prog2.model;
 
 import java.util.ArrayList;
 
+/**
+ * Representa una carretera de terra amb accés de vehicle.
+ */
 public class CarreteraTerra extends AccesTerra{
 
     private double amplada;
