@@ -38,6 +38,7 @@ public class Camping implements InCamping,Serializable{
     }
 
 
+    /*
     // Fem el mètode buscarAllotjament
     public Allotjament buscarAllotjament(String Id){
         Iterator<Allotjament> iterator = allotjaments.iterator();
@@ -65,6 +66,8 @@ public class Camping implements InCamping,Serializable{
         }
         return null;
     }
+
+    */
     public static InAllotjament.Temp getTemporada(LocalDate data){
         int mes = data.getMonthValue();
         int dia = data.getDayOfMonth();
@@ -77,6 +80,7 @@ public class Camping implements InCamping,Serializable{
         }
     }
 
+    /*
     public int getNumAllotjaments() {
         return this.allotjaments.size();
     }
@@ -161,6 +165,7 @@ public class Camping implements InCamping,Serializable{
         return allotjamentEstadaMesCurta;
 
     }
+    */
 
 
     // -------------------------------------------------------Els metodes nous-----------------------------------------------------------

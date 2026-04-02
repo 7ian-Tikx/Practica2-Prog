@@ -2,11 +2,11 @@ package prog2.model;
 
 import java.util.ArrayList;
 
-public class CarreteraAsfalt extends AccesAsfalt{
+public class CarreteraAsfaltada extends AccesAsfalt{
 
     private double pes;
 
-    public CarreteraAsfalt(String nom, boolean estat, float tamanyAsfalt){
+    public CarreteraAsfaltada(String nom, boolean estat, float tamanyAsfalt,double pes){
         super(nom, true, tamanyAsfalt);
         this.pes = pes;
     }

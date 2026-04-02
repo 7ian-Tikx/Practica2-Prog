@@ -64,7 +64,7 @@ public class LlistaAccessos implements InLlistaAccessos {
 
             acces.setEstat(false);
 
-            if(acces.getLlistaAllotjaments().containsAllotjamentOperatiu()){
+            if(acces.getAAllotjaments().containsAllotjamentOperatiu()){
                 acces.setEstat(true);
             }
         }
@@ -100,6 +100,7 @@ public class LlistaAccessos implements InLlistaAccessos {
                 metres += accesTerra.getLongitud();
             }
         }
+        return metres;
     }
 }
 

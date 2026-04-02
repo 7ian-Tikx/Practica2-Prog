@@ -86,7 +86,7 @@ public class VistaCamping {
 
                     case AFEGIR_TASCA_MANTENIMENT: {
                         System.out.print("Número de tasca: ");
-                        int num = Integer.parseInt(sc.nextLine());
+                        int num = sc.nextInt();
 
                         System.out.print("ID allotjament (ex: ALL1): ");
                         String idAllotjament = sc.nextLine();
@@ -98,7 +98,7 @@ public class VistaCamping {
                         String data = sc.nextLine();
 
                         System.out.print("Dies esperats: ");
-                        int dies = Integer.parseInt(sc.nextLine());
+                        int dies = sc.nextInt();
 
                         camping.afegirTascaManteniment(num, tipus, idAllotjament, data, dies);
                         System.out.println("Tasca afegida correctament.");
@@ -109,7 +109,7 @@ public class VistaCamping {
                         System.out.println("Tasques actives:");
                         System.out.println(camping.llistarTasquesManteniment());
                         System.out.print("Número de la tasca a completar: ");
-                        int num = Integer.parseInt(sc.nextLine());
+                        int num = sc.nextInt();
 
                         camping.completarTascaManteniment(num);
                         System.out.println("Tasca completada correctament.");
