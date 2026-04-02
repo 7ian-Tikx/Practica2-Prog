@@ -297,12 +297,13 @@ public class Camping implements InCamping,Serializable{
      * @return text amb la informació dels allotjaments filtrats
      * @throws ExcepcioCamping si l'estat no és vàlid o no hi ha resultats
      */
-        /**
-     * Operació llistarAllotjaments.
-     * @param estat estat actual (obert/tancat o operatiu/no operatiu segons el context)
-     * @return valor retornat
-     * @throws ExcepcioCamping en cas d'error
-     */
+    /**
+    * Itera sobre la llista d'allotjaments i retorna un String amb la informació de tots els allotjaments amb l'estat rebut per paràmetre.
+    * En cas que no hi hagi allotjaments en l'estat passat com a paràmetre llança una excepció.
+    * @param estat
+    * @return String
+    * @throws prog2.vista.ExcepcioCamping Aquest mètode llança una excepció en cas que no hi hagi allotjaments en l'estat passat com a paràmetre.
+    */
     @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
        return this.llistaAllotjaments.llistarAllotjaments(estat);
@@ -341,11 +342,12 @@ public class Camping implements InCamping,Serializable{
      * @return text amb les tasques actives
      * @throws ExcepcioCamping si no hi ha cap tasca registrada
      */
-        /**
-     * Operació llistarTasquesManteniment.
-     * @return valor retornat
-     * @throws ExcepcioCamping en cas d'error
-     */
+    /**
+    * Itera sobre la llista de tasques i retorna un String amb la informació de totes les tasques de manteniment.
+    * En cas que no hi hagi cap tasca llança una excepció.
+    * @return String
+    * @throws ExcepcioCamping
+    */
     @Override
     public String llistarTasquesManteniment() throws ExcepcioCamping {
         return llistaTasquesManteniment.llistarTasquesManteniment();
@@ -400,10 +402,11 @@ public class Camping implements InCamping,Serializable{
      *
      * @return nombre d'accessos no accessibles
      */
-        /**
-     * Operació calculaAccessosNoAccessibles.
-     * @return valor retornat
-     */
+    /**
+    * Itera sobre la llista d'accessos i retorna el número d'accessos sense accessibilitat.
+    * @return int
+    * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
+    */
     @Override
     public int calculaAccessosNoAccessibles(){
         return llistaAccessos.calculaAccessosNoAccessibles();
@@ -413,10 +416,11 @@ public class Camping implements InCamping,Serializable{
      *
      * @return metres totals d'accessos de terra
      */
-        /**
-     * Operació calculaMetresTerra.
-     * @return valor retornat
-     */
+    /**
+    * Itera sobre la llista d'accessos, i pels accessos de terra suma el total de metres (longitud) i ho retorna.
+    * @return float amb els metres totals.
+    * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
+    */
     @Override
     public float calculaMetresTerra(){
         return llistaAccessos.calculaMetresTerra();

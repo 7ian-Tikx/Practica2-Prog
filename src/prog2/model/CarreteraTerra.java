@@ -40,10 +40,10 @@ public class CarreteraTerra extends AccesTerra{
         return this.amplada;
     }
 
-        /**
-     * Operació isAccessibilitat.
-     * @return valor retornat
-     */
+    /**
+    * Retorna si l'accés permet accessibilitat amb cotxe o no.
+    * @return 
+    */
     @Override
     public boolean isAccessibilitat() {
         return true;

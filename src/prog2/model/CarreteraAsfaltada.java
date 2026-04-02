@@ -40,10 +40,10 @@ public class CarreteraAsfaltada extends AccesAsfalt{
     public double getPes(){
         return this.pes;
     }
-        /**
-     * Operació isAccessibilitat.
-     * @return valor retornat
-     */
+    /**
+    * Retorna si l'accés permet accessibilitat amb cotxe o no.
+    * @return 
+    */
     @Override
     public boolean isAccessibilitat(){
         return true;

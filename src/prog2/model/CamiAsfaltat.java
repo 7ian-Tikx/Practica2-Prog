@@ -14,10 +14,10 @@ public class CamiAsfaltat extends AccesAsfalt {
         super(nom, false, tamanyAsfalt);
 
     }
-        /**
-     * Operació isAccessibilitat.
-     * @return valor retornat
-     */
+    /**
+    * Retorna si l'accés permet accessibilitat amb cotxe o no.
+    * @return 
+    */
     @Override
     public boolean isAccessibilitat(){
         return false;

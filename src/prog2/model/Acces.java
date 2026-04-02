@@ -60,9 +60,9 @@ public abstract class Acces implements InAcces, Serializable {
     //fem els getters
 
     /**
-     * Operació getNom.
-     * @return valor retornat
-     */
+    * Retorna el nom de l'accés
+    * @return
+    */
     public String getNom(){
         return this.nom;
     }
@@ -76,41 +76,42 @@ public abstract class Acces implements InAcces, Serializable {
     }
 
     /**
-     * Operació getEstat.
-     * @return valor retornat
-     */
+    * Retorna l'estat de l'accés (obert o tancat)
+    * @return
+    */
     public boolean getEstat(){
         return this.estat;
     }
 
     /**
-     * Operació getAAllotjaments.
-     * @return valor retornat
-     */
+    * Retorna la llista d'allotjaments associats a l'accés
+    * @return
+    */
     public LlistaAllotjaments getAAllotjaments(){
         return this.llistaAllotjaments;
     }
 
-        /**
-     * Operació afegirAllotjament.
-     * @param allotjament allotjament associat
-     */
+    /**
+    * Afegeix un allotjament rebut per paràmetre a la llista d'allotjaments.
+    * @param allotjament allotjament associat
+    * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
+    */
     @Override
     public void afegirAllotjament(Allotjament allotjament) {
         this.llistaAllotjaments.afegirAllotjament(allotjament);
     }
 
-        /**
-     * Operació tancarAcces.
-     */
+    /**
+    * Canvia l'estat de l'accés a tancat
+    */
     @Override
     public void tancarAcces() {
         this.estat = false;
     }
 
-        /**
-     * Operació obrirAcces.
-     */
+    /**
+    * Canvia l'estat de l'accés a obert 
+    */
     @Override
     public void obrirAcces() {
         this.estat = true;

@@ -34,9 +34,9 @@ public abstract class Allotjament implements InAllotjament, Serializable{
 
     // Ara definim els getters
     /**
-     * Operació getNom.
-     * @return valor retornat
-     */
+    * Retorna el nom de l'accés
+    * @return
+    */
     public String getNom(){
        return this.nom;
     }
@@ -134,10 +134,10 @@ public abstract class Allotjament implements InAllotjament, Serializable{
                 ", estada mínima en temp BAIXA: " + estadaMinimaBAIXA + ".";
     }
 
-        /**
-     * Operació tancarAllotjament.
-     * @param tasca tasca de manteniment
-     */
+    /**
+    * Modifica l'estat de l'allotjament a No Operatiu i la il·luminació depenent de la tasca rebuda com a paràmetre
+    * @param tasca tasca de manteniment
+    */
     @Override
     public void tancarAllotjament(TascaManteniment tasca) {
         this.estat = false;
@@ -153,9 +153,9 @@ public abstract class Allotjament implements InAllotjament, Serializable{
         }
     }
 
-        /**
-     * Operació obrirAllotjament.
-     */
+    /**
+    * Modifica l'estat de l'allotjament a Operatiu i la il·luminació al 100%
+    */
     @Override
     public void obrirAllotjament() {
        this.estat = true;

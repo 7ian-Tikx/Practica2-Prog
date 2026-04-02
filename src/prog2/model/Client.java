@@ -21,9 +21,9 @@ public class Client implements Serializable {
     }
     //Fem els getters de Nom i DNI
     /**
-     * Operació getNom.
-     * @return valor retornat
-     */
+    * Retorna el nom de l'accés
+    * @return
+    */
     public String getNom(){
         return this.nom;
     }

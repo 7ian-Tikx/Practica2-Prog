@@ -16,10 +16,10 @@ public class CamiTerra extends AccesTerra {
     public CamiTerra(String nom, boolean estat, double longitud) {
         super(nom, false, longitud);
     }
-        /**
-     * Operació isAccessibilitat.
-     * @return valor retornat
-     */
+    /**
+    * Retorna si l'accés permet accessibilitat amb cotxe o no.
+    * @return 
+    */
     @Override
     public boolean isAccessibilitat() {
         return false;
