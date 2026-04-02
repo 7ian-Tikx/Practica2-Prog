@@ -59,9 +59,9 @@ public class Camping implements InCamping,Serializable{
     /*
     // Fem el mètode buscarAllotjament
     /**
-     * Mètode buscarAllotjament.
-     * @param Id paràmetre del mètode
-     * @return resultat del mètode
+     * Operació buscarAllotjament.
+     * @param Id valor d'entrada
+     * @return valor retornat
      */
     public Allotjament buscarAllotjament(String Id){
         Iterator<Allotjament> iterator = allotjaments.iterator();
@@ -78,9 +78,9 @@ public class Camping implements InCamping,Serializable{
 
     //Fem el mètode buscarClient
     /**
-     * Mètode buscarClient.
-     * @param DNI paràmetre del mètode
-     * @return resultat del mètode
+     * Operació buscarClient.
+     * @param DNI valor d'entrada
+     * @return valor retornat
      */
     public Client buscarClient(String DNI){
         Iterator<Client> iterator = clients.iterator();
@@ -116,33 +116,33 @@ public class Camping implements InCamping,Serializable{
 
     /*
     /**
-     * Mètode getNumAllotjaments.
-     * @return resultat del mètode
+     * Operació getNumAllotjaments.
+     * @return valor retornat
      */
     public int getNumAllotjaments() {
         return this.allotjaments.size();
     }
 
     /**
-     * Mètode getNumReserves.
-     * @return resultat del mètode
+     * Operació getNumReserves.
+     * @return valor retornat
      */
     public int getNumReserves() {
         return this.llistaReserves.getNumReserves();
     }
 
     /**
-     * Mètode getNumClients.
-     * @return resultat del mètode
+     * Operació getNumClients.
+     * @return valor retornat
      */
     public int getNumClients() {
         return this.clients.size();
     }
 
     /**
-     * Mètode afegirClient.
-     * @param nom_ paràmetre del mètode
-     * @param dni_ paràmetre del mètode
+     * Operació afegirClient.
+     * @param nom_ valor d'entrada
+     * @param dni_ valor d'entrada
      */
     public void afegirClient(String nom_, String dni_) {
         Client  client = new Client(nom_, dni_);
@@ -150,11 +150,11 @@ public class Camping implements InCamping,Serializable{
     }
 
     /**
-     * Mètode afegirParcela.
-     * @param nom_ paràmetre del mètode
-     * @param idAllotjament_ paràmetre del mètode
-     * @param metres paràmetre del mètode
-     * @param connexioElectrica paràmetre del mètode
+     * Operació afegirParcela.
+     * @param nom_ valor d'entrada
+     * @param idAllotjament_ valor d'entrada
+     * @param metres valor d'entrada
+     * @param connexioElectrica valor d'entrada
      */
     public void afegirParcela(String nom_, String idAllotjament_, float metres, boolean connexioElectrica) {
         Parcela parcela = new Parcela(nom_, idAllotjament_, metres, connexioElectrica);
@@ -162,72 +162,72 @@ public class Camping implements InCamping,Serializable{
     }
 
     /**
-     * Mètode afegirBungalow.
-     * @param nom_ paràmetre del mètode
-     * @param idAllotjament_ paràmetre del mètode
-     * @param mida paràmetre del mètode
-     * @param habitacions paràmetre del mètode
-     * @param placesPersones paràmetre del mètode
-     * @param placesParquing paràmetre del mètode
-     * @param terrassa paràmetre del mètode
-     * @param tv paràmetre del mètode
-     * @param aireFred paràmetre del mètode
+     * Operació afegirBungalow.
+     * @param nom_ valor d'entrada
+     * @param idAllotjament_ valor d'entrada
+     * @param mida valor d'entrada
+     * @param habitacions valor d'entrada
+     * @param placesPersones valor d'entrada
+     * @param placesParquing valor d'entrada
+     * @param terrassa valor d'entrada
+     * @param tv valor d'entrada
+     * @param aireFred valor d'entrada
      */
     public void afegirBungalow(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
         Bungalow bungalow = new Bungalow(nom_, idAllotjament_, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred);
         this.allotjaments.add(bungalow);
     }
     /**
-     * Mètode afegirBungalowPremium.
-     * @param nom_ paràmetre del mètode
-     * @param idAllotjament_ paràmetre del mètode
-     * @param mida paràmetre del mètode
-     * @param habitacions paràmetre del mètode
-     * @param placesPersones paràmetre del mètode
-     * @param placesParquing paràmetre del mètode
-     * @param terrassa paràmetre del mètode
-     * @param tv paràmetre del mètode
-     * @param aireFred paràmetre del mètode
-     * @param serveisExtra paràmetre del mètode
-     * @param codiWifi paràmetre del mètode
+     * Operació afegirBungalowPremium.
+     * @param nom_ valor d'entrada
+     * @param idAllotjament_ valor d'entrada
+     * @param mida valor d'entrada
+     * @param habitacions valor d'entrada
+     * @param placesPersones valor d'entrada
+     * @param placesParquing valor d'entrada
+     * @param terrassa valor d'entrada
+     * @param tv valor d'entrada
+     * @param aireFred valor d'entrada
+     * @param serveisExtra valor d'entrada
+     * @param codiWifi valor d'entrada
      */
     public void afegirBungalowPremium(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred, boolean serveisExtra, String codiWifi){
         BungalowPremium bungalowPremium = new BungalowPremium(nom_,idAllotjament_,mida,habitacions,placesPersones,placesParquing,terrassa,tv,aireFred,serveisExtra,codiWifi);
         this.allotjaments.add(bungalowPremium);
     }
     /**
-     * Mètode afegirGlamping.
-     * @param nom_ paràmetre del mètode
-     * @param idAllotjament_ paràmetre del mètode
-     * @param mida paràmetre del mètode
-     * @param habitacions paràmetre del mètode
-     * @param placesPersones paràmetre del mètode
-     * @param material paràmetre del mètode
-     * @param casaMascota paràmetre del mètode
+     * Operació afegirGlamping.
+     * @param nom_ valor d'entrada
+     * @param idAllotjament_ valor d'entrada
+     * @param mida valor d'entrada
+     * @param habitacions valor d'entrada
+     * @param placesPersones valor d'entrada
+     * @param material valor d'entrada
+     * @param casaMascota valor d'entrada
      */
     public void afegirGlamping(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, String material, boolean casaMascota){
         Glamping glamping = new Glamping(nom_,idAllotjament_,mida,habitacions,placesPersones,material,casaMascota);
         this.allotjaments.add(glamping);
     }
     /**
-     * Mètode afegirMobilHome.
-     * @param nom_ paràmetre del mètode
-     * @param idAllotjament_ paràmetre del mètode
-     * @param mida paràmetre del mètode
-     * @param habitacions paràmetre del mètode
-     * @param placesPersones paràmetre del mètode
-     * @param terrassaBarbacoa paràmetre del mètode
+     * Operació afegirMobilHome.
+     * @param nom_ valor d'entrada
+     * @param idAllotjament_ valor d'entrada
+     * @param mida valor d'entrada
+     * @param habitacions valor d'entrada
+     * @param placesPersones valor d'entrada
+     * @param terrassaBarbacoa valor d'entrada
      */
     public  void afegirMobilHome(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, boolean terrassaBarbacoa){
         MobilHome mobilHome = new MobilHome(nom_,idAllotjament_,mida,habitacions,placesPersones,terrassaBarbacoa);
         this.allotjaments.add(mobilHome);
     }
     /**
-     * Mètode afegirReserva.
-     * @param id_ paràmetre del mètode
-     * @param dni_ paràmetre del mètode
-     * @param dataEntrada paràmetre del mètode
-     * @param dataSortida paràmetre del mètode
+     * Operació afegirReserva.
+     * @param id_ valor d'entrada
+     * @param dni_ valor d'entrada
+     * @param dataEntrada valor d'entrada
+     * @param dataSortida valor d'entrada
      * @throws ExcepcioCamping en cas d'error
      */
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioCamping {
@@ -245,8 +245,8 @@ public class Camping implements InCamping,Serializable{
     }
 
     /**
-     * Mètode calculAllotjamentsOperatius.
-     * @return resultat del mètode
+     * Operació calculAllotjamentsOperatius.
+     * @return valor retornat
      */
     public  int calculAllotjamentsOperatius(){
        int comptador = 0;
@@ -263,9 +263,9 @@ public class Camping implements InCamping,Serializable{
     }
 
     /**
-     * Mètode getAllotjamentEstadaMesCurta.
-     * @param temp paràmetre del mètode
-     * @return resultat del mètode
+     * Operació getAllotjamentEstadaMesCurta.
+     * @param temp valor d'entrada
+     * @return valor retornat
      */
     public Allotjament getAllotjamentEstadaMesCurta(InAllotjament.Temp temp){
         long estadaCurta = 1000000;
@@ -297,13 +297,13 @@ public class Camping implements InCamping,Serializable{
      * @return text amb la informació dels allotjaments filtrats
      * @throws ExcepcioCamping si l'estat no és vàlid o no hi ha resultats
      */
-    @Override
-    /**
-     * Mètode llistarAllotjaments.
-     * @param estat paràmetre del mètode
-     * @return resultat del mètode
+        /**
+     * Operació llistarAllotjaments.
+     * @param estat valor d'entrada
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
        return this.llistaAllotjaments.llistarAllotjaments(estat);
     }
@@ -315,13 +315,13 @@ public class Camping implements InCamping,Serializable{
      * @return text amb la informació dels accessos filtrats
      * @throws ExcepcioCamping si l'estat indicat no és vàlid
      */
-    @Override
-    /**
-     * Mètode llistarAccessos.
-     * @param infoEstat paràmetre del mètode
-     * @return resultat del mètode
+        /**
+     * Operació llistarAccessos.
+     * @param infoEstat valor d'entrada
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public String llistarAccessos(String infoEstat) throws ExcepcioCamping {
         boolean estat;
         if ("Obert".equalsIgnoreCase(infoEstat)) {
@@ -341,12 +341,12 @@ public class Camping implements InCamping,Serializable{
      * @return text amb les tasques actives
      * @throws ExcepcioCamping si no hi ha cap tasca registrada
      */
-    @Override
-    /**
-     * Mètode llistarTasquesManteniment.
-     * @return resultat del mètode
+        /**
+     * Operació llistarTasquesManteniment.
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public String llistarTasquesManteniment() throws ExcepcioCamping {
         return llistaTasquesManteniment.llistarTasquesManteniment();
     }
@@ -361,16 +361,16 @@ public class Camping implements InCamping,Serializable{
      * @param dies dies previstos de durada
      * @throws ExcepcioCamping si les dades no són vàlides o l'allotjament no existeix
      */
-    @Override
-    /**
-     * Mètode afegirTascaManteniment.
-     * @param num paràmetre del mètode
-     * @param tipus paràmetre del mètode
-     * @param idAllotjament paràmetre del mètode
-     * @param data paràmetre del mètode
-     * @param dies paràmetre del mètode
+        /**
+     * Operació afegirTascaManteniment.
+     * @param num valor d'entrada
+     * @param tipus valor d'entrada
+     * @param idAllotjament valor d'entrada
+     * @param data valor d'entrada
+     * @param dies valor d'entrada
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public void afegirTascaManteniment(int num, String tipus, String idAllotjament, String data, int dies) throws ExcepcioCamping {
         Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
         llistaTasquesManteniment.afegirTascaManteniment(num, tipus, allotjament, data, dies);
@@ -383,12 +383,12 @@ public class Camping implements InCamping,Serializable{
      * @param num número de la tasca a completar
      * @throws ExcepcioCamping si la tasca no existeix
      */
-    @Override
-    /**
-     * Mètode completarTascaManteniment.
-     * @param num paràmetre del mètode
+        /**
+     * Operació completarTascaManteniment.
+     * @param num valor d'entrada
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public void completarTascaManteniment(int num) throws ExcepcioCamping {
         TascaManteniment tasca = llistaTasquesManteniment.getTascaManteniment(num);
         llistaTasquesManteniment.completarTascaManteniment(tasca);
@@ -400,11 +400,11 @@ public class Camping implements InCamping,Serializable{
      *
      * @return nombre d'accessos no accessibles
      */
-    @Override
-    /**
-     * Mètode calculaAccessosNoAccessibles.
-     * @return resultat del mètode
+        /**
+     * Operació calculaAccessosNoAccessibles.
+     * @return valor retornat
      */
+    @Override
     public int calculaAccessosNoAccessibles(){
         return llistaAccessos.calculaAccessosNoAccessibles();
     }
@@ -413,11 +413,11 @@ public class Camping implements InCamping,Serializable{
      *
      * @return metres totals d'accessos de terra
      */
-    @Override
-    /**
-     * Mètode calculaMetresTerra.
-     * @return resultat del mètode
+        /**
+     * Operació calculaMetresTerra.
+     * @return valor retornat
      */
+    @Override
     public float calculaMetresTerra(){
         return llistaAccessos.calculaMetresTerra();
     }
@@ -428,12 +428,12 @@ public class Camping implements InCamping,Serializable{
      * @param fitxerFI ruta del fitxer destí
      * @throws ExcepcioCamping si es produeix un error d'E/S
      */
-    @Override
-    /**
-     * Mètode save.
-     * @param fitxerFI paràmetre del mètode
+        /**
+     * Operació save.
+     * @param fitxerFI valor d'entrada
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public void save(String fitxerFI) throws ExcepcioCamping{
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fitxerFI))){
             oos.writeObject(this);

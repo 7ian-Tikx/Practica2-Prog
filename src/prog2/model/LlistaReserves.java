@@ -22,15 +22,15 @@ public class LlistaReserves implements InLlistaReserves, Serializable{
     }
     //Fem el seu getter i setter
     /**
-     * Mètode getLlistaReserves.
-     * @return resultat del mètode
+     * Operació getLlistaReserves.
+     * @return valor retornat
      */
     public ArrayList getLlistaReserves(){
         return this.llistaReserves;
     }
     /**
-     * Mètode setLlistaReserves.
-     * @param llistaReserves paràmetre del mètode
+     * Operació setLlistaReserves.
+     * @param llistaReserves valor d'entrada
      */
     public void setLlistaReserves(ArrayList<Reserva> llistaReserves){
 
@@ -38,11 +38,11 @@ public class LlistaReserves implements InLlistaReserves, Serializable{
     }
     //Implementam metode allotjamentDisponible
     /**
-     * Mètode allotjamentDisponible.
-     * @param allotjament paràmetre del mètode
-     * @param dataEntrada paràmetre del mètode
-     * @param dataSortida paràmetre del mètode
-     * @return resultat del mètode
+     * Operació allotjamentDisponible.
+     * @param allotjament valor d'entrada
+     * @param dataEntrada valor d'entrada
+     * @param dataSortida valor d'entrada
+     * @return valor retornat
      */
     public boolean allotjamentDisponible(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida){
         for(int i = 0; i < llistaReserves.size();i++){
@@ -58,11 +58,11 @@ public class LlistaReserves implements InLlistaReserves, Serializable{
     }
     //Implementam metode isEstadaMinima
     /**
-     * Mètode isEstadaMinima.
-     * @param allotjament paràmetre del mètode
-     * @param dataEntrada paràmetre del mètode
-     * @param dataSortida paràmetre del mètode
-     * @return resultat del mètode
+     * Operació isEstadaMinima.
+     * @param allotjament valor d'entrada
+     * @param dataEntrada valor d'entrada
+     * @param dataSortida valor d'entrada
+     * @return valor retornat
      */
     public boolean isEstadaMinima (Allotjament allotjament,LocalDate dataEntrada,LocalDate dataSortida) {
         long diesEstada = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
@@ -84,16 +84,16 @@ public class LlistaReserves implements InLlistaReserves, Serializable{
         }
     }
 
-        @Override
-        /**
-         * Mètode afegirReserva.
-         * @param allotjament paràmetre del mètode
-         * @param client paràmetre del mètode
-         * @param dataEntrada paràmetre del mètode
-         * @param dataSortida paràmetre del mètode
+                /**
+         * Operació afegirReserva.
+         * @param allotjament valor d'entrada
+         * @param client valor d'entrada
+         * @param dataEntrada valor d'entrada
+         * @param dataSortida valor d'entrada
          * @throws ExcepcioReserva en cas d'error
          */
-        public void afegirReserva(Allotjament allotjament,Client client, LocalDate dataEntrada,LocalDate dataSortida)throws ExcepcioReserva{
+        @Override
+    public void afegirReserva(Allotjament allotjament,Client client, LocalDate dataEntrada,LocalDate dataSortida)throws ExcepcioReserva{
             if(!allotjamentDisponible(allotjament,dataEntrada,dataSortida)){
                 throw new ExcepcioReserva("L'allotjament amb identificador " + allotjament.getId() + " no està disponible en la data demanada "
                         + dataEntrada + " pel client " + client.getNom() +  " amb DNI: " + client.getDni());
@@ -108,12 +108,12 @@ public class LlistaReserves implements InLlistaReserves, Serializable{
             llistaReserves.add(reserva);
         }
 
-        @Override
-        /**
-         * Mètode getNumReserves.
-         * @return resultat del mètode
+                /**
+         * Operació getNumReserves.
+         * @return valor retornat
          */
-        public int getNumReserves() {
+        @Override
+    public int getNumReserves() {
             return this.llistaReserves.size();
     }
 

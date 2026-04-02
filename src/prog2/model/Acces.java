@@ -15,8 +15,8 @@ public abstract class Acces implements InAcces, Serializable {
 
     /**
      * Constructor de Acces.
-     * @param nom paràmetre del mètode
-     * @param estat paràmetre del mètode
+     * @param nom valor d'entrada
+     * @param estat valor d'entrada
      */
     public Acces(String nom, boolean estat) {
         this.nom = nom;
@@ -27,31 +27,31 @@ public abstract class Acces implements InAcces, Serializable {
     //fem els setters
 
     /**
-     * Mètode setNom.
-     * @param nom paràmetre del mètode
+     * Operació setNom.
+     * @param nom valor d'entrada
      */
     public void setNom(String nom) {
         this.nom = nom;
     }
     /**
-     * Mètode setAccessibilitat.
-     * @param accessibilitat paràmetre del mètode
+     * Operació setAccessibilitat.
+     * @param accessibilitat valor d'entrada
      */
     public void setAccessibilitat(boolean accessibilitat){
         this.accessibilitat = accessibilitat;
     }
 
     /**
-     * Mètode setEstat.
-     * @param estat paràmetre del mètode
+     * Operació setEstat.
+     * @param estat valor d'entrada
      */
     public void setEstat(boolean estat){
         this.estat = estat;
     }
 
     /**
-     * Mètode setLlistaAllotjaments.
-     * @param llistaAllotjaments paràmetre del mètode
+     * Operació setLlistaAllotjaments.
+     * @param llistaAllotjaments valor d'entrada
      */
     public void setLlistaAllotjaments(LlistaAllotjaments llistaAllotjaments){
         this.llistaAllotjaments = llistaAllotjaments;
@@ -60,67 +60,67 @@ public abstract class Acces implements InAcces, Serializable {
     //fem els getters
 
     /**
-     * Mètode getNom.
-     * @return resultat del mètode
+     * Operació getNom.
+     * @return valor retornat
      */
     public String getNom(){
         return this.nom;
     }
 
     /**
-     * Mètode getAccessibilitat.
-     * @return resultat del mètode
+     * Operació getAccessibilitat.
+     * @return valor retornat
      */
     public boolean getAccessibilitat(){
         return this.accessibilitat;
     }
 
     /**
-     * Mètode getEstat.
-     * @return resultat del mètode
+     * Operació getEstat.
+     * @return valor retornat
      */
     public boolean getEstat(){
         return this.estat;
     }
 
     /**
-     * Mètode getAAllotjaments.
-     * @return resultat del mètode
+     * Operació getAAllotjaments.
+     * @return valor retornat
      */
     public LlistaAllotjaments getAAllotjaments(){
         return this.llistaAllotjaments;
     }
 
-    @Override
-    /**
-     * Mètode afegirAllotjament.
-     * @param allotjament paràmetre del mètode
+        /**
+     * Operació afegirAllotjament.
+     * @param allotjament valor d'entrada
      */
+    @Override
     public void afegirAllotjament(Allotjament allotjament) {
         this.llistaAllotjaments.afegirAllotjament(allotjament);
     }
 
-    @Override
-    /**
-     * Mètode tancarAcces.
+        /**
+     * Operació tancarAcces.
      */
+    @Override
     public void tancarAcces() {
         this.estat = false;
     }
 
-    @Override
-    /**
-     * Mètode obrirAcces.
+        /**
+     * Operació obrirAcces.
      */
+    @Override
     public void obrirAcces() {
         this.estat = true;
     }
 
-    @Override
-    /**
-     * Mètode toString.
-     * @return resultat del mètode
+        /**
+     * Operació toString.
+     * @return valor retornat
      */
+    @Override
     public String toString(){
         String access = "";
         String estats = "";

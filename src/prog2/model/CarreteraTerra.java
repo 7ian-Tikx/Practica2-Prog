@@ -11,10 +11,10 @@ public class CarreteraTerra extends AccesTerra{
 
     /**
      * Constructor de CarreteraTerra.
-     * @param nom paràmetre del mètode
-     * @param accessibilitat paràmetre del mètode
-     * @param longitud paràmetre del mètode
-     * @param amplada paràmetre del mètode
+     * @param nom valor d'entrada
+     * @param accessibilitat valor d'entrada
+     * @param longitud valor d'entrada
+     * @param amplada valor d'entrada
      */
     public CarreteraTerra(String nom, boolean accessibilitat, double longitud, double amplada) {
         super(nom, accessibilitat, longitud);
@@ -23,8 +23,8 @@ public class CarreteraTerra extends AccesTerra{
 
     //fem els setters
     /**
-     * Mètode setAmplada.
-     * @param amplada paràmetre del mètode
+     * Operació setAmplada.
+     * @param amplada valor d'entrada
      */
     public void setAmplada(double amplada){
         this.amplada = amplada;
@@ -33,26 +33,26 @@ public class CarreteraTerra extends AccesTerra{
     //fem els getters
 
     /**
-     * Mètode getAmplada.
-     * @return resultat del mètode
+     * Operació getAmplada.
+     * @return valor retornat
      */
     public double getAmplada(){
         return this.amplada;
     }
 
-    @Override
-    /**
-     * Mètode isAccessibilitat.
-     * @return resultat del mètode
+        /**
+     * Operació isAccessibilitat.
+     * @return valor retornat
      */
+    @Override
     public boolean isAccessibilitat() {
         return true;
     }
-    @Override
-    /**
-     * Mètode toString.
-     * @return resultat del mètode
+        /**
+     * Operació toString.
+     * @return valor retornat
      */
+    @Override
     public String toString() {
 
         return super.toString() + " , " + "amplada: " + this.amplada;

@@ -21,45 +21,45 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
     }
     // Els getters i setters
     /**
-     * Mètode getLlistaAllotjaments.
-     * @return resultat del mètode
+     * Operació getLlistaAllotjaments.
+     * @return valor retornat
      */
     public ArrayList<Allotjament> getLlistaAllotjaments(){
         return this.llistaAllotjaments;
     }
     /**
-     * Mètode setLlistaAllotjaments.
-     * @param llistaAllotjaments paràmetre del mètode
+     * Operació setLlistaAllotjaments.
+     * @param llistaAllotjaments valor d'entrada
      */
     public void setLlistaAllotjaments(ArrayList<Allotjament> llistaAllotjaments){
         this.llistaAllotjaments = llistaAllotjaments;
     }
 
-    @Override
-    /**
-     * Mètode afegirAllotjament.
-     * @param allotjament paràmetre del mètode
+        /**
+     * Operació afegirAllotjament.
+     * @param allotjament valor d'entrada
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public void afegirAllotjament(Allotjament allotjament) throws ExcepcioCamping {
         this.llistaAllotjaments.add(allotjament);
     }
 
-    @Override
-    /**
-     * Mètode buidar.
+        /**
+     * Operació buidar.
      */
+    @Override
     public void buidar() {
         this.llistaAllotjaments.clear();
     }
 
-    @Override
-    /**
-     * Mètode llistarAllotjaments.
-     * @param estat paràmetre del mètode
-     * @return resultat del mètode
+        /**
+     * Operació llistarAllotjaments.
+     * @param estat valor d'entrada
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
         boolean estatBoolean;
         if ("Operatiu".equals(estat)) {
@@ -84,11 +84,11 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
     }
 
 
-    @Override
-    /**
-     * Mètode containsAllotjamentOperatiu.
-     * @return resultat del mètode
+        /**
+     * Operació containsAllotjamentOperatiu.
+     * @return valor retornat
      */
+    @Override
     public boolean containsAllotjamentOperatiu() {
         Iterator<Allotjament> it = this.llistaAllotjaments.iterator();
         while (it.hasNext()){
@@ -100,12 +100,12 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
         return false;
     }
 
-    @Override
-    /**
-     * Mètode contains.
-     * @param allotjament paràmetre del mètode
-     * @return resultat del mètode
+        /**
+     * Operació contains.
+     * @param allotjament valor d'entrada
+     * @return valor retornat
      */
+    @Override
     public boolean contains(Allotjament allotjament) {
         Iterator<Allotjament> it = this.llistaAllotjaments.iterator();
         while (it.hasNext()){
@@ -117,13 +117,13 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable{
         return false;
     }
 
-    @Override
-    /**
-     * Mètode getAllotjament.
-     * @param id paràmetre del mètode
-     * @return resultat del mètode
+        /**
+     * Operació getAllotjament.
+     * @param id valor d'entrada
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public Allotjament getAllotjament(String id) throws ExcepcioCamping {
         Iterator<Allotjament> it = this.llistaAllotjaments.iterator();
         while (it.hasNext()){

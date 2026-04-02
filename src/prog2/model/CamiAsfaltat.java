@@ -6,19 +6,19 @@ package prog2.model;
 public class CamiAsfaltat extends AccesAsfalt {
     /**
      * Constructor de CamiAsfaltat.
-     * @param nom paràmetre del mètode
-     * @param estat paràmetre del mètode
-     * @param tamanyAsfalt paràmetre del mètode
+     * @param nom valor d'entrada
+     * @param estat valor d'entrada
+     * @param tamanyAsfalt valor d'entrada
      */
     public CamiAsfaltat(String nom, boolean estat, float tamanyAsfalt){
         super(nom, false, tamanyAsfalt);
 
     }
-    @Override
-    /**
-     * Mètode isAccessibilitat.
-     * @return resultat del mètode
+        /**
+     * Operació isAccessibilitat.
+     * @return valor retornat
      */
+    @Override
     public boolean isAccessibilitat(){
         return false;
     }

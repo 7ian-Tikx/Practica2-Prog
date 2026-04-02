@@ -15,8 +15,8 @@ public class MobilHome extends Casa {
 
     // Els getters
     /**
-     * Mètode isTerrassaBarbacoa.
-     * @return resultat del mètode
+     * Operació isTerrassaBarbacoa.
+     * @return valor retornat
      */
     public boolean isTerrassaBarbacoa() {
         return terrassaBarbacoa;
@@ -24,28 +24,28 @@ public class MobilHome extends Casa {
 
     // Els setters
     /**
-     * Mètode setTerrassaBarbacoa.
-     * @param terrassaBarbacoa paràmetre del mètode
+     * Operació setTerrassaBarbacoa.
+     * @param terrassaBarbacoa valor d'entrada
      */
     public void setTerrassaBarbacoa(boolean terrassaBarbacoa) {
         this.terrassaBarbacoa = terrassaBarbacoa;
     }
 
     // El metodo funcionaCorrectament
-    @Override
-    /**
-     * Mètode correcteFuncionament.
-     * @return resultat del mètode
+        /**
+     * Operació correcteFuncionament.
+     * @return valor retornat
      */
+    @Override
     public boolean correcteFuncionament() {
         return terrassaBarbacoa;
     }
 
-    @Override
-    /**
-     * Mètode toString.
-     * @return resultat del mètode
+        /**
+     * Operació toString.
+     * @return valor retornat
      */
+    @Override
     public String toString() {
         return super.toString() + ". MobilHome{" + "material='" + ", terrassaBarbacoa=" + terrassaBarbacoa + "}";
     }

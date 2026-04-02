@@ -15,11 +15,11 @@ public class TascaManteniment implements InTascaManteniment, Serializable {
 
     /**
      * Constructor de TascaManteniment.
-     * @param numTasca paràmetre del mètode
-     * @param tipus paràmetre del mètode
-     * @param allotjament paràmetre del mètode
-     * @param data paràmetre del mètode
-     * @param dies paràmetre del mètode
+     * @param numTasca valor d'entrada
+     * @param tipus valor d'entrada
+     * @param allotjament valor d'entrada
+     * @param data valor d'entrada
+     * @param dies valor d'entrada
      */
     public TascaManteniment (int numTasca,TipusTascaManteniment tipus,Allotjament allotjament,String data,int dies){
         this.numTasca = numTasca;
@@ -31,11 +31,11 @@ public class TascaManteniment implements InTascaManteniment, Serializable {
 
 
     // Els getters
-    @Override
-    /**
-     * Mètode getNum.
-     * @return resultat del mètode
+        /**
+     * Operació getNum.
+     * @return valor retornat
      */
+    @Override
     public int getNum() {
         return numTasca;
     }
@@ -45,83 +45,83 @@ public class TascaManteniment implements InTascaManteniment, Serializable {
         return this.tipus;
     }
 
-    @Override
-    /**
-     * Mètode getAllotjament.
-     * @return resultat del mètode
+        /**
+     * Operació getAllotjament.
+     * @return valor retornat
      */
+    @Override
     public Allotjament getAllotjament() {
         return allotjament;
     }
 
-    @Override
-    /**
-     * Mètode getData.
-     * @return resultat del mètode
+        /**
+     * Operació getData.
+     * @return valor retornat
      */
+    @Override
     public String getData() {
         return data;
     }
 
-    @Override
-    /**
-     * Mètode getDies.
-     * @return resultat del mètode
+        /**
+     * Operació getDies.
+     * @return valor retornat
      */
+    @Override
     public int getDies() {
         return dies;
     }
 
     // Els setters
     /**
-     * Mètode setNum.
-     * @param num_ paràmetre del mètode
+     * Operació setNum.
+     * @param num_ valor d'entrada
      */
     public void setNum(int num_) {
         this.numTasca = num_;
     }
 
-    @Override
-    /**
-     * Mètode setTipus.
-     * @param tipus_ paràmetre del mètode
+        /**
+     * Operació setTipus.
+     * @param tipus_ valor d'entrada
      */
+    @Override
     public void setTipus(TascaManteniment.TipusTascaManteniment tipus_) {
         this.tipus = tipus_;
     }
 
-    @Override
-    /**
-     * Mètode setAllotjament.
-     * @param allotjament paràmetre del mètode
+        /**
+     * Operació setAllotjament.
+     * @param allotjament valor d'entrada
      */
+    @Override
     public void setAllotjament(Allotjament allotjament) {
         this.allotjament = allotjament;
     }
 
-    @Override
-    /**
-     * Mètode setData.
-     * @param data paràmetre del mètode
+        /**
+     * Operació setData.
+     * @param data valor d'entrada
      */
+    @Override
     public void setData(String data) {
         this.data = data;
     }
 
-    @Override
-    /**
-     * Mètode setDies.
-     * @param dies paràmetre del mètode
+        /**
+     * Operació setDies.
+     * @param dies valor d'entrada
      */
+    @Override
     public void setDies(int dies) {
         this.dies = dies;
     }
 
-    @Override
-    /**
-     * Mètode getIluminacioAllotjament.
-     * @return resultat del mètode
+        /**
+     * Operació getIluminacioAllotjament.
+     * @return valor retornat
      */
+    @Override
     public String getIluminacioAllotjament() {
         if (this.tipus == TipusTascaManteniment.Reparacio) {
             return "50%";

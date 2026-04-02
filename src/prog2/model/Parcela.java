@@ -10,12 +10,12 @@ public class Parcela extends Allotjament {
     // El constructor
     /**
      * Constructor de Parcela.
-     * @param nom paràmetre del mètode
-     * @param id paràmetre del mètode
-     * @param estat paràmetre del mètode
-     * @param iluminacio paràmetre del mètode
-     * @param mida paràmetre del mètode
-     * @param conexioElectrica paràmetre del mètode
+     * @param nom valor d'entrada
+     * @param id valor d'entrada
+     * @param estat valor d'entrada
+     * @param iluminacio valor d'entrada
+     * @param mida valor d'entrada
+     * @param conexioElectrica valor d'entrada
      */
     public Parcela(String nom, String id, boolean estat, String iluminacio, float mida, boolean conexioElectrica) {
         super(nom, id, 4, 2, estat, iluminacio);
@@ -25,51 +25,51 @@ public class Parcela extends Allotjament {
 
     // Els getters i setters dels nous atributs
     /**
-     * Mètode isConnexioElectrica.
-     * @return resultat del mètode
+     * Operació isConnexioElectrica.
+     * @return valor retornat
      */
     public boolean isConnexioElectrica() {
         return this.conexioElectrica;
     }
 
     /**
-     * Mètode getMida.
-     * @return resultat del mètode
+     * Operació getMida.
+     * @return valor retornat
      */
     public double getMida() {
         return this.mida;
     }
 
     /**
-     * Mètode setConnexioElectrica.
-     * @param conexioElectrica_ paràmetre del mètode
+     * Operació setConnexioElectrica.
+     * @param conexioElectrica_ valor d'entrada
      */
     public void setConnexioElectrica(boolean conexioElectrica_) {
         this.conexioElectrica = conexioElectrica_;
     }
 
     /**
-     * Mètode setMida.
-     * @param mida_ paràmetre del mètode
+     * Operació setMida.
+     * @param mida_ valor d'entrada
      */
     public void setMida(float mida_) {
         this.mida = mida_;
     }
 
-    @Override
-    /**
-     * Mètode correcteFuncionament.
-     * @return resultat del mètode
+        /**
+     * Operació correcteFuncionament.
+     * @return valor retornat
      */
+    @Override
     public boolean correcteFuncionament() {
         return conexioElectrica;
     }
 
-    @Override
-    /**
-     * Mètode toString.
-     * @return resultat del mètode
+        /**
+     * Operació toString.
+     * @return valor retornat
      */
+    @Override
     public String toString() {
         return super.toString() + "Parcela{mida=" + this.mida + ", connexioElectrica=" + this.conexioElectrica + "}";
     }

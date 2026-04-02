@@ -22,30 +22,30 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
 
     // Els getters i setters
     /**
-     * Mètode getTasquesManteniment.
-     * @return resultat del mètode
+     * Operació getTasquesManteniment.
+     * @return valor retornat
      */
     public ArrayList<TascaManteniment> getTasquesManteniment(){
         return this.tasquesManteniment;
     }
     /**
-     * Mètode setTasquesManteniment.
-     * @param tasquesManteniment paràmetre del mètode
+     * Operació setTasquesManteniment.
+     * @param tasquesManteniment valor d'entrada
      */
     public void setTasquesManteniment(ArrayList<TascaManteniment> tasquesManteniment){
         this.tasquesManteniment = tasquesManteniment;
     }
 
-    @Override
-    /**
-     * Mètode afegirTascaManteniment.
-     * @param num paràmetre del mètode
-     * @param tipus paràmetre del mètode
-     * @param allotjament paràmetre del mètode
-     * @param data paràmetre del mètode
-     * @param dies paràmetre del mètode
+        /**
+     * Operació afegirTascaManteniment.
+     * @param num valor d'entrada
+     * @param tipus valor d'entrada
+     * @param allotjament valor d'entrada
+     * @param data valor d'entrada
+     * @param dies valor d'entrada
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public void afegirTascaManteniment(int num, String tipus, Allotjament allotjament, String data, int dies) throws ExcepcioCamping {
         TascaManteniment.TipusTascaManteniment tipusTasca;
         try {
@@ -66,12 +66,12 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
         this.tasquesManteniment.add(tasca);
     }
 
-    @Override
-    /**
-     * Mètode completarTascaManteniment.
-     * @param tasca paràmetre del mètode
+        /**
+     * Operació completarTascaManteniment.
+     * @param tasca valor d'entrada
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public void completarTascaManteniment(TascaManteniment tasca) throws ExcepcioCamping {
         Iterator<TascaManteniment> it = this.tasquesManteniment.iterator();
         while (it.hasNext()){
@@ -85,12 +85,12 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
         throw new ExcepcioCamping("La tasca no existeix");
     }
 
-    @Override
-    /**
-     * Mètode llistarTasquesManteniment.
-     * @return resultat del mètode
+        /**
+     * Operació llistarTasquesManteniment.
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public String llistarTasquesManteniment() throws ExcepcioCamping {
         String result = "";
         if (this.tasquesManteniment.isEmpty()) throw new ExcepcioCamping("NO hi ha cap tasca registrada");
@@ -109,13 +109,13 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
         return result;
     }
 
-    @Override
-    /**
-     * Mètode getTascaManteniment.
-     * @param num paràmetre del mètode
-     * @return resultat del mètode
+        /**
+     * Operació getTascaManteniment.
+     * @param num valor d'entrada
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public TascaManteniment getTascaManteniment(int num) throws ExcepcioCamping {
         Iterator<TascaManteniment> it = this.tasquesManteniment.iterator();
         while (it.hasNext()){

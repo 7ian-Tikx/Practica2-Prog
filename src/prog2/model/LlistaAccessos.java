@@ -21,32 +21,32 @@ public class LlistaAccessos implements InLlistaAccessos, Serializable {
         this.llistaAccessos = new ArrayList<>();
     }
 
-    @Override
-    /**
-     * Mètode afegirAcces.
-     * @param acc paràmetre del mètode
+        /**
+     * Operació afegirAcces.
+     * @param acc valor d'entrada
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public void afegirAcces(Acces acc) throws ExcepcioCamping{
         this.llistaAccessos.add(acc);
     }
 
-    @Override
-    /**
-     * Mètode buidar.
+        /**
+     * Operació buidar.
      */
+    @Override
     public void buidar(){
         this.llistaAccessos.clear();
 
     }
 
-    @Override
-    /**
-     * Mètode llistarAccessos.
-     * @param estat paràmetre del mètode
-     * @return resultat del mètode
+        /**
+     * Operació llistarAccessos.
+     * @param estat valor d'entrada
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public String llistarAccessos(boolean estat) throws ExcepcioCamping{
         String resultat = "";
         boolean trobat = false;
@@ -77,11 +77,11 @@ public class LlistaAccessos implements InLlistaAccessos, Serializable {
         return resultat;
     }
 
-    @Override
-    /**
-     * Mètode actualitzaEstatAccessos.
+        /**
+     * Operació actualitzaEstatAccessos.
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public void actualitzaEstatAccessos() throws ExcepcioCamping{
         Iterator<Acces> iterator = this.llistaAccessos.iterator();
 
@@ -96,12 +96,12 @@ public class LlistaAccessos implements InLlistaAccessos, Serializable {
         }
     }
 
-    @Override
-    /**
-     * Mètode calculaAccessosNoAccessibles.
-     * @return resultat del mètode
+        /**
+     * Operació calculaAccessosNoAccessibles.
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public int calculaAccessosNoAccessibles() throws ExcepcioCamping{
         int comptador = 0;
 
@@ -117,12 +117,12 @@ public class LlistaAccessos implements InLlistaAccessos, Serializable {
         return comptador;
     }
 
-    @Override
-    /**
-     * Mètode calculaMetresTerra.
-     * @return resultat del mètode
+        /**
+     * Operació calculaMetresTerra.
+     * @return valor retornat
      * @throws ExcepcioCamping en cas d'error
      */
+    @Override
     public float calculaMetresTerra() throws ExcepcioCamping{
         float metres = 0;
 

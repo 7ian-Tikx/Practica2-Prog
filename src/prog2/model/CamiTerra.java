@@ -9,18 +9,18 @@ public class CamiTerra extends AccesTerra {
 
     /**
      * Constructor de CamiTerra.
-     * @param nom paràmetre del mètode
-     * @param estat paràmetre del mètode
-     * @param longitud paràmetre del mètode
+     * @param nom valor d'entrada
+     * @param estat valor d'entrada
+     * @param longitud valor d'entrada
      */
     public CamiTerra(String nom, boolean estat, double longitud) {
         super(nom, false, longitud);
     }
-    @Override
-    /**
-     * Mètode isAccessibilitat.
-     * @return resultat del mètode
+        /**
+     * Operació isAccessibilitat.
+     * @return valor retornat
      */
+    @Override
     public boolean isAccessibilitat() {
         return false;
     }

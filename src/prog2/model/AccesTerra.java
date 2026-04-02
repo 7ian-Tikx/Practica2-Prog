@@ -10,9 +10,9 @@ public abstract class AccesTerra extends Acces {
 
     /**
      * Constructor de AccesTerra.
-     * @param nom paràmetre del mètode
-     * @param estat paràmetre del mètode
-     * @param longitud paràmetre del mètode
+     * @param nom valor d'entrada
+     * @param estat valor d'entrada
+     * @param longitud valor d'entrada
      */
     public AccesTerra(String nom, boolean estat, double longitud){
         super(nom,estat);
@@ -24,8 +24,8 @@ public abstract class AccesTerra extends Acces {
 
 
     /**
-     * Mètode setLongitud.
-     * @param longitud paràmetre del mètode
+     * Operació setLongitud.
+     * @param longitud valor d'entrada
      */
     public void setLongitud(double longitud){
         this.longitud = longitud;
@@ -34,18 +34,18 @@ public abstract class AccesTerra extends Acces {
     //fem els getters
 
     /**
-     * Mètode getLongitud.
-     * @return resultat del mètode
+     * Operació getLongitud.
+     * @return valor retornat
      */
     public double getLongitud(){
         return this.longitud;
     }
 
-    @Override
-    /**
-     * Mètode toString.
-     * @return resultat del mètode
+        /**
+     * Operació toString.
+     * @return valor retornat
      */
+    @Override
     public String toString(){
         return super.toString() + " , " + "longitud " + this.longitud;
     }

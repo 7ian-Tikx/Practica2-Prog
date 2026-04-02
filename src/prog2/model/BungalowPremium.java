@@ -20,16 +20,16 @@ public class BungalowPremium extends Bungalow{
 
     // Els getters dels nous atributs
     /**
-     * Mètode isServeisExtra.
-     * @return resultat del mètode
+     * Operació isServeisExtra.
+     * @return valor retornat
      */
     public boolean isServeisExtra(){
         return serveisExtra;
     }
 
     /**
-     * Mètode getCodiWifi.
-     * @return resultat del mètode
+     * Operació getCodiWifi.
+     * @return valor retornat
      */
     public String getCodiWifi(){
         return codiWifi;
@@ -37,16 +37,16 @@ public class BungalowPremium extends Bungalow{
 
     // Els setters dels nous atributs
     /**
-     * Mètode setServeisExtra.
-     * @param serveisExtra paràmetre del mètode
+     * Operació setServeisExtra.
+     * @param serveisExtra valor d'entrada
      */
     public void setServeisExtra(boolean serveisExtra){
         this.serveisExtra = serveisExtra;
     }
 
     /**
-     * Mètode setCodiWifi.
-     * @param codiWifi paràmetre del mètode
+     * Operació setCodiWifi.
+     * @param codiWifi valor d'entrada
      */
     public void setCodiWifi(String codiWifi){
         this.codiWifi = codiWifi;
@@ -54,21 +54,21 @@ public class BungalowPremium extends Bungalow{
 
 
     // El metodo funcionaCorrectament
-    @Override
-    /**
-     * Mètode correcteFuncionament.
-     * @return resultat del mètode
+        /**
+     * Operació correcteFuncionament.
+     * @return valor retornat
      */
+    @Override
     public boolean correcteFuncionament(){
         boolean codiCorrecte = codiWifi.length() >= 8 && codiWifi.length() <= 16;
         return codiCorrecte && super.isAireFred();
     }
 
-    @Override
-    /**
-     * Mètode toString.
-     * @return resultat del mètode
+        /**
+     * Operació toString.
+     * @return valor retornat
      */
+    @Override
     public String toString() {
         return super.toString() + ". BungalowPremium{" + "serveisExtra=" + serveisExtra + ", codiWifi='" + codiWifi + "'" + "}";
     }

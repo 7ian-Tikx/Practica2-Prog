@@ -19,10 +19,10 @@ public class Reserva implements Serializable{
     //Fem el constructor de Reserva
     /**
      * Constructor de Reserva.
-     * @param allotjament paràmetre del mètode
-     * @param client paràmetre del mètode
-     * @param dataEntrada paràmetre del mètode
-     * @param dataSortida paràmetre del mètode
+     * @param allotjament valor d'entrada
+     * @param client valor d'entrada
+     * @param dataEntrada valor d'entrada
+     * @param dataSortida valor d'entrada
      * @throws ExcepcioReserva en cas d'error
      */
     public Reserva(Allotjament allotjament,Client client,LocalDate dataEntrada,LocalDate dataSortida) throws ExcepcioReserva{
@@ -37,29 +37,29 @@ public class Reserva implements Serializable{
     }
     //Fem els getter de dataEntrada,dataSortida,client i allotjament
     /**
-     * Mètode getDataEntrada.
-     * @return resultat del mètode
+     * Operació getDataEntrada.
+     * @return valor retornat
      */
     public LocalDate getDataEntrada(){
         return this.dataEntrada;
     }
     /**
-     * Mètode getDataSortida.
-     * @return resultat del mètode
+     * Operació getDataSortida.
+     * @return valor retornat
      */
     public LocalDate getDataSortida(){
         return this.dataSortida;
     }
     /**
-     * Mètode getClient.
-     * @return resultat del mètode
+     * Operació getClient.
+     * @return valor retornat
      */
     public Client getClient(){
         return this.client;
     }
     /**
-     * Mètode getAllotjament_.
-     * @return resultat del mètode
+     * Operació getAllotjament_.
+     * @return valor retornat
      */
     public Allotjament getAllotjament_(){
         return this.allotjament;
@@ -67,29 +67,29 @@ public class Reserva implements Serializable{
 
     //Fem els setters de dataEntrada,dataSortida,client i allotjament
     /**
-     * Mètode setDataEntrada.
-     * @param dataEntrada paràmetre del mètode
+     * Operació setDataEntrada.
+     * @param dataEntrada valor d'entrada
      */
     public void setDataEntrada(LocalDate dataEntrada){
         this.dataEntrada = dataEntrada;
     }
     /**
-     * Mètode setDataSortida.
-     * @param dataSortida paràmetre del mètode
+     * Operació setDataSortida.
+     * @param dataSortida valor d'entrada
      */
     public void setDataSortida(LocalDate dataSortida){
         this.dataSortida = dataSortida;
     }
     /**
-     * Mètode setClient.
-     * @param client paràmetre del mètode
+     * Operació setClient.
+     * @param client valor d'entrada
      */
     public void setClient(Client client){
         this.client = client;
     }
     /**
-     * Mètode setAllotjament_.
-     * @param allotjament paràmetre del mètode
+     * Operació setAllotjament_.
+     * @param allotjament valor d'entrada
      */
     public void setAllotjament_(Allotjament allotjament){
         this.allotjament = allotjament;

@@ -12,8 +12,8 @@ public class Client implements Serializable {
     //Fem el constructor de la clase Client
     /**
      * Constructor de Client.
-     * @param nom paràmetre del mètode
-     * @param DNI paràmetre del mètode
+     * @param nom valor d'entrada
+     * @param DNI valor d'entrada
      */
     public Client(String nom, String DNI) {
         this.nom = nom;
@@ -21,30 +21,30 @@ public class Client implements Serializable {
     }
     //Fem els getters de Nom i DNI
     /**
-     * Mètode getNom.
-     * @return resultat del mètode
+     * Operació getNom.
+     * @return valor retornat
      */
     public String getNom(){
         return this.nom;
     }
     /**
-     * Mètode getDni.
-     * @return resultat del mètode
+     * Operació getDni.
+     * @return valor retornat
      */
     public String getDni(){
         return this.DNI;
     }
     //Fem els setters del Nom i DNI
     /**
-     * Mètode setNom.
-     * @param nom paràmetre del mètode
+     * Operació setNom.
+     * @param nom valor d'entrada
      */
     public void setNom(String nom){
         this.nom = nom;
     }
     /**
-     * Mètode setDni.
-     * @param DNI paràmetre del mètode
+     * Operació setDni.
+     * @param DNI valor d'entrada
      */
     public void setDni(String DNI){
         this.DNI = DNI;
@@ -52,8 +52,8 @@ public class Client implements Serializable {
     @Override
     //Fem el metode toString per imprimir les informacions
     /**
-     * Mètode toString.
-     * @return resultat del mètode
+     * Operació toString.
+     * @return valor retornat
      */
     public String toString(){
         return this.nom + " amb DNI: " + this.DNI + ". ";

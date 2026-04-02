@@ -16,12 +16,12 @@ public abstract class Allotjament implements InAllotjament, Serializable{
     // El constructor
     /**
      * Constructor de Allotjament.
-     * @param nom paràmetre del mètode
-     * @param id paràmetre del mètode
-     * @param estadaMinimaALTA paràmetre del mètode
-     * @param estadaMinimaBAIXA paràmetre del mètode
-     * @param estat paràmetre del mètode
-     * @param iluminacio paràmetre del mètode
+     * @param nom valor d'entrada
+     * @param id valor d'entrada
+     * @param estadaMinimaALTA valor d'entrada
+     * @param estadaMinimaBAIXA valor d'entrada
+     * @param estat valor d'entrada
+     * @param iluminacio valor d'entrada
      */
     public Allotjament(String nom, String id, long estadaMinimaALTA,long estadaMinimaBAIXA,boolean estat,String iluminacio){
         this.nom = nom;
@@ -34,25 +34,25 @@ public abstract class Allotjament implements InAllotjament, Serializable{
 
     // Ara definim els getters
     /**
-     * Mètode getNom.
-     * @return resultat del mètode
+     * Operació getNom.
+     * @return valor retornat
      */
     public String getNom(){
        return this.nom;
     }
 
     /**
-     * Mètode getId.
-     * @return resultat del mètode
+     * Operació getId.
+     * @return valor retornat
      */
     public String getId(){
         return this.id;
     }
 
     /**
-     * Mètode getEstadaMinima.
-     * @param temp paràmetre del mètode
-     * @return resultat del mètode
+     * Operació getEstadaMinima.
+     * @param temp valor d'entrada
+     * @return valor retornat
      */
     public long getEstadaMinima(Temp temp){
         if (temp == Temp.ALTA){
@@ -63,16 +63,16 @@ public abstract class Allotjament implements InAllotjament, Serializable{
     }
 
     /**
-     * Mètode isOperatiu.
-     * @return resultat del mètode
+     * Operació isOperatiu.
+     * @return valor retornat
      */
     public boolean isOperatiu(){
         return estat;
     }
 
     /**
-     * Mètode getIluminacio.
-     * @return resultat del mètode
+     * Operació getIluminacio.
+     * @return valor retornat
      */
     public String getIluminacio() {
         return iluminacio;
@@ -80,24 +80,24 @@ public abstract class Allotjament implements InAllotjament, Serializable{
 
     // Els setter
     /**
-     * Mètode setNom.
-     * @param nom paràmetre del mètode
+     * Operació setNom.
+     * @param nom valor d'entrada
      */
     public void setNom(String nom){
         this.nom = nom;
     }
     /**
-     * Mètode setId.
-     * @param id paràmetre del mètode
+     * Operació setId.
+     * @param id valor d'entrada
      */
     public void setId(String id){
         this.id = id;
     }
 
     /**
-     * Mètode setEstadaMinima.
-     * @param estadaMinimaALTA_ paràmetre del mètode
-     * @param estadaMinimaBAIXA_ paràmetre del mètode
+     * Operació setEstadaMinima.
+     * @param estadaMinimaALTA_ valor d'entrada
+     * @param estadaMinimaBAIXA_ valor d'entrada
      */
     public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_){
         this.estadaMinimaBAIXA = estadaMinimaBAIXA_;
@@ -106,16 +106,16 @@ public abstract class Allotjament implements InAllotjament, Serializable{
     }
 
     /**
-     * Mètode setOperatiu.
-     * @param estat paràmetre del mètode
+     * Operació setOperatiu.
+     * @param estat valor d'entrada
      */
     public void setOperatiu(boolean estat) {
         this.estat = estat;
     }
 
     /**
-     * Mètode setIluminacio.
-     * @param iluminacio paràmetre del mètode
+     * Operació setIluminacio.
+     * @param iluminacio valor d'entrada
      */
     public void setIluminacio(String iluminacio) {
         this.iluminacio = iluminacio;
@@ -124,21 +124,21 @@ public abstract class Allotjament implements InAllotjament, Serializable{
     // Aquest metodo es abstract porque cadascuna de les seves subclasses tindra els seus propis crites de funcionament
     public abstract boolean correcteFuncionament();
 
-    @Override
-    /**
-     * Mètode toString.
-     * @return resultat del mètode
+        /**
+     * Operació toString.
+     * @return valor retornat
      */
+    @Override
     public String toString(){
         return "Nom=" + nom + ", Id=" + id + ", estada mínima en temp ALTA: " + estadaMinimaALTA +
                 ", estada mínima en temp BAIXA: " + estadaMinimaBAIXA + ".";
     }
 
-    @Override
-    /**
-     * Mètode tancarAllotjament.
-     * @param tasca paràmetre del mètode
+        /**
+     * Operació tancarAllotjament.
+     * @param tasca valor d'entrada
      */
+    @Override
     public void tancarAllotjament(TascaManteniment tasca) {
         this.estat = false;
         TascaManteniment.TipusTascaManteniment tascaManteniment = tasca.getTipus();
@@ -153,10 +153,10 @@ public abstract class Allotjament implements InAllotjament, Serializable{
         }
     }
 
-    @Override
-    /**
-     * Mètode obrirAllotjament.
+        /**
+     * Operació obrirAllotjament.
      */
+    @Override
     public void obrirAllotjament() {
        this.estat = true;
        this.iluminacio = "100%";

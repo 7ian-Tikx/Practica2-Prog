@@ -19,24 +19,24 @@ public abstract class Casa extends Allotjament{
 
     //Els nous getters
     /**
-     * Mètode getMida.
-     * @return resultat del mètode
+     * Operació getMida.
+     * @return valor retornat
      */
     public float getMida(){
         return this.mida;
     }
 
     /**
-     * Mètode getNumHabitacions.
-     * @return resultat del mètode
+     * Operació getNumHabitacions.
+     * @return valor retornat
      */
     public int getNumHabitacions(){
         return this.habitacions;
     }
 
     /**
-     * Mètode getPlacesPersones.
-     * @return resultat del mètode
+     * Operació getPlacesPersones.
+     * @return valor retornat
      */
     public int getPlacesPersones(){
         return this.placesPersones;
@@ -44,24 +44,24 @@ public abstract class Casa extends Allotjament{
 
     // Els setters
     /**
-     * Mètode setMida.
-     * @param mida paràmetre del mètode
+     * Operació setMida.
+     * @param mida valor d'entrada
      */
     public void setMida(float mida){
         this.mida = mida;
     }
 
     /**
-     * Mètode setHabitacions.
-     * @param habitacions paràmetre del mètode
+     * Operació setHabitacions.
+     * @param habitacions valor d'entrada
      */
     public void setHabitacions(int habitacions){
         this.habitacions = habitacions;
     }
 
     /**
-     * Mètode setPlacesPersones.
-     * @param placesPersones paràmetre del mètode
+     * Operació setPlacesPersones.
+     * @param placesPersones valor d'entrada
      */
     public void setPlacesPersones(int placesPersones){
         this.placesPersones = placesPersones;
@@ -70,11 +70,11 @@ public abstract class Casa extends Allotjament{
     // El metode correcteFuncionament en aquest subclasse tambe es abstract
     public abstract boolean correcteFuncionament();
 
-    @Override
-    /**
-     * Mètode toString.
-     * @return resultat del mètode
+        /**
+     * Operació toString.
+     * @return valor retornat
      */
+    @Override
     public String toString() {
         return super.toString() +
                 ", mida=" + mida + ", habitacions=" + habitacions + ", placesPersones=" + placesPersones;

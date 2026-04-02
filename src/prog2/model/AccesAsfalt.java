@@ -10,9 +10,9 @@ public abstract class AccesAsfalt extends Acces{
 
     /**
      * Constructor de AccesAsfalt.
-     * @param nom paràmetre del mètode
-     * @param estat paràmetre del mètode
-     * @param tamanyAsfalt paràmetre del mètode
+     * @param nom valor d'entrada
+     * @param estat valor d'entrada
+     * @param tamanyAsfalt valor d'entrada
      */
     public AccesAsfalt(String nom, boolean estat, double tamanyAsfalt){
         super(nom,estat);
@@ -22,8 +22,8 @@ public abstract class AccesAsfalt extends Acces{
     //fem els setters
 
     /**
-     * Mètode setTamanyAsfalt.
-     * @param tamanyAsfalt paràmetre del mètode
+     * Operació setTamanyAsfalt.
+     * @param tamanyAsfalt valor d'entrada
      */
     public void setTamanyAsfalt(double tamanyAsfalt){
         this.tamanyAsfalt = tamanyAsfalt;
@@ -32,18 +32,18 @@ public abstract class AccesAsfalt extends Acces{
     //fem els getters
 
     /**
-     * Mètode getTamanyAsfalt.
-     * @return resultat del mètode
+     * Operació getTamanyAsfalt.
+     * @return valor retornat
      */
     public double getTamanyAsfalt(){
         return this.tamanyAsfalt;
     }
 
-    @Override
-    /**
-     * Mètode toString.
-     * @return resultat del mètode
+        /**
+     * Operació toString.
+     * @return valor retornat
      */
+    @Override
     public String toString(){
         return super.toString() + " , " + " tamany aslfat: " + this.tamanyAsfalt;
     }
