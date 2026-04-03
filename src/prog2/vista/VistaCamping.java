@@ -102,7 +102,7 @@ public class VistaCamping {
                         System.out.print("Número de tasca: ");
                         int num = Integer.parseInt(sc.nextLine());
 
-                        System.out.print("ID allotjament (ex: ALL1): ");
+                        System.out.print("ID allotjament:");
                         String idAllotjament = sc.nextLine();
 
                         System.out.print("Tipus (Reparacio / Neteja / RevisioTecnica / Desinfeccio): ");
@@ -142,7 +142,7 @@ public class VistaCamping {
                         System.out.print("Ruta fitxer destí: ");
                         String cami = sc.nextLine();
                         camping.save(cami);
-                        System.out.println("Càmping guardat correctament.");
+                        System.out.println("Càmping guardat correctament");
                         break;
                     }
 
@@ -150,21 +150,16 @@ public class VistaCamping {
                         System.out.print("Ruta fitxer origen: ");
                         String cami = sc.nextLine();
                         camping = Camping.load(cami);
-                        System.out.println("Càmping recuperat correctament.");
+                        System.out.println("Càmping recuperat correctament");
                         break;
                     }
 
                     case SORTIR:
-                        System.out.println("Fins aviat!");
+                        System.out.println("Fins aviat");
                         break;
                 }
             } catch (ExcepcioCamping e) {
                 System.out.println("Error: " + e.getMessage());
-            } catch (NumberFormatException e) {
-                System.out.println("Error: format numèric incorrecte.");
-
-            } catch (Exception e) {
-                System.out.println("Error inesperat: " + e.getMessage());
             }
 
         } while (opcio != OpcionsMenuPrincipal.SORTIR);
