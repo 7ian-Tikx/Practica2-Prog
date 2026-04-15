@@ -85,13 +85,6 @@ public class Camping implements InCamping,Serializable{
      * @return text amb la informació dels allotjaments filtrats
      * @throws ExcepcioCamping si l'estat no és vàlid o no hi ha resultats
      */
-    /**
-    * Itera sobre la llista d'allotjaments i retorna un String amb la informació de tots els allotjaments amb l'estat rebut per paràmetre.
-    * En cas que no hi hagi allotjaments en l'estat passat com a paràmetre llança una excepció.
-    * @param estat
-    * @return String
-    * @throws prog2.vista.ExcepcioCamping Aquest mètode llança una excepció en cas que no hi hagi allotjaments en l'estat passat com a paràmetre.
-    */
     @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
        return this.llistaAllotjaments.llistarAllotjaments(estat);
@@ -103,12 +96,6 @@ public class Camping implements InCamping,Serializable{
      * @param infoEstat text de l'estat a filtrar
      * @return text amb la informació dels accessos filtrats
      * @throws ExcepcioCamping si l'estat indicat no és vàlid
-     */
-        /**
-     * Operació llistarAccessos.
-     * @param infoEstat text de l'estat a filtrar
-     * @return valor retornat
-     * @throws ExcepcioCamping en cas d'error
      */
     @Override
     public String llistarAccessos(String infoEstat) throws ExcepcioCamping {
@@ -130,12 +117,6 @@ public class Camping implements InCamping,Serializable{
      * @return text amb les tasques actives
      * @throws ExcepcioCamping si no hi ha cap tasca registrada
      */
-    /**
-    * Itera sobre la llista de tasques i retorna un String amb la informació de totes les tasques de manteniment.
-    * En cas que no hi hagi cap tasca llança una excepció.
-    * @return String
-    * @throws ExcepcioCamping
-    */
     @Override
     public String llistarTasquesManteniment() throws ExcepcioCamping {
         return llistaTasquesManteniment.llistarTasquesManteniment();
@@ -151,15 +132,6 @@ public class Camping implements InCamping,Serializable{
      * @param dies dies previstos o durada en dies
      * @throws ExcepcioCamping si les dades no són vàlides o l'allotjament no existeix
      */
-        /**
-     * Operació afegirTascaManteniment.
-     * @param num número identificador de la tasca
-     * @param tipus tipus de tasca de manteniment
-     * @param idAllotjament identificador de l'allotjament
-     * @param data data de la tasca o operació
-     * @param dies dies previstos o durada en dies
-     * @throws ExcepcioCamping en cas d'error
-     */
     @Override
     public void afegirTascaManteniment(int num, String tipus, String idAllotjament, String data, int dies) throws ExcepcioCamping {
         Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
@@ -173,11 +145,6 @@ public class Camping implements InCamping,Serializable{
      * @param num número identificador de la tasca
      * @throws ExcepcioCamping si la tasca no existeix
      */
-        /**
-     * Operació completarTascaManteniment.
-     * @param num número identificador de la tasca
-     * @throws ExcepcioCamping en cas d'error
-     */
     @Override
     public void completarTascaManteniment(int num) throws ExcepcioCamping {
         TascaManteniment tasca = llistaTasquesManteniment.getTascaManteniment(num);
@@ -190,25 +157,16 @@ public class Camping implements InCamping,Serializable{
      *
      * @return nombre d'accessos no accessibles
      */
-    /**
-    * Itera sobre la llista d'accessos i retorna el número d'accessos sense accessibilitat.
-    * @return int
-    * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
-    */
     @Override
     public int calculaAccessosNoAccessibles(){
         return llistaAccessos.calculaAccessosNoAccessibles();
     }
+
     /**
      * Calcula els metres totals dels accessos de tipus terra.
      *
      * @return metres totals d'accessos de terra
      */
-    /**
-    * Itera sobre la llista d'accessos, i pels accessos de terra suma el total de metres (longitud) i ho retorna.
-    * @return float amb els metres totals.
-    * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
-    */
     @Override
     public float calculaMetresTerra(){
         return llistaAccessos.calculaMetresTerra();
@@ -220,11 +178,6 @@ public class Camping implements InCamping,Serializable{
      * @param fitxerFI ruta del fitxer destí
      * @throws ExcepcioCamping si es produeix un error d'E/S
      */
-        /**
-     * Operació save.
-     * @param fitxerFI ruta del fitxer destí
-     * @throws ExcepcioCamping en cas d'error
-     */
     @Override
     public void save(String fitxerFI) throws ExcepcioCamping{
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fitxerFI))){
@@ -235,6 +188,7 @@ public class Camping implements InCamping,Serializable{
             throw new ExcepcioCamping(e.getMessage());
         }
     }
+
     /**
      * Carrega un objecte {@link Camping} des d'un fitxer.
      *

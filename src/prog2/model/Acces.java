@@ -125,7 +125,7 @@ public abstract class Acces implements InAcces, Serializable {
     public String toString(){
         String access = "";
         String estats = "";
-        if(this.accessibilitat) {
+        if(this.isAccessibilitat()) {
             access = "Sí";
         }
         else{
