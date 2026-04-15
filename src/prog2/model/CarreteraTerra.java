@@ -12,12 +12,12 @@ public class CarreteraTerra extends AccesTerra{
     /**
      * Constructor de CarreteraTerra.
      * @param nom nom de l'entitat
-     * @param accessibilitat valor d'entrada associat a l'operació
+     * @param estat valor d'entrada associat a l'operació
      * @param longitud longitud del tram de terra en metres
      * @param amplada amplada de la carretera de terra
      */
-    public CarreteraTerra(String nom, boolean accessibilitat, double longitud, double amplada) {
-        super(nom, accessibilitat, longitud);
+    public CarreteraTerra(String nom, boolean estat, double longitud, double amplada) {
+        super(nom, estat, longitud);
         this.amplada = amplada;
     }
 

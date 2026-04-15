@@ -17,7 +17,7 @@ public class CarreteraAsfaltada extends AccesAsfalt{
      * @param pes pes màxim admès per la carretera
      */
     public CarreteraAsfaltada(String nom, boolean estat, float tamanyAsfalt,double pes){
-        super(nom, true, tamanyAsfalt);
+        super(nom, estat, tamanyAsfalt);
         this.pes = pes;
     }
 
